@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>▲HEAP</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="http://marshallmallicoat.com/theme/css/style.css" />
+ <!-- adds article description to head, if available -->
+</head>
+
+<body>
+  <header>
+      <h1><a href="http://marshallmallicoat.com/" title="Home">▲HEAP</a></h1>
+  </header>
+
+  <main>
+<article>
+  <header><h1>Blog Design</h1></header>
+  <footer>
+        Revised
+        <time class="modified" datetime="2018-09-12T00:00:00-05:00">
+        12 Sep 2018</time>
+  </footer>
+
+  <div class="section" id="todo">
+<h2>Todo</h2>
+<ul class="simple">
+<li>Init a git repo in the 'output' folder and push to Github pages
+repo for hosting.</li>
+<li>Move 'poems published elsewhere' to the main list?</li>
+<li>Move hyperlink in 'works published elsewhere' to the title, away from the publication?</li>
+<li>Maybe created a single post which links to the 12 lyric essays;
+or could put in a single big page and add a TOC at the top with
+<tt class="docutils literal">.. contents:: My Table of Contents</tt>.</li>
+<li>In index page, use <tt class="docutils literal">&lt;section&gt;&gt;</tt> as the sectioning element.
+Currently, I don't think I have one.</li>
+<li>Remove the <tt class="docutils literal">&lt;hr&gt;</tt>: my use of it is not semantic, does not
+follow the HTML5 spec.</li>
+<li>How to indicate citation of other works, like book in footnote? Or Twilight movie in one essay?
+There exists an HTML tag <tt class="docutils literal">&lt;cite&gt;</tt> which is maybe the one to use.
+This can maybe be implemented using RST's <tt class="docutils literal">:role:cite</tt>.
+Browsers will automatically put the text enclosed in italics.
+I think it can also be done with <tt class="docutils literal"><span class="pre">:title:`text`</span></tt> or simply <tt class="docutils literal"><span class="pre">:t:`text`</span></tt></li>
+<li>Do I really need a sitemap? Some <a class="reference external" href="https://github.com/getpelican/pelican/wiki/Tips-n-Tricks">tips</a> to implement this.</li>
+</ul>
+<div class="section" id="won-t-do">
+<h3>Won't Do</h3>
+<ul class="simple">
+<li>In <tt class="docutils literal">base.html</tt> template, add metadata like author to head?</li>
+<li>In <tt class="docutils literal">about.html</tt> page, use <tt class="docutils literal">address</tt> element,
+maybe in the vCard (?) microformat.</li>
+<li>Add a favicon?</li>
+</ul>
+</div>
+<div class="section" id="done">
+<h3>Done</h3>
+<ul class="simple">
+<li>Add a <em>blogroll</em>: &quot;A blogroll is a list of links on a blog, usually on the
+sidebar for easy access, that the blog writer likes and wants to share.&quot;</li>
+<li>Use ALA state abbreviations in Readings? What is NY?</li>
+<li>Maybe add a symbol on the title banner by <em>HEAP</em>, e.g. a triangle (like a pile of
+sand in an hourglass). This would be like Winston's &quot;Five-Star&quot; method, i.e.
+adding a <em>symbol</em>.</li>
+<li>Get HTML structure to match previous blog.</li>
+<li>On second thought, maybe should strip the HTML down: remove all unnecessary
+classes and ids. Focus on the <em>structure</em>, guiding by the HTML specification.
+Try to make the tree structure clear and correct.
+Don't worry about the presentation at all for now. Just use the Tufte CSS unaltered.</li>
+<li>How to do em-dashes in rST? Can't. Have to use <tt class="docutils literal">^V</tt> thing in vim.</li>
+<li>Need to go back through essays and clean up the markup</li>
+</ul>
+</div>
+</div>
+<div class="section" id="git">
+<h2>Git</h2>
+<ul class="simple">
+<li>I have created a local branch called <tt class="docutils literal">pelican</tt> of the git repo.</li>
+<li>When I push to the master branch, I need to do it correctly.
+This <a class="reference external" href="https://stackoverflow.com/questions/4752387/pushing-a-local-branch-up-to-github">Stackoverflow question</a> has some info that might
+be helpful.</li>
+</ul>
+</div>
+<div class="section" id="design-notes">
+<h2>Design Notes</h2>
+<ul class="simple">
+<li>Maybe redesign the view, e.g. maybe a white background. <a class="reference external" href="https://hamberg.no/erlend/">This site</a> has nice text.</li>
+<li><a class="reference external" href="https://edwardtufte.github.io/tufte-css/">Tufte CSS</a> provides CSS guidance/stylesheets based on typography theory.
+I may be able to rely on this heavily.</li>
+</ul>
+</div>
+<div class="section" id="other-thoughts">
+<h2>Other Thoughts</h2>
+<ul class="simple">
+<li>I think we want a single directory for all non-personal notes, both drafts and final. The draft status can be set with a meta tag, which Pelican can use to decide to include or not.</li>
+<li>We will keep a last modified date for each document.</li>
+<li>I think in Pelican you can have a &quot;drafts&quot; category which can be set to not be published.</li>
+</ul>
+</div>
+
+
+</article>
+  </main>
+
+  <hr>
+  <footer>
+  <nav>
+    <h3>Navigation</h3>
+    <ul>
+      <li><a href="http://marshallmallicoat.com/">Home</a></li>
+      <li><a href="http://marshallmallicoat.com/about.html">About</a></li>
+      <li><a href="http://marshallmallicoat.com/feed.xml">Feed</a></li>
+    </ul>
+  </nav>
+  </footer>
+</body>
+</html>
