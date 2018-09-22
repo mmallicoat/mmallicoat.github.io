@@ -17,29 +17,19 @@
   <header><h1>Blog Design</h1></header>
   <footer>
         Revised
-        <time class="modified" datetime="2018-09-12T00:00:00-05:00">
-        12 Sep 2018</time>
+        <time class="modified" datetime="2018-09-22T00:00:00-05:00">
+        22 Sep 2018</time>
   </footer>
 
   <div class="section" id="todo">
 <h2>Todo</h2>
 <ul class="simple">
-<li>Init a git repo in the 'output' folder and push to Github pages
-repo for hosting.</li>
 <li>Move 'poems published elsewhere' to the main list?</li>
 <li>Move hyperlink in 'works published elsewhere' to the title, away from the publication?</li>
-<li>Maybe created a single post which links to the 12 lyric essays;
-or could put in a single big page and add a TOC at the top with
-<tt class="docutils literal">.. contents:: My Table of Contents</tt>.</li>
 <li>In index page, use <tt class="docutils literal">&lt;section&gt;&gt;</tt> as the sectioning element.
 Currently, I don't think I have one.</li>
 <li>Remove the <tt class="docutils literal">&lt;hr&gt;</tt>: my use of it is not semantic, does not
 follow the HTML5 spec.</li>
-<li>How to indicate citation of other works, like book in footnote? Or Twilight movie in one essay?
-There exists an HTML tag <tt class="docutils literal">&lt;cite&gt;</tt> which is maybe the one to use.
-This can maybe be implemented using RST's <tt class="docutils literal">:role:cite</tt>.
-Browsers will automatically put the text enclosed in italics.
-I think it can also be done with <tt class="docutils literal"><span class="pre">:title:`text`</span></tt> or simply <tt class="docutils literal"><span class="pre">:t:`text`</span></tt></li>
 <li>Do I really need a sitemap? Some <a class="reference external" href="https://github.com/getpelican/pelican/wiki/Tips-n-Tricks">tips</a> to implement this.</li>
 </ul>
 <div class="section" id="won-t-do">
@@ -54,6 +44,16 @@ maybe in the vCard (?) microformat.</li>
 <div class="section" id="done">
 <h3>Done</h3>
 <ul class="simple">
+<li>How to indicate citation of other works, like book in footnote? Or Twilight movie in one essay?
+There exists an HTML tag <tt class="docutils literal">&lt;cite&gt;</tt> which is maybe the one to use.
+This can maybe be implemented using RST's <tt class="docutils literal">:role:cite</tt>.
+Browsers will automatically put the text enclosed in italics.
+I think it can also be done with <tt class="docutils literal"><span class="pre">:title:`text`</span></tt> or simply <tt class="docutils literal"><span class="pre">:t:`text`</span></tt></li>
+<li>Maybe created a single post which links to the 12 lyric essays;
+or could put in a single big page and add a TOC at the top with
+<tt class="docutils literal">.. contents:: My Table of Contents</tt>.</li>
+<li>Init a git repo in the 'output' folder and push to Github pages
+repo for hosting.</li>
 <li>Add a <em>blogroll</em>: &quot;A blogroll is a list of links on a blog, usually on the
 sidebar for easy access, that the blog writer likes and wants to share.&quot;</li>
 <li>Use ALA state abbreviations in Readings? What is NY?</li>

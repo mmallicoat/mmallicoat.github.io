@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/all-en.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2018-09-12T00:00:00-05:00</updated><entry><title>Links to People</title><link href="http://marshallmallicoat.com/links.html" rel="alternate"></link><published>2018-09-12T00:00:00-05:00</published><updated>2018-09-12T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-12:/links.html</id><summary type="html">&lt;p&gt;Here is a collection of links to personal websites, either those
+<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/all-en.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2018-09-22T00:00:00-05:00</updated><entry><title>Lyric Essays</title><link href="http://marshallmallicoat.com/lyric-essays.html" rel="alternate"></link><published>2018-09-22T00:00:00-05:00</published><updated>2018-09-22T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-22:/lyric-essays.html</id><summary type="html">&lt;p&gt;Here are a few lyric essays written in 2015:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="../in-the-twilight.html"&gt;In the twilight of GMT+1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../john-henry.html"&gt;John Henry&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../junkie.html"&gt;Junkie, don't talk to me&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../thoughts-on-sports.html"&gt;Thoughts on sports&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../vanitas.html"&gt;Vanitas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Here are a few lyric essays written in 2015:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="../in-the-twilight.html"&gt;In the twilight of GMT+1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../john-henry.html"&gt;John Henry&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../junkie.html"&gt;Junkie, don't talk to me&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../thoughts-on-sports.html"&gt;Thoughts on sports&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../vanitas.html"&gt;Vanitas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>Links to People</title><link href="http://marshallmallicoat.com/links.html" rel="alternate"></link><published>2018-09-12T00:00:00-05:00</published><updated>2018-09-12T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-12:/links.html</id><summary type="html">&lt;p&gt;Here is a collection of links to personal websites, either those
 I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;div class="section" id="arts-and-letters"&gt;
 &lt;h2&gt;Arts and Letters&lt;/h2&gt;
@@ -76,11 +92,11 @@ For a more immersive experience, try the &lt;a class="reference external" href="
 &lt;/ul&gt;
 &lt;/div&gt;
 </content></entry><entry><title>Essays Published Elsewhere</title><link href="http://marshallmallicoat.com/essays-published.html" rel="alternate"></link><published>2018-09-07T00:00:00-05:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-07:/essays-published.html</id><summary type="html">&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20160530031314/http://www.horseghost.info/p/marshall-mallicoat_8.html"&gt;Essay&lt;/a&gt; in the &amp;quot;detailed accounts of february 15, 2013&amp;quot; issue of &lt;em&gt;horse ghost&lt;/em&gt;,
+&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20160530031314/http://www.horseghost.info/p/marshall-mallicoat_8.html"&gt;Essay&lt;/a&gt; in the &amp;quot;detailed accounts of february 15, 2013&amp;quot; issue of &lt;cite&gt;horse ghost&lt;/cite&gt;,
 edited by Mathew Donahoo (Late 2013).&lt;/li&gt;
 &lt;/ul&gt;
 </summary><content type="html">&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20160530031314/http://www.horseghost.info/p/marshall-mallicoat_8.html"&gt;Essay&lt;/a&gt; in the &amp;quot;detailed accounts of february 15, 2013&amp;quot; issue of &lt;em&gt;horse ghost&lt;/em&gt;,
+&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20160530031314/http://www.horseghost.info/p/marshall-mallicoat_8.html"&gt;Essay&lt;/a&gt; in the &amp;quot;detailed accounts of february 15, 2013&amp;quot; issue of &lt;cite&gt;horse ghost&lt;/cite&gt;,
 edited by Mathew Donahoo (Late 2013).&lt;/li&gt;
 &lt;/ul&gt;
 </content></entry><entry><title>Press and Appearances</title><link href="http://marshallmallicoat.com/press.html" rel="alternate"></link><published>2018-09-05T00:00:00-05:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-05:/press.html</id><summary type="html">&lt;div class="section" id="press-and-appearances"&gt;
@@ -106,31 +122,31 @@ minute mark] (Nov. 2012).&lt;/li&gt;
 &lt;/div&gt;
 </content></entry><entry><title>Poems Published Elsewhere</title><link href="http://marshallmallicoat.com/poems-published.html" rel="alternate"></link><published>2018-01-31T00:00:00-06:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-01-31:/poems-published.html</id><summary type="html">&lt;ul class="simple"&gt;
 &lt;li&gt;&amp;quot;Siste Viator&amp;quot; featured in Susan Dunne's &lt;a class="reference external" href="http://www.courant.com/entertainment/arts-theater/hc-syllable-poetry-series-little-river-restorative-20171119-story.html"&gt;&amp;quot;Syllable: A Monthly Night Of Words
-And Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;em&gt;Hartford Courant&lt;/em&gt;, 28 Nov. 2017).&lt;/li&gt;
+And Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;cite&gt;Hartford Courant&lt;/cite&gt;, 28 Nov. 2017).&lt;/li&gt;
 &lt;li&gt;Songs &amp;quot;Cellophane&amp;quot; and &amp;quot;Fountain,&amp;quot; co-written with Alexander Sheppard,
 on Pageant Boys' &lt;a class="reference external" href="https://therecordmachine.bandcamp.com/album/shadowboxing"&gt;Shadowboxing&lt;/a&gt; (The Record Machine, 19 May 2017).&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://westernbeefs.com/mallicoat"&gt;6 poems&lt;/a&gt; in &lt;em&gt;Western Beefs of North America&lt;/em&gt;,
+&lt;li&gt;&lt;a class="reference external" href="http://westernbeefs.com/mallicoat"&gt;6 poems&lt;/a&gt; in &lt;cite&gt;Western Beefs of North America&lt;/cite&gt;,
 edited …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;ul class="simple"&gt;
 &lt;li&gt;&amp;quot;Siste Viator&amp;quot; featured in Susan Dunne's &lt;a class="reference external" href="http://www.courant.com/entertainment/arts-theater/hc-syllable-poetry-series-little-river-restorative-20171119-story.html"&gt;&amp;quot;Syllable: A Monthly Night Of Words
-And Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;em&gt;Hartford Courant&lt;/em&gt;, 28 Nov. 2017).&lt;/li&gt;
+And Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;cite&gt;Hartford Courant&lt;/cite&gt;, 28 Nov. 2017).&lt;/li&gt;
 &lt;li&gt;Songs &amp;quot;Cellophane&amp;quot; and &amp;quot;Fountain,&amp;quot; co-written with Alexander Sheppard,
 on Pageant Boys' &lt;a class="reference external" href="https://therecordmachine.bandcamp.com/album/shadowboxing"&gt;Shadowboxing&lt;/a&gt; (The Record Machine, 19 May 2017).&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://westernbeefs.com/mallicoat"&gt;6 poems&lt;/a&gt; in &lt;em&gt;Western Beefs of North America&lt;/em&gt;,
+&lt;li&gt;&lt;a class="reference external" href="http://westernbeefs.com/mallicoat"&gt;6 poems&lt;/a&gt; in &lt;cite&gt;Western Beefs of North America&lt;/cite&gt;,
 edited by Willis Plummer (Mid 2014).&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://newhive.com/popserial/marshall-mallicoat-3-poems"&gt;3 poems&lt;/a&gt; in &lt;em&gt;Pop Serial&lt;/em&gt;,
+&lt;li&gt;&lt;a class="reference external" href="http://newhive.com/popserial/marshall-mallicoat-3-poems"&gt;3 poems&lt;/a&gt; in &lt;cite&gt;Pop Serial&lt;/cite&gt;,
 issue 5, edited by Stephen Tully Dierks (Early 2014).&lt;/li&gt;
 &lt;li&gt;Spoken poem &amp;quot;where my baby at in seattle&amp;quot; in &lt;a class="reference external" href="https://keepthisbagawayfromchildren.bandcamp.com"&gt;Ho Hum Vol. 1&lt;/a&gt;
-(&lt;em&gt;Keep This Bag Away From Children&lt;/em&gt;, 3 Apr. 2013).&lt;/li&gt;
+(&lt;cite&gt;Keep This Bag Away From Children&lt;/cite&gt;, 3 Apr. 2013).&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.everyday-genius.com/2013/02/marshall-mallicoat.html"&gt;&amp;quot;Poem&amp;quot;&lt;/a&gt; in
-&lt;em&gt;Everyday Genius&lt;/em&gt;, edited by Stephen Tully Dierks (15 Feb. 2013).&lt;/li&gt;
+&lt;cite&gt;Everyday Genius&lt;/cite&gt;, edited by Stephen Tully Dierks (15 Feb. 2013).&lt;/li&gt;
 &lt;li&gt;Song &amp;quot;Kill Cops, Kill Yourself&amp;quot; in Adam Humphrey's documentary &lt;a class="reference external" href="https://www.youtube.com/watch?v=Ppm8__FxZ4o"&gt;Shitty Youth&lt;/a&gt;
 [at the 6:38 minute mark] (Nov. 2012).&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20150310015452/http://issue3.popserial.net:80/marshall-mallicoat/"&gt;3 poems&lt;/a&gt;
-in &lt;em&gt;Pop Serial&lt;/em&gt;, issue 3, edited by Stephen Tully Dierks (Early 2012).&lt;/li&gt;
+in &lt;cite&gt;Pop Serial&lt;/cite&gt;, issue 3, edited by Stephen Tully Dierks (Early 2012).&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20160530012856/http://www.horseghost.info/p/marshall-mallicoat.html"&gt;&amp;quot;The radiators come on at night and wake me up&amp;quot;&lt;/a&gt;
-in &lt;em&gt;horse ghost&lt;/em&gt;, volume one, edited by Matthew Donahoo (Early 2012).&lt;/li&gt;
+in &lt;cite&gt;horse ghost&lt;/cite&gt;, volume one, edited by Matthew Donahoo (Early 2012).&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://cooprenner.com/2012/02/Red.html"&gt;4 poems&lt;/a&gt;, co-written with Alexander Sheppard,
-in &lt;em&gt;elimae&lt;/em&gt;, edited by Coop Renner (Feb. 2012).&lt;/li&gt;
+in &lt;cite&gt;elimae&lt;/cite&gt;, edited by Coop Renner (Feb. 2012).&lt;/li&gt;
 &lt;/ul&gt;
 </content></entry><entry><title>Past Readings</title><link href="http://marshallmallicoat.com/readings.html" rel="alternate"></link><published>2018-01-02T00:00:00-06:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-01-02:/readings.html</id><summary type="html">&lt;p&gt;This is a catalog of almost all of the poetry readings I've given.&lt;/p&gt;
 &lt;!-- Associated Press Stylebook abbreviations for state and country --&gt;
@@ -157,13 +173,13 @@ This installment was held at a bar in Frog Hollow, Hartford.&lt;/p&gt;
 She read some essays from a collection focusing on the subject
 of chronic pain. She suffers from rheumatoid arthritis.&lt;/p&gt;
 &lt;p&gt;I one of here essays, she talks about how her condition makes her skin permeable
-to the environment.  Pollution, such as smoke/exhaust or chemicals, can actually
-cause her pain.  What struck me is that, although this sort of damage to the
+to the environment. Pollution, such as smoke/exhaust or chemicals, can actually
+cause her pain. What struck me is that, although this sort of damage to the
 environment is invisible to most people, she literally &lt;em&gt;feels&lt;/em&gt; it in her body.
-There are real victims of pollution, which I didn't appreciate.  Also, it
+There are real victims of pollution, which I didn't appreciate. Also, it
 occurred to me that, if we all were similarly sensitive to the environment,
-maybe we would work harder to keep it clean.  (We surround ourselves with
-poisons of our own making, such as &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Xenoestrogen"&gt;xenoestrogens&lt;/a&gt;.)&lt;/p&gt;
+maybe we would work harder to keep it clean. (We surround ourselves with
+poisons of our own making, such as xenoestrogens.)&lt;/p&gt;
 &lt;p&gt;Kem Joy Ukwu read two short stories. She is from New Jersey.&lt;/p&gt;
 &lt;p&gt;Lauren Bolstridge played some songs on acoustic guitar.
 She is from West Hartford, CT and lives in the area, I think.&lt;/p&gt;
@@ -196,7 +212,7 @@ We ate and people drank then everyone left.&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Where: Housing Works in Manhattan&lt;/li&gt;
 &lt;li&gt;Why: Release of Mira Gonzalez's book
-&lt;em&gt;i will never be beautiful enough to make us beautiful together&lt;/em&gt;&lt;/li&gt;
+&lt;cite&gt;i will never be beautiful enough to make us beautiful together&lt;/cite&gt;&lt;/li&gt;
 &lt;li&gt;Other readers: Mira Gonzalez, Spencer Madsen, Giancarlo DiTrapano,
 Kool A.D. (Victor Vazquez), Melissa Broder, Willis Plummer&lt;/li&gt;
 &lt;/ul&gt;
@@ -214,12 +230,12 @@ I took the train home to Connecticut afterward.&lt;/p&gt;
 &lt;h2&gt;26 Oct. 2012 in New York, N.Y.&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;Where: apartment in Brooklyn&lt;/li&gt;
-&lt;li&gt;Why: &lt;em&gt;Keep This Bag Away From Children&lt;/em&gt; release&lt;/li&gt;
+&lt;li&gt;Why: &lt;cite&gt;Keep This Bag Away From Children&lt;/cite&gt; release&lt;/li&gt;
 &lt;li&gt;Other readers: Jordan Castro, David Fishkind, Mallory Whittan,
 Andrew Worthington&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This reading was for the release of an issue of
-&lt;em&gt;Keep This Bag Away From Children&lt;/em&gt;, edited by Andrew Worthington and others.
+&lt;cite&gt;Keep This Bag Away From Children&lt;/cite&gt;, edited by Andrew Worthington and others.
 I was invited to read, although I wasn't published there.
 Jordan Castro played a few songs in addition to reading.
 I think the reading was possibly at Ed Halladay's apartment.&lt;/p&gt;
@@ -254,7 +270,7 @@ Steve Roggenbuck, Poncho Peligroso&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;This was my first reading in New York City, which was exciting.
 I wore a button-up shirt, tucked in, and nice black pants.
-I read poems from my (now unavailable) book &lt;em&gt;Santo Del Supermercado&lt;/em&gt;,
+I read poems from my (now unavailable) book &lt;cite&gt;Santo Del Supermercado&lt;/cite&gt;,
 which was written during a month-long stay at the Hilton Hotel in Stamford, CT.
 I was nervous but read alright.&lt;/p&gt;
 &lt;p&gt;Poncho read tweets from the recently passed &lt;a class="reference external" href="https://twitter.com/tree_bro"&gt;&amp;#64;tree_bro&lt;/a&gt;.&lt;/p&gt;
@@ -276,7 +292,7 @@ That night I slept on a rug on the floor of Spencer's tiny room.&lt;/p&gt;
 &lt;p&gt;I took a poetry class taught by Prof. Joseph Harrington
 at the University of Kansas. At the end of the semester, all of the students
 read together at a local venue. I remember few of their names.&lt;/p&gt;
-&lt;p&gt;I read some &lt;a class="reference external" href="http://locustfarm.blogspot.com/2009/01/celebration-of-heady-afterbirth.html"&gt;ecstatic&lt;/a&gt;, &lt;a class="reference external" href="http://locustfarm.blogspot.com/2009/01/bob-dylan-king-of-jews.html"&gt;Ginsberg-inspired&lt;/a&gt; stuff.
+&lt;p&gt;I read some ecstatic, Ginsberg-inspired stuff.
 This is the first time I read with a microphone,
 and I didn't really know how to use it.&lt;/p&gt;
 &lt;/div&gt;
@@ -291,7 +307,7 @@ songs by Greg Fox&lt;/li&gt;
 &lt;!-- Readers from April 28th event: Mike Johnson, Brian Daldorph, Leah Sewell,
 d. douglas, Gary Lechliter --&gt;
 &lt;p&gt;My recollections are aided by a flyer from the event that my parents had framed.
-The reading was sponsored by the Topeka magazine &lt;em&gt;seveneightfive&lt;/em&gt;.
+The reading was sponsored by the Topeka magazine &lt;cite&gt;seveneightfive&lt;/cite&gt;.
 It was hosted by Matt Porubsky, an editor of the magazine.
 He invited me to read after some of my poems were published there.
 He was a former student of Brian Daldorph,
@@ -301,8 +317,7 @@ It was Prof. Daldorph who had suggested I submit to the magazine.&lt;/p&gt;
 I remember the green room being a small kitchen. (I don't know where
 the actual cooking was done.)&lt;/p&gt;
 &lt;p&gt;This was the first proper reading I did. I was using the pseudonym
-&lt;em&gt;Zeke Collyer&lt;/em&gt; at the time, inspired by the
-&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Collyer_brothers"&gt;Collyer brothers&lt;/a&gt;.
+Zeke Collyer at the time, inspired by the Collyer brothers.
 I was very young, and the other poets were much more accomplished.&lt;/p&gt;
 &lt;p&gt;The readers rotated through the rooms of the restaurant, reading
 to the diners throughout the meal. My parents were in attendance.
@@ -322,8 +337,289 @@ It might even have been billed as a &amp;quot;poetry slam.&amp;quot;&lt;/p&gt;
 He may have got a gift certificate or some other picayune as a prize.&lt;/p&gt;
 &lt;p&gt;My friends Nick, Ryan, and Devin also read poems.&lt;/p&gt;
 &lt;/div&gt;
-</content></entry><entry><title>All Along the Livery Line</title><link href="http://marshallmallicoat.com/all-along-the-livery-line.html" rel="alternate"></link><published>2016-11-25T00:00:00-06:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2016-11-25:/all-along-the-livery-line.html</id><summary type="html">&lt;p&gt;&lt;em&gt;All Along the Livery Line&lt;/em&gt; is a collection of my poems published from
-2012 to 2014. It is available in PDF &lt;a class="reference external" href="http://marshallmallicoat.com/media/All Along the Livery Line.pdf"&gt;here&lt;/a&gt;.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;&lt;em&gt;All Along the Livery Line&lt;/em&gt; is a collection of my poems published from
-2012 to 2014. It is available in PDF &lt;a class="reference external" href="http://marshallmallicoat.com/media/All Along the Livery Line.pdf"&gt;here&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><title>All Along the Livery Line</title><link href="http://marshallmallicoat.com/all-along-the-livery-line.html" rel="alternate"></link><published>2016-11-25T00:00:00-06:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2016-11-25:/all-along-the-livery-line.html</id><summary type="html">&lt;p&gt;&lt;cite&gt;All Along the Livery Line&lt;/cite&gt; is a collection of poems published from
+2012 to 2014. It is available in PDF &lt;a class="reference external" href="../media/All Along the Livery Line.pdf"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- .. _here: {filename}/media/All\ Along\ the\ Livery\ Line.pdf --&gt;
+</summary><content type="html">&lt;p&gt;&lt;cite&gt;All Along the Livery Line&lt;/cite&gt; is a collection of poems published from
+2012 to 2014. It is available in PDF &lt;a class="reference external" href="../media/All Along the Livery Line.pdf"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- .. _here: {filename}/media/All\ Along\ the\ Livery\ Line.pdf --&gt;
+</content></entry><entry><title>Vanitas</title><link href="http://marshallmallicoat.com/vanitas.html" rel="alternate"></link><published>2015-07-15T00:00:00-05:00</published><updated>2015-07-15T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2015-07-15:/vanitas.html</id><summary type="html">&lt;div class="section" id="grave-plots"&gt;
+&lt;h2&gt;Grave Plots&lt;/h2&gt;
+&lt;p&gt;My parents came into a couple grave plots. (I don't know how.) They're
+trying to flip them, since they already have spots reserved. They say
+that the cemetery in question isn't as desirable as it used to be, so
+they want to unload them fast. Especially since cremation …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="grave-plots"&gt;
+&lt;h2&gt;Grave Plots&lt;/h2&gt;
+&lt;p&gt;My parents came into a couple grave plots. (I don't know how.) They're
+trying to flip them, since they already have spots reserved. They say
+that the cemetery in question isn't as desirable as it used to be, so
+they want to unload them fast. Especially since cremation is getting
+more popular.&lt;/p&gt;
+&lt;p&gt;My mom on cremation: &lt;em&gt;You don't amount to much.&lt;/em&gt; Just a two-pint Ziploc.
+She dumped her mother's ashes illegally off the Pacific coast, by where
+the &lt;cite&gt;Twilight&lt;/cite&gt; movies were shot. The remainder was pressed into a bead
+that she keeps on her Pandora bracelet. (This one aside, she has about
+$1300 in charms on it.)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="notice"&gt;
+&lt;h2&gt;Notice&lt;/h2&gt;
+&lt;p&gt;I've come to understand the things I've left at my parents' house, since
+moving out, as &lt;em&gt;horcruxes.&lt;/em&gt; I'll keep them there safe—my old t-shirts
+and books—in case I'm cut down in the street. (Tho if I was hit by a
+car tomorrow, this and everything else on my computer would be lost
+forever.)&lt;/p&gt;
+&lt;p&gt;This month I had to delete the first dead person from my email contacts:
+an old boss, aged 66, a Marlboro man. Put into the bin and then the bin
+emptied.&lt;/p&gt;
+&lt;p&gt;I received a Google Alert when my grandfather's Obits4Life page went
+live, since I was listed among the bereft. My inheritance remains
+obscure. It's like I was left a set of shoe trees, but threw them out,
+not knowing what they were for.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="old-man-mallicoat"&gt;
+&lt;h2&gt;Old Man Mallicoat&lt;/h2&gt;
+&lt;p&gt;I plan to bald gracefully. I'll keep it real short and see if I can
+slide by for a couple decades. If it gets too bad, I'll shave it all off
+and be done with it.&lt;/p&gt;
+&lt;p&gt;My eye doctor says that, if I keep using computers, my eyes will slowly
+get worse and worse forever.&lt;/p&gt;
+&lt;p&gt;My dentist says that I grind my teeth in my sleep, probably due to
+stress. So now I go to sleep in shorts and a mouthguard like a boxer.&lt;/p&gt;
+&lt;p&gt;After a weekend in the city, I'll have black snot and my fingers will be
+swollen red around the nail. I feel like my body is already rotting.
+Like I'm being fitted for the big &amp;amp; tall in the sky.&lt;/p&gt;
+&lt;p&gt;For my wake, lay me out on a California king. Run my obituary in the
+&lt;cite&gt;Kansas City Star&lt;/cite&gt;, my preferred newspaper of record.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="vanity"&gt;
+&lt;h2&gt;Vanity&lt;/h2&gt;
+&lt;p&gt;My desk dictionary memorializes Christopher Columbus as thus: &lt;em&gt;1451-1506
+Ital. navigator; disc. Am.&lt;/em&gt; I doubt my legacy will be abbreviated so
+succinctly.&lt;/p&gt;
+&lt;p&gt;They think Los Angeles will been underwater in 100 years. I estimate
+I've eaten 4800 peanut butter sandwiches in my lifetime.&lt;/p&gt;
+&lt;p&gt;Bell peppers change color from green to yellow or orange and then to
+red. I suspect this is the original metaphor for traffic lights.&lt;/p&gt;
+&lt;p&gt;Implicit in everything I write here is the assumption that the world has
+never ended. Now that it’s been said, I don’t know why that seemed like
+such a statement to make.&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>John Henry</title><link href="http://marshallmallicoat.com/john-henry.html" rel="alternate"></link><published>2015-06-21T00:00:00-05:00</published><updated>2015-06-21T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2015-06-21:/john-henry.html</id><summary type="html">&lt;div class="section" id="emails-from-your-boss-written-in-the-form-of-a-question-with-a-period-at-the-end"&gt;
+&lt;h2&gt;Emails from your boss, written in the form of a question, with a period at the end&lt;/h2&gt;
+&lt;p&gt;Smart people are house slaves to the rich. Even among the aliens, the
+Nordic whites rule over the little greens and grays. To my landlord, I
+am an encumbrance on the property. To …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="emails-from-your-boss-written-in-the-form-of-a-question-with-a-period-at-the-end"&gt;
+&lt;h2&gt;Emails from your boss, written in the form of a question, with a period at the end&lt;/h2&gt;
+&lt;p&gt;Smart people are house slaves to the rich. Even among the aliens, the
+Nordic whites rule over the little greens and grays. To my landlord, I
+am an encumbrance on the property. To my employer, a capital outlay. I
+find it hard to believe that, in three million years of fossil record,
+there is not a single lizard man.&lt;/p&gt;
+&lt;p&gt;Some open questions: Why does the cable company need my Social Security
+number? Why does my boss need to know my credit score? How come I can't
+give &lt;em&gt;him&lt;/em&gt; a piss test? Where do cows get their calcium, if they only
+eat grass? And their protein, for that matter?&lt;/p&gt;
+&lt;p&gt;Spy satellites are so high up, they always look straight down. If you
+face forward, they can only see the top of your head.&lt;/p&gt;
+&lt;p&gt;I found a spot behind the security desk at the mall where I can watch
+the guards idly browse the internet.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="john-henry"&gt;
+&lt;h2&gt;John Henry&lt;/h2&gt;
+&lt;p&gt;To survive in white collar labor, you must cultivate a certain
+lassitude, and wear it as a suit of armor. If the work load is heavy,
+you have to drag your feet, since even if you finish early you won't get
+sent home. If the work load is light, you have to pretend to be working
+hard or you will get assigned more work. In any case, you must also
+appear to be having a good time.&lt;/p&gt;
+&lt;p&gt;When the railroads were built, work songs were sung to set the pace of
+labor. It kept everyone working at a level of exertion that could be
+kept up all day in the hot sun without risking death. It also kept every
+working at the same rate, so no one could foolishly work harder to win
+the graces of the foreman—which would force everyone else to work
+harder, and thereby endanger both their welfare and their lives.&lt;/p&gt;
+&lt;p&gt;In the office, there's no sound other than the dull hum of the air
+conditioner and the cricketsong of computers. And your coworkers are all
+blood doping—cranking on the commute, then drinking themselves to
+sleep at night. How can you keep up without joining in?&lt;/p&gt;
+&lt;p&gt;John Henry was able to beat the steel-driving machine through sheer effort.
+But afterward, his heart gave out and he soon died. The &amp;quot;Ballad of John
+Henry&amp;quot; says “That old hammer killed John Henry / but that old hammer
+won't kill me”. I'm saying, that old hammer won't kill me.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="not-an-apartment-but-a-dark-hole-i-lived-in-for-3-years"&gt;
+&lt;h2&gt;Not an apartment, but a dark hole I lived in for 3 years&lt;/h2&gt;
+&lt;p&gt;To vacate an apartment without incident feels like getting away with a
+crime. You drag your mattress down the stairwell and leave it in a
+dumpster like a warm body. Having recouped the full deposit, you skip
+town before the landlord gets wise.&lt;/p&gt;
+&lt;p&gt;To live is to be in constant fear of legal retribution: speeding,
+jaywalking, illegal downloading, cheating on your taxes, and so on. The
+state of Connecticut defines “loitering” as: standing around, moving
+slowly about, spending time idly, sauntering, dallying, lingering, or
+lagging behind. In Florida, twenty grams is a felony.&lt;/p&gt;
+&lt;p&gt;Say you found a pair of crystal antlers. How could you explain having a
+pair of crystal antlers to the police? Better to play it safe and
+quickly dispose of them.&lt;/p&gt;
+&lt;p&gt;Whenever you hear sirens, you think it's for you. When you see a cop,
+you think &amp;quot;so this is how it ends&amp;quot;. It's only a matter of time before
+the black helicopters swoop down to snatch you up. As for me, I know my
+last days will be described as &lt;em&gt;brazen&lt;/em&gt;.&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Junkie, don't talk to me</title><link href="http://marshallmallicoat.com/junkie.html" rel="alternate"></link><published>2015-05-09T00:00:00-05:00</published><updated>2015-05-09T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2015-05-09:/junkie.html</id><summary type="html">&lt;div class="section" id="cold-water-after-black-coffee-is-like-tempering-steel"&gt;
+&lt;h2&gt;Cold water after black coffee is like tempering steel&lt;/h2&gt;
+&lt;p&gt;I've come to a calm in the midst of my mid-morning coffee—my first and
+only coffee of the day. The fog in my head burns off. The wool-legged
+spiders who cobweb my attic disperse.&lt;/p&gt;
+&lt;p&gt;Caffeine doesn't bring euphoria—more like …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="cold-water-after-black-coffee-is-like-tempering-steel"&gt;
+&lt;h2&gt;Cold water after black coffee is like tempering steel&lt;/h2&gt;
+&lt;p&gt;I've come to a calm in the midst of my mid-morning coffee—my first and
+only coffee of the day. The fog in my head burns off. The wool-legged
+spiders who cobweb my attic disperse.&lt;/p&gt;
+&lt;p&gt;Caffeine doesn't bring euphoria—more like an elasticity to your limbs
+and a humming in your head, from the amplified sound of your blood. And
+a feeling like being wrapped in warm, clean towels.&lt;/p&gt;
+&lt;p&gt;But it's only good for the first few sips. Just as you start to enjoy
+the high, you've already peaked. By the time you finish, you're past the
+plateau and down in the valley after.&lt;/p&gt;
+&lt;p&gt;Nowadays I'm only happy for 15 minutes at a time, followed by a
+headache. And with it comes boredom. Not a boredom like watching paint
+dry, but watching paint that had recently dried. The grass growing in
+the lawn has stalled out, and I'm languishing in a terminal middle-class
+lifestyle.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="taking-dexedrine-at-2am-in-nyc-to-hold-you-through-till-5am-when-grand-central-re-opens-and-you-can-get-a-train-back-to-connecticut"&gt;
+&lt;h2&gt;Taking Dexedrine at 2am in NYC to hold you through till 5am when Grand Central re-opens and you can get a train back to Connecticut&lt;/h2&gt;
+&lt;p&gt;I'd say, if caffeine was a taxi conducting your body through the human
+traffic, that Dexedrine is a black sedan speeding through a tunnel at
+night.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="junkie"&gt;
+&lt;h2&gt;Junkie&lt;/h2&gt;
+&lt;p&gt;I can tell when my mom has been drinking coffee. She is jubilant. She is
+effervescent. She &lt;em&gt;bubbles&lt;/em&gt;. I tell her, &amp;quot;Don't talk to me, junkie.&amp;quot;&lt;/p&gt;
+&lt;p&gt;She started drinking coffee because she was narcoleptic and would fall
+asleep while driving. I only started drinking coffee after I started
+taking caffeine pills. Which I only took with alcohol, to make drinking
+less miserable.&lt;/p&gt;
+&lt;p&gt;I read an insightful observation somewhere, maybe in a Gawker comment,
+that Lindsay Lohan wasn't a cokehead, just an alcoholic who took cocaine
+to be able to drink more.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="coffee-as-ideology"&gt;
+&lt;h2&gt;Coffee as ideology&lt;/h2&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;You're in the city and there's coffee to buy. Either with brunch or
+after when you walk around the shops. Later there's beer. Someone's
+in town for a few days or it's a going away party. You drink and talk
+and make plans to meet at the new brunch place in the morning. They
+have the best espresso.&lt;/li&gt;
+&lt;li&gt;The pass code for the bathroom at the Union Square Starbucks on July
+4, 2014, was 8282. And I gave it away to the first person I saw: a
+Russian tourist standing in line. In turn, she gave it to the people
+behind her. In this way, she was my first apostle.&lt;/li&gt;
+&lt;li&gt;I prefer the discretion of pill poppers and day drunks to the
+perverts who go to cafes after dark.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;div class="section" id="hairy-man"&gt;
+&lt;h2&gt;Hairy Man&lt;/h2&gt;
+&lt;p&gt;In the March 2014 issue of &lt;cite&gt;The Red Bulletin&lt;/cite&gt;, an interview with Nicolas
+Cage (“Being Nicolas Cage”) opens with “Do you think about death?” (He
+does.)&lt;/p&gt;
+&lt;p&gt;At the grocery store by the energy drinks, there is a sign that says
+&amp;quot;This area is monitored by Closed Circuit Television.&amp;quot; In the aisle by
+the safety razors, the same sign, plus a sliding plastic shield across
+the shelf—presumably to slow you down when scooping them into your
+trash bag.&lt;/p&gt;
+&lt;p&gt;The implication is that there exists a cohort of congenitally hairy men
+(or one Hairy Man) who both fiends for caffeine and is willing to do
+anything to alleviate his condition.&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Thoughts on sports</title><link href="http://marshallmallicoat.com/thoughts-on-sports.html" rel="alternate"></link><published>2015-03-02T00:00:00-06:00</published><updated>2015-03-02T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2015-03-02:/thoughts-on-sports.html</id><summary type="html">&lt;div class="section" id="golf"&gt;
+&lt;h2&gt;Golf&lt;/h2&gt;
+&lt;p&gt;The inner workings of a miniature golf course amount to a secret gospel.&lt;/p&gt;
+&lt;p&gt;Miniature golf is to golf what reality TV is to reality.&lt;/p&gt;
+&lt;p&gt;In golf, you swing lowercase L's at the tops of semicolons.&lt;/p&gt;
+&lt;p&gt;At the bowling alley, they give you golf pencils to keep score.&lt;/p&gt;
+&lt;p&gt;My grandfather …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="golf"&gt;
+&lt;h2&gt;Golf&lt;/h2&gt;
+&lt;p&gt;The inner workings of a miniature golf course amount to a secret gospel.&lt;/p&gt;
+&lt;p&gt;Miniature golf is to golf what reality TV is to reality.&lt;/p&gt;
+&lt;p&gt;In golf, you swing lowercase L's at the tops of semicolons.&lt;/p&gt;
+&lt;p&gt;At the bowling alley, they give you golf pencils to keep score.&lt;/p&gt;
+&lt;p&gt;My grandfather owned both a set of clubs and a bowling ball. My father
+has neither.&lt;/p&gt;
+&lt;p&gt;I've invented a new drink that's half-Arnold Palmer and half-Shirley
+Temple, called the LBJ.&lt;/p&gt;
+&lt;p&gt;Guessing a woman's age is a kind of golf.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="other-sports"&gt;
+&lt;h2&gt;Other Sports&lt;/h2&gt;
+&lt;p&gt;Baseball is basically unwatchable, but it works on the radio.&lt;/p&gt;
+&lt;p&gt;The counter-insurgency is Whac-a-Mole, the drug war Three-card Monte.&lt;/p&gt;
+&lt;p&gt;Capitalism has wrought the moneyballing of everything. The Dutch work 6
+hours a day, then ride bikes home. Americans work for 6 hours, spend 2
+hours on Facebook, then crawl through traffic for 45 minutes.&lt;/p&gt;
+&lt;p&gt;Someone who sits very still at a desk all day, looking at small numbers
+on a screen, is a kind of athlete. It takes endurance. You need training
+and preparation to do it without hurting yourself. These are grown men
+with all the hair rubbed off their ankles by socks, and prostates the
+size of clenched fists. They will show you their game face.&lt;/p&gt;
+&lt;p&gt;The highest compliment you can pay a man is to call him a machine. Men
+strive to make themselves into weapons. This is done through emotional
+distance, rituals of control, and repetition.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="on-sportsmanship"&gt;
+&lt;h2&gt;On Sportsmanship&lt;/h2&gt;
+&lt;p&gt;I was a high school wrestler for one day. I was on the swimming team but
+quit. After failing to induce vomiting in the bathroom, I lied about
+having vomited to get out of practice. At a strip mall dojo, I put my
+fist through the drywall.&lt;/p&gt;
+&lt;p&gt;In job interviews, I extemporize on my temperament as if I were a race
+horse. As long as they let me down easy, I don't care if I don't get a
+call back. To be listed among the also-rans is enough for me. I'm like a
+retired greyhound who's too skinny to lie down on hardwood floors. I
+understand back pain—what I lack is &lt;em&gt;context&lt;/em&gt; for my back pain.&lt;/p&gt;
+&lt;p&gt;I saw a picture of the man with the biggest hands in the world, posing
+with a basketball. But he doesn't even play basketball. He just holds it
+for photographs. It's like that guy who says he's crazy about football,
+only he never watches the games, doesn't know the rules, it just pops
+into his mind every once in a while.&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>In the twilight of GMT+1</title><link href="http://marshallmallicoat.com/in-the-twilight.html" rel="alternate"></link><published>2015-02-02T00:00:00-06:00</published><updated>2015-02-02T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2015-02-02:/in-the-twilight.html</id><summary type="html">&lt;p&gt;The telegraph was an early internet, with its own lolcats and leetspeak.
+To people in the future, we probably seem like steampunks: one foot in the
+last century, carrying our brains around in our pockets like
+Tamagotchis.&lt;/p&gt;
+&lt;p&gt;To open a file on your computer, you touch an arrowhead to a …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The telegraph was an early internet, with its own lolcats and leetspeak.
+To people in the future, we probably seem like steampunks: one foot in the
+last century, carrying our brains around in our pockets like
+Tamagotchis.&lt;/p&gt;
+&lt;p&gt;To open a file on your computer, you touch an arrowhead to a tiny
+picture of a manila folder. When you want to save, an artist's rendering
+of a 3.5” floppy disk. Clicking on a trashcan will de-index a block of
+memory. If the world was Tetris, we'd all have roofs with holes in them
+(or no roofs at all).&lt;/p&gt;
+&lt;p&gt;Buddhist prayers wheels have a mantra written around so that, when spun,
+it is like the mantra is being read. The Dalai Lama has said that having
+the mantra on your computer works the same as a traditional wheel. As
+the digital image spins on your hard drive, it sends the peaceful prayer
+of compassion in all directions.&lt;/p&gt;
+&lt;p&gt;The Malaysian space agency recommends that Muslim astronauts, if they
+cannot determine the direction of Mecca, pray in the direction of the
+Earth. Failing that, any direction is acceptable. Additionally they
+advise you to &amp;quot;observe peace with other beings.&amp;quot;&lt;/p&gt;
+&lt;p&gt;In Tibet and Nepal, they still practice sky burials, where bodies are
+stripped and laid out for the vultures to eat. But the bodies that have
+been given medicine or cleaned in hospitals make the vultures sick, so
+they have to be buried in the ground.&lt;/p&gt;
+&lt;p&gt;Apparently the most coveted donors for knee replacements are Muslim men.
+Their patella are kept flexible by the years of praying on their knees.&lt;/p&gt;
+&lt;p&gt;There have never been middle-aged rappers before. And you can't even
+make a rapper admit to rapping anymore. They've become demure.&lt;/p&gt;
+&lt;p&gt;I remember when pay phones cost 35 cents. I remember pay phones. I asked
+around and confirmed that they don't even play beer pong with beer in
+the cups anymore. They just keep score on paper. We will be among the
+last people on Earth to remember before the Internet, if yet we still
+do.&lt;/p&gt;
 </content></entry></feed>
