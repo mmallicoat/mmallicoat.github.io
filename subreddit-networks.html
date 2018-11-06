@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>▲HEAP</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="http://marshallmallicoat.com/theme/css/style.css" />
+ <!-- adds article description to head, if available -->
+</head>
+
+<body>
+  <header>
+      <h1><a href="http://marshallmallicoat.com/" title="Home">▲HEAP</a></h1>
+  </header>
+
+  <main>
+<article>
+  <header><h1>Analyzing Subreddit Networks</h1></header>
+  <footer>
+        Revised
+        <time class="modified" datetime="2018-11-06T00:00:00-06:00">
+        6 Nov 2018</time>
+  </footer>
+
+  <div class="section" id="introduction">
+<h2>Introduction</h2>
+<p>The popular website reddit.com contains numerous messageboards
+(called &quot;subreddits&quot;), each dedicated to a particular subject,
+such as a hobby or topic of interest. Often the users of these
+subreddits will place links to related subreddits on the sidebar
+of the webpage. In this way, these linked subreddits form a
+network of closely related online communities. Because these
+lists of links are human-curated, they give high-quality
+indicators of related topics and communities. By following these
+links programmatically, we can collect the data needed to to
+visualize and analyze these networks.</p>
+<p>All of the code for this project can be found on <a class="reference external" href="https://github.com/mmallicoat/subreddit-graphs">Github</a>.</p>
+</div>
+<div class="section" id="scrape-the-data">
+<h2>Scrape the Data</h2>
+<p>I wrote simple web scraper using the Python library <tt class="docutils literal">scrapy</tt>
+which collects the list of links and other information from each
+subreddit page. Starting from an initial subreddit, the scraper
+searches the sidebar on the page for any related subreddits that
+have been linked there. The scraper then follows those links and
+iteratively searches for more links. The name of each subreddit is
+collected, along with its description, number of subscribers, and
+the list of links to other subreddits.</p>
+<p>From these data, it is possible to construct the network of
+subreddits surrounding the initial page. In this network (often
+called a <em>graph</em> in mathematics), each node is a subreddit and
+each edge is a hyperlink between them. For simplicity, I decided
+to build a non-directed graph, ignoring the directionality of
+hyperlinks: a hyperlink from subreddit A to B is treated in the
+same manner as a hyperlink from subreddit B to A.</p>
+<p>The scraper uses CSS selectors to locate the desired elements on
+each webpage. Here is a code snippet with the selectors:</p>
+<pre class="code python literal-block">
+<span class="k">for</span> <span class="n">sidebar</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">'div.s1s8pi67-0'</span><span class="p">):</span>
+    <span class="n">sub_count</span> <span class="o">=</span> <span class="n">subscriber_conversion</span><span class="p">(</span>
+                    <span class="n">sidebar</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">'p.s34nhbn-12::text'</span><span class="p">)</span><span class="o">.</span><span class="n">extract_first</span><span class="p">()</span>
+                <span class="p">)</span>  <span class="c1"># convert from string to numeric</span>
+    <span class="n">links</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">'div.s1s8pi67-0 a::attr(href)'</span><span class="p">)</span><span class="o">.</span><span class="n">re</span><span class="p">(</span><span class="sa">r</span><span class="s1">'/r/\w+'</span><span class="p">):</span>
+        <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="k">yield</span> <span class="p">{</span>
+      <span class="s1">'subreddit'</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">'/r/\w+'</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span>
+      <span class="s1">'description'</span><span class="p">:</span> <span class="n">sidebar</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">'p.s34nhbn-14::text'</span><span class="p">)</span><span class="o">.</span><span class="n">extract_first</span><span class="p">(),</span>
+      <span class="s1">'links'</span><span class="p">:</span> <span class="n">links</span><span class="p">,</span>
+      <span class="s1">'subscribers'</span><span class="p">:</span> <span class="n">sub_count</span>
+    <span class="p">}</span>
+</pre>
+<p>The sidebar on the page is identified using the method
+<tt class="docutils literal"><span class="pre">response.css('div.s1s8pi67-0')</span></tt> where <tt class="docutils literal">response</tt> is the
+object representing the returned webpage. The string
+<tt class="docutils literal"><span class="pre">s1s8pi67-0</span></tt> is a unique class of the <tt class="docutils literal">div</tt> element containing
+the sidebar. <a class="footnote-reference" href="#selectors" id="id1">[1]</a> The scaper returns the name of the
+subreddit, the subreddit's description, the list of links in the
+sidebar, and the number of subscribers.</p>
+<p>I chose two subreddits to use as the starting points to crawl
+through related pages, which results in two networks for analysis:</p>
+<ol class="arabic simple">
+<li>one centered at /r/programming, which I will refer
+to as the &quot;programming network&quot;</li>
+<li>one centered at /r/financialindependence, which I
+will refer to as the &quot;financial network.&quot;</li>
+</ol>
+<p>Both of these initial subreddits have a fair number of links
+listed in their sidebars, which should lead to larger, more
+complex networks.</p>
+<table class="docutils footnote" frame="void" id="selectors" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Using these seemingly random attribute values for
+the selectors is less than ideal: they are non-semantic and they
+seem to change fairly frequently, possibly with each build of the
+website. An improvement woudl be to find a more robust selector. I
+think it would be possible to use an XPath selector to find the
+text <tt class="docutils literal"><span class="pre">/r/[subreddit</span> name]</tt> that appears in the sidebar, and then
+select the document element containing this a few steps up the
+hierarchy.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="visualizations">
+<h2>Visualizations</h2>
+<p>After collecting the network data, we can use the library
+<tt class="docutils literal">networkx</tt> to visualize and analyze the networks. I quickly
+made a couple plots using <tt class="docutils literal">matplotlib</tt> to visualize the graphs.</p>
+<div class="figure align-center">
+<img alt="network centered as /r/programming" src="./media/prog-graph.png" />
+</div>
+<p>Unfortunately, these were difficult to read and not very useful
+for exploring the networks. To remedy this, I decided to use the
+visualization library <tt class="docutils literal">d3</tt> (written in JavaScript) to make some
+interactive plots. After we convert the network data into the
+&quot;node-link&quot; JSON format using <tt class="docutils literal">networkx</tt>, we can read it into a
+HTML file containing JavaScript visualizations.</p>
+<p>Click on the images below to view the interactive plots.</p>
+<div class="figure align-center">
+<a class="reference external image-reference" href="html/fin-force.html"><img alt="network centered as /r/financialindependence" src="./media/fin-force-label.jpg" /></a>
+<p class="caption">Plot of the network centered at the subreddit /r/financialindependence</p>
+</div>
+<div class="figure align-center">
+<a class="reference external image-reference" href="html/prog-force.html"><img alt="network centered as /r/programming" src="./media/prog-force-label.jpg" /></a>
+<p class="caption">Plot of the network centered at the subreddit /r/programming</p>
+</div>
+<p>In these charts, the relative number of subscribers to each
+subreddit is represented by the radius of the node (using a
+log-scale).</p>
+<p>One of the most salient features is the &quot;spoke-and-hub&quot; structure:
+a larger subreddit links to many smaller subreddits, which
+are often dedicated to a more specific topic. For example,
+/r/financialindependence is linked to country-specific subreddits
+for Canada (/r/personalfinancecanada), UK (/r/ukpersonalfinance),
+and so on. These can often be sensibly grouped into a cluster of
+nodes based on their subject matter. An example of this is the
+closely related subreddits surrounding /r/collapse which are all
+dedicated to the topic of societal and economic collapse.</p>
+</div>
+<div class="section" id="analysis">
+<h2>Analysis</h2>
+<div class="section" id="average-degree-and-density">
+<h3>Average Degree and Density</h3>
+<p>One descriptive statistic of a graph is the <em>average degree</em>. The
+degree of a node is the number of edges connected to it. The
+average degree of a graph is simply the average of the degrees of
+each of its nodes. These two networks have low average degrees,
+both around 1.3. This is a consequence of the structure of these
+networks: there are a small number of &quot;hub&quot; nodes that have links
+to a large number of &quot;spoke&quot; nodes, which have few links. As a
+result, most of the nodes are &quot;spoke&quot; nodes, usually only having a
+single edge. This lack of connections is also shown in another
+metric, the <em>graph density</em>.</p>
+<p>Graph density is defined as the ratio of the number of edges to
+the total possible number of edges between the nodes. The total
+possible would be achieved if every node was connected to every
+other node. For a graph with <em>n</em> nodes, this would result in <em>n
+choose 2</em> or <em>n * (n - 1) / 2</em> edges. The density thus varies from
+0 (in a graph with no edges) to 1 (in a graph with every possible
+edge). The densities of the financial and programming graphs are
+0.01 and 0.04, respectively, so they have low density.</p>
+</div>
+<div class="section" id="centrality">
+<h3>Centrality</h3>
+<p>Using <tt class="docutils literal">networkx</tt>, we can also calculate metrics which helps us
+to better understand the network. One property of nodes in a
+network that we are interested in is their centrality. The metric
+of <em>betweenness centrality</em> is one way of calculating this.
+The betweenness centrality of a node is the proportion of
+shortest paths between any other two nodes that pass through
+it. &quot;Spoke&quot; nodes will have low values and &quot;hubs&quot; high values.</p>
+<p>The most central nodes in the financial network are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="41%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Subreddit</th>
+<th class="head">Betweenness Centrality</th>
+<th class="head">Edges</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>/r/frugal</td>
+<td>0.63</td>
+<td>27</td>
+</tr>
+<tr><td>/r/buildapc</td>
+<td>0.48</td>
+<td>11</td>
+</tr>
+<tr><td>/r/collapse</td>
+<td>0.31</td>
+<td>35</td>
+</tr>
+<tr><td>/r/gamedeals</td>
+<td>0.29</td>
+<td>14</td>
+</tr>
+<tr><td>/r/simpleliving</td>
+<td>0.26</td>
+<td>18</td>
+</tr>
+<tr><td>/r/canadianhardwareswap</td>
+<td>0.24</td>
+<td>14</td>
+</tr>
+<tr><td>/r/zerowaste</td>
+<td>0.19</td>
+<td>16</td>
+</tr>
+<tr><td>/r/meditation</td>
+<td>0.17</td>
+<td>9</td>
+</tr>
+<tr><td>/r/steam</td>
+<td>0.14</td>
+<td>10</td>
+</tr>
+<tr><td>/r/buildapcsales</td>
+<td>0.12</td>
+<td>4</td>
+</tr>
+<tr><td>/r/financialindependence</td>
+<td>0.12</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<p>/r/frugal and /r/buildapc are central because they act as a bridge
+between the network's two main branches: one focused on financial
+matters and the other focused on computer building and gaming.
+Because of this, many shortest paths must pass through them.
+/r/frugal also unites the main hubs in the financial branch,
+/r/collapse, /r/zerowaste, /r/simpleliving, and
+/r/financialindependence.</p>
+<p>/r/collapse is a hub for many small subreddits that are not
+linked to any other nodes. Any path from one of these nodes to
+another other must necessarily pass through /r/collapse,
+contributing to its high centrality.</p>
+</div>
+<div class="section" id="clustering">
+<h3>Clustering</h3>
+<p>Another metric for describing a network is the <em>clustering
+coefficient.</em> Before we define this, first define a <em>triangle</em> as
+a sub-graph of three nodes that are all connected to each other.
+Suppose we have a node <em>u</em> with degree <em>n</em>. The maximum possible
+of triangles including <em>u</em> is <em>n choose 2</em>, or <em>n * (n - 1) / 2</em>.
+The clustering coefficient is the number of existing triangles
+including node <em>u</em> divided by this maximum possible number.
+So, this coefficient will always be between 0 and 1. It can be
+interpreted as the tendency of a node to cluster with other nodes.
+Any node that is only connected to a single other node will always have
+a clustering coefficient of 0. If all of a node's neighboring nodes are
+connected, then the node will have a clustering coefficient of 1.</p>
+<p>Most of the nodes in our two networks are spokes connected only to
+a single hub node and thus will have a clustering coefficient of
+0. Nodes with coefficients significantly larger than 0 are more
+rare in these networks. This is perhaps not surprising given that
+these are sparse graphs.</p>
+<p>The nodes in the programming network with the highest clustering
+coefficients are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="48%" />
+<col width="42%" />
+<col width="10%" />
+</colgroup>
+<thead valign="bottom">
+<tr><th class="head">Subreddit</th>
+<th class="head">Clustering Coefficient</th>
+<th class="head">Edges</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr><td>/r/programmerhumor</td>
+<td>1.00</td>
+<td>2</td>
+</tr>
+<tr><td>/r/cseducation</td>
+<td>1.00</td>
+<td>2</td>
+</tr>
+<tr><td>/r/computerscience</td>
+<td>1.00</td>
+<td>2</td>
+</tr>
+<tr><td>/r/cryptocurrencymemes</td>
+<td>1.00</td>
+<td>2</td>
+</tr>
+<tr><td>/r/compsci</td>
+<td>1.00</td>
+<td>3</td>
+</tr>
+<tr><td>/r/freelance</td>
+<td>1.00</td>
+<td>2</td>
+</tr>
+<tr><td>/r/cs_questions</td>
+<td>1.00</td>
+<td>2</td>
+</tr>
+<tr><td>/r/resumes</td>
+<td>1.00</td>
+<td>2</td>
+</tr>
+<tr><td>/r/coding</td>
+<td>1.00</td>
+<td>3</td>
+</tr>
+<tr><td>/r/javascript</td>
+<td>1.00</td>
+<td>2</td>
+</tr>
+<tr><td>/r/experienceddevs</td>
+<td>1.00</td>
+<td>2</td>
+</tr>
+<tr><td>/r/learnprogramming</td>
+<td>0.67</td>
+<td>4</td>
+</tr>
+<tr><td>/r/jobs</td>
+<td>0.33</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Many of these have only two or three few neighbors, so the
+clustering coefficient of 1 is less significant. In contrast,
+while /r/csmajors has a coefficient of only 0.17, it has 12
+neighbors: out of the 66 possible triangles, 11 of them are fully
+connected. This subreddit be part of something closer to a cluster
+than many of nodes with a clustering coefficient of 1.</p>
+</div>
+</div>
+<div class="section" id="next-steps">
+<h2>Next Steps</h2>
+<p>There is much room for expansion on this sort of analysis. Some
+further avenues to explore are:</p>
+<blockquote>
+<p>1. A more extensive network could be constructed by crawling the
+actual posts on each messageboard and collecting hyperlinks given
+there. Links to webpages outside of reddit.com could also be
+crawled.</p>
+<p>2. The number of links between webpages could be tabulated in
+order to measure the <em>strength</em> of each link in the network.</p>
+<p>3. Instead of an undirected graph, the direction of the links
+could be incorporated into the model.</p>
+</blockquote>
+</div>
+
+
+</article>
+  </main>
+
+  <hr>
+  <footer>
+  <nav>
+    <h3>Navigation</h3>
+    <ul>
+      <li><a href="http://marshallmallicoat.com/">Home</a></li>
+      <li><a href="http://marshallmallicoat.com/about.html">About</a></li>
+      <li><a href="http://marshallmallicoat.com/feed.xml">Feed</a></li>
+    </ul>
+  </nav>
+  </footer>
+</body>
+</html>

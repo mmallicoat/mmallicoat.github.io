@@ -1,5 +1,342 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP - Marshall Mallicoat</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/marshall-mallicoat.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2018-09-22T00:00:00-05:00</updated><entry><title>Lyric Essays</title><link href="http://marshallmallicoat.com/lyric-essays.html" rel="alternate"></link><published>2018-09-22T00:00:00-05:00</published><updated>2018-09-22T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-22:/lyric-essays.html</id><summary type="html">&lt;p&gt;Here are a few lyric essays written in 2015:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP - Marshall Mallicoat</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/marshall-mallicoat.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2018-11-06T00:00:00-06:00</updated><entry><title>Analyzing Subreddit Networks</title><link href="http://marshallmallicoat.com/subreddit-networks.html" rel="alternate"></link><published>2018-11-02T00:00:00-05:00</published><updated>2018-11-06T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-11-02:/subreddit-networks.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The popular website reddit.com contains numerous messageboards
+(called &amp;quot;subreddits&amp;quot;), each dedicated to a particular subject,
+such as a hobby or topic of interest. Often the users of these
+subreddits will place links to related subreddits on the sidebar
+of the webpage. In this way, these linked subreddits form …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The popular website reddit.com contains numerous messageboards
+(called &amp;quot;subreddits&amp;quot;), each dedicated to a particular subject,
+such as a hobby or topic of interest. Often the users of these
+subreddits will place links to related subreddits on the sidebar
+of the webpage. In this way, these linked subreddits form a
+network of closely related online communities. Because these
+lists of links are human-curated, they give high-quality
+indicators of related topics and communities. By following these
+links programmatically, we can collect the data needed to to
+visualize and analyze these networks.&lt;/p&gt;
+&lt;p&gt;All of the code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/subreddit-graphs"&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="scrape-the-data"&gt;
+&lt;h2&gt;Scrape the Data&lt;/h2&gt;
+&lt;p&gt;I wrote simple web scraper using the Python library &lt;tt class="docutils literal"&gt;scrapy&lt;/tt&gt;
+which collects the list of links and other information from each
+subreddit page. Starting from an initial subreddit, the scraper
+searches the sidebar on the page for any related subreddits that
+have been linked there. The scraper then follows those links and
+iteratively searches for more links. The name of each subreddit is
+collected, along with its description, number of subscribers, and
+the list of links to other subreddits.&lt;/p&gt;
+&lt;p&gt;From these data, it is possible to construct the network of
+subreddits surrounding the initial page. In this network (often
+called a &lt;em&gt;graph&lt;/em&gt; in mathematics), each node is a subreddit and
+each edge is a hyperlink between them. For simplicity, I decided
+to build a non-directed graph, ignoring the directionality of
+hyperlinks: a hyperlink from subreddit A to B is treated in the
+same manner as a hyperlink from subreddit B to A.&lt;/p&gt;
+&lt;p&gt;The scraper uses CSS selectors to locate the desired elements on
+each webpage. Here is a code snippet with the selectors:&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;sidebar&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'div.s1s8pi67-0'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;sub_count&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subscriber_conversion&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+                    &lt;span class="n"&gt;sidebar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'p.s34nhbn-12::text'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extract_first&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+                &lt;span class="p"&gt;)&lt;/span&gt;  &lt;span class="c1"&gt;# convert from string to numeric&lt;/span&gt;
+    &lt;span class="n"&gt;links&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;link&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'div.s1s8pi67-0 a::attr(href)'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;'/r/\w+'&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;link&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+    &lt;span class="k"&gt;yield&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+      &lt;span class="s1"&gt;'subreddit'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;search&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;'/r/\w+'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;request&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;group&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;lower&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+      &lt;span class="s1"&gt;'description'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;sidebar&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;css&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'p.s34nhbn-14::text'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;extract_first&lt;/span&gt;&lt;span class="p"&gt;(),&lt;/span&gt;
+      &lt;span class="s1"&gt;'links'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;links&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+      &lt;span class="s1"&gt;'subscribers'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;sub_count&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;The sidebar on the page is identified using the method
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;response.css('div.s1s8pi67-0')&lt;/span&gt;&lt;/tt&gt; where &lt;tt class="docutils literal"&gt;response&lt;/tt&gt; is the
+object representing the returned webpage. The string
+&lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;s1s8pi67-0&lt;/span&gt;&lt;/tt&gt; is a unique class of the &lt;tt class="docutils literal"&gt;div&lt;/tt&gt; element containing
+the sidebar. &lt;a class="footnote-reference" href="#selectors" id="id1"&gt;[1]&lt;/a&gt; The scaper returns the name of the
+subreddit, the subreddit's description, the list of links in the
+sidebar, and the number of subscribers.&lt;/p&gt;
+&lt;p&gt;I chose two subreddits to use as the starting points to crawl
+through related pages, which results in two networks for analysis:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;one centered at /r/programming, which I will refer
+to as the &amp;quot;programming network&amp;quot;&lt;/li&gt;
+&lt;li&gt;one centered at /r/financialindependence, which I
+will refer to as the &amp;quot;financial network.&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Both of these initial subreddits have a fair number of links
+listed in their sidebars, which should lead to larger, more
+complex networks.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="selectors" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Using these seemingly random attribute values for
+the selectors is less than ideal: they are non-semantic and they
+seem to change fairly frequently, possibly with each build of the
+website. An improvement woudl be to find a more robust selector. I
+think it would be possible to use an XPath selector to find the
+text &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;/r/[subreddit&lt;/span&gt; name]&lt;/tt&gt; that appears in the sidebar, and then
+select the document element containing this a few steps up the
+hierarchy.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="visualizations"&gt;
+&lt;h2&gt;Visualizations&lt;/h2&gt;
+&lt;p&gt;After collecting the network data, we can use the library
+&lt;tt class="docutils literal"&gt;networkx&lt;/tt&gt; to visualize and analyze the networks. I quickly
+made a couple plots using &lt;tt class="docutils literal"&gt;matplotlib&lt;/tt&gt; to visualize the graphs.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="network centered as /r/programming" src="./media/prog-graph.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Unfortunately, these were difficult to read and not very useful
+for exploring the networks. To remedy this, I decided to use the
+visualization library &lt;tt class="docutils literal"&gt;d3&lt;/tt&gt; (written in JavaScript) to make some
+interactive plots. After we convert the network data into the
+&amp;quot;node-link&amp;quot; JSON format using &lt;tt class="docutils literal"&gt;networkx&lt;/tt&gt;, we can read it into a
+HTML file containing JavaScript visualizations.&lt;/p&gt;
+&lt;p&gt;Click on the images below to view the interactive plots.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;a class="reference external image-reference" href="html/fin-force.html"&gt;&lt;img alt="network centered as /r/financialindependence" src="./media/fin-force-label.jpg" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Plot of the network centered at the subreddit /r/financialindependence&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="figure align-center"&gt;
+&lt;a class="reference external image-reference" href="html/prog-force.html"&gt;&lt;img alt="network centered as /r/programming" src="./media/prog-force-label.jpg" /&gt;&lt;/a&gt;
+&lt;p class="caption"&gt;Plot of the network centered at the subreddit /r/programming&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;In these charts, the relative number of subscribers to each
+subreddit is represented by the radius of the node (using a
+log-scale).&lt;/p&gt;
+&lt;p&gt;One of the most salient features is the &amp;quot;spoke-and-hub&amp;quot; structure:
+a larger subreddit links to many smaller subreddits, which
+are often dedicated to a more specific topic. For example,
+/r/financialindependence is linked to country-specific subreddits
+for Canada (/r/personalfinancecanada), UK (/r/ukpersonalfinance),
+and so on. These can often be sensibly grouped into a cluster of
+nodes based on their subject matter. An example of this is the
+closely related subreddits surrounding /r/collapse which are all
+dedicated to the topic of societal and economic collapse.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="analysis"&gt;
+&lt;h2&gt;Analysis&lt;/h2&gt;
+&lt;div class="section" id="average-degree-and-density"&gt;
+&lt;h3&gt;Average Degree and Density&lt;/h3&gt;
+&lt;p&gt;One descriptive statistic of a graph is the &lt;em&gt;average degree&lt;/em&gt;. The
+degree of a node is the number of edges connected to it. The
+average degree of a graph is simply the average of the degrees of
+each of its nodes. These two networks have low average degrees,
+both around 1.3. This is a consequence of the structure of these
+networks: there are a small number of &amp;quot;hub&amp;quot; nodes that have links
+to a large number of &amp;quot;spoke&amp;quot; nodes, which have few links. As a
+result, most of the nodes are &amp;quot;spoke&amp;quot; nodes, usually only having a
+single edge. This lack of connections is also shown in another
+metric, the &lt;em&gt;graph density&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Graph density is defined as the ratio of the number of edges to
+the total possible number of edges between the nodes. The total
+possible would be achieved if every node was connected to every
+other node. For a graph with &lt;em&gt;n&lt;/em&gt; nodes, this would result in &lt;em&gt;n
+choose 2&lt;/em&gt; or &lt;em&gt;n * (n - 1) / 2&lt;/em&gt; edges. The density thus varies from
+0 (in a graph with no edges) to 1 (in a graph with every possible
+edge). The densities of the financial and programming graphs are
+0.01 and 0.04, respectively, so they have low density.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="centrality"&gt;
+&lt;h3&gt;Centrality&lt;/h3&gt;
+&lt;p&gt;Using &lt;tt class="docutils literal"&gt;networkx&lt;/tt&gt;, we can also calculate metrics which helps us
+to better understand the network. One property of nodes in a
+network that we are interested in is their centrality. The metric
+of &lt;em&gt;betweenness centrality&lt;/em&gt; is one way of calculating this.
+The betweenness centrality of a node is the proportion of
+shortest paths between any other two nodes that pass through
+it. &amp;quot;Spoke&amp;quot; nodes will have low values and &amp;quot;hubs&amp;quot; high values.&lt;/p&gt;
+&lt;p&gt;The most central nodes in the financial network are:&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="46%" /&gt;
+&lt;col width="41%" /&gt;
+&lt;col width="13%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;Subreddit&lt;/th&gt;
+&lt;th class="head"&gt;Betweenness Centrality&lt;/th&gt;
+&lt;th class="head"&gt;Edges&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;/r/frugal&lt;/td&gt;
+&lt;td&gt;0.63&lt;/td&gt;
+&lt;td&gt;27&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/buildapc&lt;/td&gt;
+&lt;td&gt;0.48&lt;/td&gt;
+&lt;td&gt;11&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/collapse&lt;/td&gt;
+&lt;td&gt;0.31&lt;/td&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/gamedeals&lt;/td&gt;
+&lt;td&gt;0.29&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/simpleliving&lt;/td&gt;
+&lt;td&gt;0.26&lt;/td&gt;
+&lt;td&gt;18&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/canadianhardwareswap&lt;/td&gt;
+&lt;td&gt;0.24&lt;/td&gt;
+&lt;td&gt;14&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/zerowaste&lt;/td&gt;
+&lt;td&gt;0.19&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/meditation&lt;/td&gt;
+&lt;td&gt;0.17&lt;/td&gt;
+&lt;td&gt;9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/steam&lt;/td&gt;
+&lt;td&gt;0.14&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/buildapcsales&lt;/td&gt;
+&lt;td&gt;0.12&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/financialindependence&lt;/td&gt;
+&lt;td&gt;0.12&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;/r/frugal and /r/buildapc are central because they act as a bridge
+between the network's two main branches: one focused on financial
+matters and the other focused on computer building and gaming.
+Because of this, many shortest paths must pass through them.
+/r/frugal also unites the main hubs in the financial branch,
+/r/collapse, /r/zerowaste, /r/simpleliving, and
+/r/financialindependence.&lt;/p&gt;
+&lt;p&gt;/r/collapse is a hub for many small subreddits that are not
+linked to any other nodes. Any path from one of these nodes to
+another other must necessarily pass through /r/collapse,
+contributing to its high centrality.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="clustering"&gt;
+&lt;h3&gt;Clustering&lt;/h3&gt;
+&lt;p&gt;Another metric for describing a network is the &lt;em&gt;clustering
+coefficient.&lt;/em&gt; Before we define this, first define a &lt;em&gt;triangle&lt;/em&gt; as
+a sub-graph of three nodes that are all connected to each other.
+Suppose we have a node &lt;em&gt;u&lt;/em&gt; with degree &lt;em&gt;n&lt;/em&gt;. The maximum possible
+of triangles including &lt;em&gt;u&lt;/em&gt; is &lt;em&gt;n choose 2&lt;/em&gt;, or &lt;em&gt;n * (n - 1) / 2&lt;/em&gt;.
+The clustering coefficient is the number of existing triangles
+including node &lt;em&gt;u&lt;/em&gt; divided by this maximum possible number.
+So, this coefficient will always be between 0 and 1. It can be
+interpreted as the tendency of a node to cluster with other nodes.
+Any node that is only connected to a single other node will always have
+a clustering coefficient of 0. If all of a node's neighboring nodes are
+connected, then the node will have a clustering coefficient of 1.&lt;/p&gt;
+&lt;p&gt;Most of the nodes in our two networks are spokes connected only to
+a single hub node and thus will have a clustering coefficient of
+0. Nodes with coefficients significantly larger than 0 are more
+rare in these networks. This is perhaps not surprising given that
+these are sparse graphs.&lt;/p&gt;
+&lt;p&gt;The nodes in the programming network with the highest clustering
+coefficients are:&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="48%" /&gt;
+&lt;col width="42%" /&gt;
+&lt;col width="10%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;Subreddit&lt;/th&gt;
+&lt;th class="head"&gt;Clustering Coefficient&lt;/th&gt;
+&lt;th class="head"&gt;Edges&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;/r/programmerhumor&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/cseducation&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/computerscience&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/cryptocurrencymemes&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/compsci&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/freelance&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/cs_questions&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/resumes&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/coding&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/javascript&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/experienceddevs&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/learnprogramming&lt;/td&gt;
+&lt;td&gt;0.67&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;/r/jobs&lt;/td&gt;
+&lt;td&gt;0.33&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Many of these have only two or three few neighbors, so the
+clustering coefficient of 1 is less significant. In contrast,
+while /r/csmajors has a coefficient of only 0.17, it has 12
+neighbors: out of the 66 possible triangles, 11 of them are fully
+connected. This subreddit be part of something closer to a cluster
+than many of nodes with a clustering coefficient of 1.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="section" id="next-steps"&gt;
+&lt;h2&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;There is much room for expansion on this sort of analysis. Some
+further avenues to explore are:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1. A more extensive network could be constructed by crawling the
+actual posts on each messageboard and collecting hyperlinks given
+there. Links to webpages outside of reddit.com could also be
+crawled.&lt;/p&gt;
+&lt;p&gt;2. The number of links between webpages could be tabulated in
+order to measure the &lt;em&gt;strength&lt;/em&gt; of each link in the network.&lt;/p&gt;
+&lt;p&gt;3. Instead of an undirected graph, the direction of the links
+could be incorporated into the model.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Lyric Essays</title><link href="http://marshallmallicoat.com/lyric-essays.html" rel="alternate"></link><published>2018-09-22T00:00:00-05:00</published><updated>2018-09-22T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-22:/lyric-essays.html</id><summary type="html">&lt;p&gt;Here are a few lyric essays written in 2015:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="../in-the-twilight.html"&gt;In the twilight of GMT+1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="../john-henry.html"&gt;John Henry&lt;/a&gt;&lt;/li&gt;
@@ -20,57 +357,66 @@ I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;div class="section" id="arts-and-letters"&gt;
 &lt;h2&gt;Arts and Letters&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.placesiveneverbeen.com/"&gt;Addie Wagenknecht&lt;/a&gt;, artist and designer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.audunmortensen.com/"&gt;Audun Mortensen&lt;/a&gt;, artist and poet&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://berliac.com"&gt;Berliac&lt;/a&gt;, comic book artist&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.crispinbest.com/"&gt;Crispin Best&lt;/a&gt;, writer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.davidfishkind.com/"&gt;David Fishkind&lt;/a&gt;, writer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://erikkennedy.com/"&gt;Erik Kennedy&lt;/a&gt;, poet&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://erikstinson.com/"&gt;Erik Stinson&lt;/a&gt;, &amp;quot;writer …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Here is a collection of links to personal websites, either those
+&lt;li&gt;&lt;a class="reference external" href="http://berliac.com"&gt;Berliac&lt;/a&gt;: comic book artist&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://gabbybess.com/"&gt;Bess, Gabby&lt;/a&gt;: writer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.crispinbest.com/"&gt;Best, Crispin&lt;/a&gt;: writer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.gwern.net/"&gt;Branwen, Gwern&lt;/a&gt;: writer on many topics&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.davidfishkind.com/"&gt;Fishkind, David&lt;/a&gt;: writer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://poemshape.wordpress.com/"&gt;Gillespie, Patrick&lt;/a&gt;: poet&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://erikkennedy.com/"&gt;Kennedy, Erik&lt;/a&gt;: poet&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.audunmortensen.com/"&gt;Mortensen …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Here is a collection of links to personal websites, either those
 I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;div class="section" id="arts-and-letters"&gt;
 &lt;h2&gt;Arts and Letters&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.placesiveneverbeen.com/"&gt;Addie Wagenknecht&lt;/a&gt;, artist and designer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.audunmortensen.com/"&gt;Audun Mortensen&lt;/a&gt;, artist and poet&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://berliac.com"&gt;Berliac&lt;/a&gt;, comic book artist&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.crispinbest.com/"&gt;Crispin Best&lt;/a&gt;, writer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.davidfishkind.com/"&gt;David Fishkind&lt;/a&gt;, writer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://erikkennedy.com/"&gt;Erik Kennedy&lt;/a&gt;, poet&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://erikstinson.com/"&gt;Erik Stinson&lt;/a&gt;, &amp;quot;writer and commercial creative&amp;quot;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://gabbybess.com/"&gt;Gabby Bess&lt;/a&gt;, writer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.gwern.net/"&gt;Gwern Branwen&lt;/a&gt;, writer on many topics&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://hillarypredko.com/"&gt;Hillary Predko&lt;/a&gt;, writer and designer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://lkshow.biz/"&gt;Lucy K. Shaw&lt;/a&gt;, writer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.pageantboys.com/"&gt;Pageant Boys&lt;/a&gt;, my friend Alexander Sheppard's band&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://berliac.com"&gt;Berliac&lt;/a&gt;: comic book artist&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://gabbybess.com/"&gt;Bess, Gabby&lt;/a&gt;: writer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.crispinbest.com/"&gt;Best, Crispin&lt;/a&gt;: writer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.gwern.net/"&gt;Branwen, Gwern&lt;/a&gt;: writer on many topics&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.davidfishkind.com/"&gt;Fishkind, David&lt;/a&gt;: writer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://poemshape.wordpress.com/"&gt;Gillespie, Patrick&lt;/a&gt;: poet&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://erikkennedy.com/"&gt;Kennedy, Erik&lt;/a&gt;: poet&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.audunmortensen.com/"&gt;Mortensen, Audun&lt;/a&gt;: artist and poet&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.pageantboys.com/"&gt;Pageant Boys&lt;/a&gt;: my friend Alexander Sheppard's band&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://hillarypredko.com/"&gt;Predko, Hillary&lt;/a&gt;: writer and designer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://lkshow.biz/"&gt;Shaw, Lucy K.&lt;/a&gt;: writer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://erikstinson.com/"&gt;Stinson, Erik&lt;/a&gt;: &amp;quot;writer and commercial creative&amp;quot;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.placesiveneverbeen.com/"&gt;Wagenknecht, Addie&lt;/a&gt;: artist and designer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://jtwelsch.com/"&gt;Welsch, J.T.&lt;/a&gt;: &amp;quot;writer and academic&amp;quot;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="computing"&gt;
 &lt;h2&gt;Computing&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.sacrideo.us/"&gt;Aaron Hsu&lt;/a&gt;, programmer and
+&lt;li&gt;&lt;a class="reference external" href="http://zorinaq.com/"&gt;Bevand, Marc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://trevore.com/"&gt;Elkins, Trevor&lt;/a&gt;: programmer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://blog.alexellis.io/"&gt;Ellis, Alex&lt;/a&gt;: programmer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://gaxun.net/"&gt;Gaxun&lt;/a&gt;: a raft drifting on the open sea&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://hamberg.no/erlend/"&gt;Hamburg, Erlend&lt;/a&gt;: programmer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://joeyh.name/"&gt;Hess, Joey&lt;/a&gt;: off-the-grid programmer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.sacrideo.us/"&gt;Hsu, Aaron&lt;/a&gt;: programmer and
 handwriting enthusiast&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://blog.alexellis.io/"&gt;Alex Ellis&lt;/a&gt;, programmer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://sheep.horse/"&gt;Andrew Stephens&lt;/a&gt;, programmer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://danluu.com/"&gt;Dan Luu&lt;/a&gt;, programmer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://hamberg.no/erlend/"&gt;Erlend Hamburg&lt;/a&gt;, programmer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://gaxun.net/"&gt;Gaxun&lt;/a&gt;, a raft drifting on the open sea&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://www.devever.net/~hl/"&gt;Hugo Landau&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://blog.invisiblethings.org/about/"&gt;Joanna Rutkowska&lt;/a&gt;, computer engineer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://begriffs.com/"&gt;Joe Nelson&lt;/a&gt;, programmer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://joeyh.name/"&gt;Joey Hess&lt;/a&gt;, off-the-grid programmer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://zorinaq.com/"&gt;Marc Bevand&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://trevore.com/"&gt;Trevor Elkins&lt;/a&gt;, programmer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://crime.team/~jkap/"&gt;Kaplan, Jae&lt;/a&gt;: founder of shared hosting site &lt;a class="reference external" href="https://crime.team/"&gt;crime.team&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.devever.net/~hl/"&gt;Landau, Hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://danluu.com/"&gt;Luu, Dan&lt;/a&gt;: programmer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://coolguy.website/"&gt;Mandeville, Zach&lt;/a&gt;: solarpunk&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://begriffs.com/"&gt;Nelson, Joe&lt;/a&gt;: programmer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://blog.invisiblethings.org/about/"&gt;Rutkowska, Joanna&lt;/a&gt;: computer engineer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://tilde.town/~vilmibm/"&gt;Smith, Nathaniel&lt;/a&gt;: founder of shared hosting site &lt;a class="reference external" href="https://tilde.town"&gt;tilde.town&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://sheep.horse/"&gt;Stephens, Andrew&lt;/a&gt;: programmer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="gopher-sites"&gt;
 &lt;h2&gt;Gopher Sites &lt;a class="footnote-reference" href="#gopher" id="id1"&gt;[1]&lt;/a&gt;&lt;/h2&gt;
 &lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://sdf.org:70/1/users/dbucklin/"&gt;Bucklin, Dave&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://vernunftzentrum.de/1/index.gph"&gt;C-Keen&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="gopher://baud.baby"&gt;Cat&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="gopher://sdf.org/1/users/celadevra"&gt;celadevra&lt;/a&gt;, editor&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="gopher://sdf.org:70/1/users/dbucklin/"&gt;Dave Bucklin&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="gopher://gopher.black"&gt;James Tomasino&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://sdf.org/1/users/celadevra"&gt;celadevra&lt;/a&gt;: editor&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://grex.org/1/%7ejandal"&gt;jandal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://sdf.org/1/users/jynx/"&gt;jynx&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="gopher://circumlunar.space/1/%7esolderpunk/"&gt;solderpunk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://gopher.black"&gt;Tomasino, James&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table class="docutils footnote" frame="void" id="gopher" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
@@ -84,21 +430,6 @@ For a more immersive experience, try the &lt;a class="reference external" href="
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-&lt;div class="section" id="miscellaneous"&gt;
-&lt;h2&gt;Miscellaneous&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://crime.team/~jkap/"&gt;Jae Kaplan&lt;/a&gt;, founder of shared hosting site &lt;a class="reference external" href="https://crime.team/"&gt;crime.team&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://tilde.town/~vilmibm/"&gt;Nathaniel Smith&lt;/a&gt;, founder of shared hosting site &lt;a class="reference external" href="https://tilde.town"&gt;tilde.town&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-</content></entry><entry><title>Essays Published Elsewhere</title><link href="http://marshallmallicoat.com/essays-published.html" rel="alternate"></link><published>2018-09-07T00:00:00-05:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-07:/essays-published.html</id><summary type="html">&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20160530031314/http://www.horseghost.info/p/marshall-mallicoat_8.html"&gt;Essay&lt;/a&gt; in the &amp;quot;detailed accounts of february 15, 2013&amp;quot; issue of &lt;cite&gt;horse ghost&lt;/cite&gt;,
-edited by Mathew Donahoo (Late 2013).&lt;/li&gt;
-&lt;/ul&gt;
-</summary><content type="html">&lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20160530031314/http://www.horseghost.info/p/marshall-mallicoat_8.html"&gt;Essay&lt;/a&gt; in the &amp;quot;detailed accounts of february 15, 2013&amp;quot; issue of &lt;cite&gt;horse ghost&lt;/cite&gt;,
-edited by Mathew Donahoo (Late 2013).&lt;/li&gt;
-&lt;/ul&gt;
 </content></entry><entry><title>Press and Appearances</title><link href="http://marshallmallicoat.com/press.html" rel="alternate"></link><published>2018-09-05T00:00:00-05:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-05:/press.html</id><summary type="html">&lt;div class="section" id="press-and-appearances"&gt;
 &lt;h2&gt;Press and Appearances&lt;/h2&gt;
 &lt;ul class="simple"&gt;
@@ -116,7 +447,7 @@ minute mark] (Nov. 2012).&lt;/li&gt;
 &lt;li&gt;I was profiled in Beach Sloth's &lt;a class="reference external" href="http://www.beachsloth.com/marshall-mallicoat-man-myth-legend.html"&gt;&amp;quot;Marshall Mallicoat: Man, Myth, Legend&amp;quot;&lt;/a&gt; (23 Mar. 2012).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Poems Published Elsewhere</title><link href="http://marshallmallicoat.com/poems-published.html" rel="alternate"></link><published>2018-01-31T00:00:00-06:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-01-31:/poems-published.html</id><summary type="html">&lt;ul class="simple"&gt;
+</content></entry><entry><title>Writing Published Elsewhere</title><link href="http://marshallmallicoat.com/writing-published.html" rel="alternate"></link><published>2018-01-31T00:00:00-06:00</published><updated>2018-11-01T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-01-31:/writing-published.html</id><summary type="html">&lt;ul class="simple"&gt;
 &lt;li&gt;&amp;quot;Siste Viator&amp;quot; featured in Susan Dunne's &lt;a class="reference external" href="http://www.courant.com/entertainment/arts-theater/hc-syllable-poetry-series-little-river-restorative-20171119-story.html"&gt;&amp;quot;Syllable: A Monthly Night Of Words
 And Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;cite&gt;Hartford Courant&lt;/cite&gt;, 28 Nov. 2017).&lt;/li&gt;
 &lt;li&gt;Songs &amp;quot;Cellophane&amp;quot; and &amp;quot;Fountain,&amp;quot; co-written with Alexander Sheppard,
@@ -131,6 +462,8 @@ on Pageant Boys' &lt;a class="reference external" href="https://therecordmachine
 edited by Willis Plummer (Mid 2014).&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://newhive.com/popserial/marshall-mallicoat-3-poems"&gt;3 poems&lt;/a&gt; in &lt;cite&gt;Pop Serial&lt;/cite&gt;,
 issue 5, edited by Stephen Tully Dierks (Early 2014).&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20160530031314/http://www.horseghost.info/p/marshall-mallicoat_8.html"&gt;Essay&lt;/a&gt; in the &amp;quot;detailed accounts of february 15, 2013&amp;quot; issue of &lt;cite&gt;horse ghost&lt;/cite&gt;,
+edited by Mathew Donahoo (Late 2013).&lt;/li&gt;
 &lt;li&gt;Spoken poem &amp;quot;where my baby at in seattle&amp;quot; in &lt;a class="reference external" href="https://keepthisbagawayfromchildren.bandcamp.com"&gt;Ho Hum Vol. 1&lt;/a&gt;
 (&lt;cite&gt;Keep This Bag Away From Children&lt;/cite&gt;, 3 Apr. 2013).&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.everyday-genius.com/2013/02/marshall-mallicoat.html"&gt;&amp;quot;Poem&amp;quot;&lt;/a&gt; in

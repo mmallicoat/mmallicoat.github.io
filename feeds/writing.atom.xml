@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP - Poems</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/poems.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2018-09-07T00:00:00-05:00</updated><entry><title>Poems Published Elsewhere</title><link href="http://marshallmallicoat.com/poems-published.html" rel="alternate"></link><published>2018-01-31T00:00:00-06:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-01-31:/poems-published.html</id><summary type="html">&lt;ul class="simple"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP - Writing</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/writing.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2018-11-01T00:00:00-05:00</updated><entry><title>Lyric Essays</title><link href="http://marshallmallicoat.com/lyric-essays.html" rel="alternate"></link><published>2018-09-22T00:00:00-05:00</published><updated>2018-09-22T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-22:/lyric-essays.html</id><summary type="html">&lt;p&gt;Here are a few lyric essays written in 2015:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="../in-the-twilight.html"&gt;In the twilight of GMT+1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../john-henry.html"&gt;John Henry&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../junkie.html"&gt;Junkie, don't talk to me&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../thoughts-on-sports.html"&gt;Thoughts on sports&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../vanitas.html"&gt;Vanitas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</summary><content type="html">&lt;p&gt;Here are a few lyric essays written in 2015:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;a class="reference external" href="../in-the-twilight.html"&gt;In the twilight of GMT+1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../john-henry.html"&gt;John Henry&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../junkie.html"&gt;Junkie, don't talk to me&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../thoughts-on-sports.html"&gt;Thoughts on sports&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="../vanitas.html"&gt;Vanitas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><title>Writing Published Elsewhere</title><link href="http://marshallmallicoat.com/writing-published.html" rel="alternate"></link><published>2018-01-31T00:00:00-06:00</published><updated>2018-11-01T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-01-31:/writing-published.html</id><summary type="html">&lt;ul class="simple"&gt;
 &lt;li&gt;&amp;quot;Siste Viator&amp;quot; featured in Susan Dunne's &lt;a class="reference external" href="http://www.courant.com/entertainment/arts-theater/hc-syllable-poetry-series-little-river-restorative-20171119-story.html"&gt;&amp;quot;Syllable: A Monthly Night Of Words
 And Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;cite&gt;Hartford Courant&lt;/cite&gt;, 28 Nov. 2017).&lt;/li&gt;
 &lt;li&gt;Songs &amp;quot;Cellophane&amp;quot; and &amp;quot;Fountain,&amp;quot; co-written with Alexander Sheppard,
@@ -14,6 +30,8 @@ on Pageant Boys' &lt;a class="reference external" href="https://therecordmachine
 edited by Willis Plummer (Mid 2014).&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://newhive.com/popserial/marshall-mallicoat-3-poems"&gt;3 poems&lt;/a&gt; in &lt;cite&gt;Pop Serial&lt;/cite&gt;,
 issue 5, edited by Stephen Tully Dierks (Early 2014).&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://web.archive.org/web/20160530031314/http://www.horseghost.info/p/marshall-mallicoat_8.html"&gt;Essay&lt;/a&gt; in the &amp;quot;detailed accounts of february 15, 2013&amp;quot; issue of &lt;cite&gt;horse ghost&lt;/cite&gt;,
+edited by Mathew Donahoo (Late 2013).&lt;/li&gt;
 &lt;li&gt;Spoken poem &amp;quot;where my baby at in seattle&amp;quot; in &lt;a class="reference external" href="https://keepthisbagawayfromchildren.bandcamp.com"&gt;Ho Hum Vol. 1&lt;/a&gt;
 (&lt;cite&gt;Keep This Bag Away From Children&lt;/cite&gt;, 3 Apr. 2013).&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.everyday-genius.com/2013/02/marshall-mallicoat.html"&gt;&amp;quot;Poem&amp;quot;&lt;/a&gt; in
