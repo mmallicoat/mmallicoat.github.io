@@ -17,8 +17,8 @@
   <header><h1>Analyzing Subreddit Networks</h1></header>
   <footer>
         Revised
-        <time class="modified" datetime="2018-11-06T00:00:00-06:00">
-        6 Nov 2018</time>
+        <time class="modified" datetime="2018-11-12T00:00:00-06:00">
+        12 Nov 2018</time>
   </footer>
 
   <div class="section" id="introduction">
@@ -33,7 +33,7 @@ lists of links are human-curated, they give high-quality
 indicators of related topics and communities. By following these
 links programmatically, we can collect the data needed to to
 visualize and analyze these networks.</p>
-<p>All of the code for this project can be found on <a class="reference external" href="https://github.com/mmallicoat/subreddit-graphs">Github</a>.</p>
+<p>The code for this project can be found on <a class="reference external" href="https://github.com/mmallicoat/subreddit-graphs">Github</a>.</p>
 </div>
 <div class="section" id="scrape-the-data">
 <h2>Scrape the Data</h2>
@@ -107,7 +107,7 @@ hierarchy.</td></tr>
 <tt class="docutils literal">networkx</tt> to visualize and analyze the networks. I quickly
 made a couple plots using <tt class="docutils literal">matplotlib</tt> to visualize the graphs.</p>
 <div class="figure align-center">
-<img alt="network centered as /r/programming" src="./media/prog-graph.png" />
+<img alt="network centered as /r/programming" src="./figures/prog-graph.png" />
 </div>
 <p>Unfortunately, these were difficult to read and not very useful
 for exploring the networks. To remedy this, I decided to use the
@@ -117,11 +117,11 @@ interactive plots. After we convert the network data into the
 HTML file containing JavaScript visualizations.</p>
 <p>Click on the images below to view the interactive plots.</p>
 <div class="figure align-center">
-<a class="reference external image-reference" href="html/fin-force.html"><img alt="network centered as /r/financialindependence" src="./media/fin-force-label.jpg" /></a>
+<a class="reference external image-reference" href="html/fin-force.html"><img alt="network centered as /r/financialindependence" src="./figures/fin-force-label.jpg" /></a>
 <p class="caption">Plot of the network centered at the subreddit /r/financialindependence</p>
 </div>
 <div class="figure align-center">
-<a class="reference external image-reference" href="html/prog-force.html"><img alt="network centered as /r/programming" src="./media/prog-force-label.jpg" /></a>
+<a class="reference external image-reference" href="html/prog-force.html"><img alt="network centered as /r/programming" src="./figures/prog-force-label.jpg" /></a>
 <p class="caption">Plot of the network centered at the subreddit /r/programming</p>
 </div>
 <p>In these charts, the relative number of subscribers to each

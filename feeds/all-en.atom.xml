@@ -1,5 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/all-en.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2018-11-06T00:00:00-06:00</updated><entry><title>Analyzing Subreddit Networks</title><link href="http://marshallmallicoat.com/subreddit-networks.html" rel="alternate"></link><published>2018-11-02T00:00:00-05:00</published><updated>2018-11-06T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-11-02:/subreddit-networks.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/all-en.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2018-11-12T00:00:00-06:00</updated><entry><title>Predicting House Prices</title><link href="http://marshallmallicoat.com/kaggle-house-prices.html" rel="alternate"></link><published>2018-11-12T00:00:00-06:00</published><updated>2018-11-12T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-11-12:/kaggle-house-prices.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The data science company Kaggle administers many predictive
+modeling competitions, one of which focuses on &lt;a class="reference external" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques"&gt;predicting house prices&lt;/a&gt;.
+The problem posed is to predict the price of a house given a large
+number of features of the house: the number of stories, the floor
+area, the number of bedrooms …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The data science company Kaggle administers many predictive
+modeling competitions, one of which focuses on &lt;a class="reference external" href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques"&gt;predicting house prices&lt;/a&gt;.
+The problem posed is to predict the price of a house given a large
+number of features of the house: the number of stories, the floor
+area, the number of bedrooms, the size of the yard, and so on.
+The data are from houses in Ames, Iowa, compiled for use in data
+science education.&lt;/p&gt;
+&lt;p&gt;To solve the problem, I developed a Generalized Linear Regression
+(GLM) model. The GLM model works by fitting a function to the
+features of houses with known prices; then, to predict the price
+of an additional house, the estimated function is evaluated with
+the house's particular features. The function takes the form of a
+&lt;em&gt;hyperplane&lt;/em&gt; (a generalization of the plane to higher dimensional
+space). Usually the response variable, in our case the house
+price, is transformed before the fitting takes place.&lt;/p&gt;
+&lt;p&gt;The code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/kaggle-house-prices"&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="data-prep"&gt;
+&lt;h2&gt;Data Prep&lt;/h2&gt;
+&lt;p&gt;The first step I took was to stratify the data provided,
+complete with the price of each house, into training and
+cross-validation (CV) datasets. Having a CV dataset lets you
+compare the performance of models on out-of-sample data, thereby
+avoiding overfitting and getting a more accurate estimate of its
+performance. I randomly partitioned the labeled dataset into the
+training and CV datasets, since I do not know if there is some
+order to how they are presented in the file Kaggle provides which
+might bias my model.&lt;/p&gt;
+&lt;p&gt;Next, I dealt with any missing values in the dataset. For numeric
+variables, I calculated the mean of the variable in the training
+data and substituted this value for any missing in the training
+and CV datasets. For the categorical variables, I substituted a
+new value &amp;quot;Unknown.&amp;quot;&lt;/p&gt;
+&lt;p&gt;To select from the many features, I used some simple heuristics.
+For the numeric variables, I calculated the variance of each
+within the training data. I produced a scatter plot of the
+variances of the variables, sorted in ascending order. In this
+plot, I found an &amp;quot;elbow&amp;quot; where there was a significant drop-off
+in variance. I then selected all variables with variance above
+this threshold. This amounted to 12 variables, about a third of
+the numeric variables available. The rationale behind this is that
+variables with low variance do not provide much discriminating
+information between houses, since all of the houses will have
+similar values.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="plot of variances of numeric variables" src="./figures/numeric-selection.png" /&gt;
+&lt;p class="caption"&gt;&amp;quot;Elbow&amp;quot; in the plot of variances of numeric variables&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;For each of the categorical variables, I calculated the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Entropy_(information_theory)"&gt;entropy&lt;/a&gt;,
+assuming each value was pulled from a multinomial distribution.
+Entropy is a measure of the amount of &amp;quot;information&amp;quot; contained in
+a stochastic process. Random variables with little &amp;quot;surprise&amp;quot; in
+their realized values will have low entropy. For binary variables,
+the entropy calculated is equivalent to the variance of the
+corresponding Bernoulli distribution. After calculating the
+entropy, I plotted a histogram, found an &amp;quot;elbow&amp;quot; is use for the
+threshold, and selected all of the variables above this threshold,
+in the same manner as the numeric variables. This amounted to 14
+variables, about a third of the categorical variables available.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="plot of entropy of categorical variables" src="./figures/categorical-selection.png" /&gt;
+&lt;p class="caption"&gt;&amp;quot;Elbow&amp;quot; in the histogram of entropy of categorical variables&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The selected categorical variables were then encoded as dummy
+variables, &lt;a class="footnote-reference" href="#id2" id="id1"&gt;[1]&lt;/a&gt; so that they can be included in the regression.
+One trip-up was that there are values of categorical variables
+appearing in the test data that do not appear in the training/CV
+data. The universe of values must be known ahead of time in order
+to encode the variable as dummy variables. Given a new dataset
+containing unseen values of a categorical variable, the model
+could not be applied.&lt;/p&gt;
+&lt;p&gt;It is somewhat challenging to develop a processing pipeline
+that can be applied to all datasets uniformly, particularly
+when the processing procedure is &amp;quot;fitted&amp;quot; to the training data.
+The processing must then be applied to training data first, the
+parameters estimated, and those parameters stored somewhere so
+that they can be applied when processing the CV and testing
+datasets. Instead of writing out the parameters to disk, as I did
+for the scaler and regression parameters, I simply kept them in
+memory and processed all of the datasets at once. This is less
+than ideal, since I wouldn't have the parameters readily available
+to apply to a new dataset, which would be necessary if this model
+were used in an application.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Dummy variables are a collection of binary variables whose
+combination correspond to one of the values of the categorical
+variable. The simplest example is a variable with possible values
+&amp;quot;Male&amp;quot; and &amp;quot;Female&amp;quot; being encoded as 1 and 0. For variables with
+&lt;em&gt;n&lt;/em&gt; possible values, &lt;em&gt;n - 1&lt;/em&gt; dummy variables are required.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="training"&gt;
+&lt;h2&gt;Training&lt;/h2&gt;
+&lt;p&gt;Before training the model, I performed some transformations on
+the data. I standardized the features, subtracting the mean and
+dividing by standard deviation to create features with zero mean
+and unit variance. If the features have different scales, the
+magnitude of the fitted coefficients in the linear model will be
+influenced by the scale of the underlying variables and harder to
+compare. Coefficients of variables with a larger scale would also
+be penalized more highly if regularization is applied.&lt;/p&gt;
+&lt;p&gt;Another transformation was to take the logarithm of the sale
+price response variable. There are two reasons for this: First,
+like most currency values, the house prices in the data are not
+normally distributed, which violates an assumption of the linear
+regression. This can be seen in the histogram below over which
+I've overlaid a fitted normal distribution.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="histogram of house prices" src="./figures/y-hist.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;By log-transforming the response variable, it is much closer to
+following a normal distribution. &lt;a class="footnote-reference" href="#id4" id="id3"&gt;[2]&lt;/a&gt;&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="histogram of log-transformed house prices" src="./figures/y-transformed-hist.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Secondly, the loss function specified for the Kaggle competition
+is the mean squared error of the &lt;em&gt;logarithm&lt;/em&gt; of the house prices
+predicted. If we wish to develop a model that performs well under
+this loss function, we must optimize the parameters of our model
+with respect to it.&lt;/p&gt;
+&lt;p&gt;My initial model resulted in some very large positive and negative
+coefficients in the fitted model. Due to the limited precision
+of floating point arithmetic, these coefficients lead to some
+overflows and &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Arithmetic_underflow"&gt;underflows&lt;/a&gt;, respectively, in the predicted value of
+the response variable. To remedy this, I used a ridge regression
+instead, which adds a regularization term to the loss function
+used for fitting the model, thereby penalizing coefficients with
+large magnitude. This solved the problem of unreasonable large
+coefficients.&lt;/p&gt;
+&lt;p&gt;After training the model, I saved the parameters of both the
+standardization procedure and the linear regression. These are
+both are needed in order to repeat the preprocessing steps and
+make predictions from the CV and test datasets.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id4" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id3"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Processes that are the sum of many independent occurrences
+generally follow a normal distribution, which is consistence with
+the Central Limit Theorem. An example of this is human height,
+which is perhaps the result of the expression of many different
+genes, the quality of nutrition through each phase of childhood,
+the effects of childhood disease, etc., which are generally
+independence events, each having a small effect. Processes like
+prices or salaries cannot be normally distributed on the face
+since they cannot have negative values. Secondly, instead of the
+constituents having an additive effect, they seem to have more of
+a &lt;em&gt;multiplicative&lt;/em&gt; effect on the outcome. Learning two new skills
+will increase your salary more than that sum of each alone.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="prediction"&gt;
+&lt;h2&gt;Prediction&lt;/h2&gt;
+&lt;p&gt;To make predictions given the CV and test datasets, the
+preprocessing steps and repeated:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;Standardize the variables using means and standard deviations
+from training dataset&lt;/li&gt;
+&lt;li&gt;For the CV dataset, log-transform the response variable. (We do
+not know the value of the response variable for the testing data,
+of course.)&lt;/li&gt;
+&lt;li&gt;Apply our regression model to make a prediction: multiply
+values of the features by the fitted coefficients, sum these up,
+and add the intercept.&lt;/li&gt;
+&lt;li&gt;For the CV dataset, calculate the value of the loss function as
+a diagnostic.&lt;/li&gt;
+&lt;li&gt;Before writing out the predictions, reverse the log-transform
+by exponentiating the predicted value.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The Kaggle competition is judged by the square root of the mean
+squared error (RMSE) of the predictions of the log-transformed
+house prices. This metric for our model (on the test dataset) is
+0.168, which is fairly middling compared to the leaderboard on the
+Kaggle website. For the CV dataset, the metric is 0.166, which is
+close to that of the test dataset, as we would expect.&lt;/p&gt;
+&lt;p&gt;The metric is somewhat difficult to interpret, so I calculated the
+RMSE of the &lt;em&gt;un&lt;/em&gt;-transformed prices for comparison. The RMSE for
+the untransformed prices in the CV dataset is $37,576. This is
+very roughly &lt;a class="footnote-reference" href="#id6" id="id5"&gt;[3]&lt;/a&gt; the expected deviation of our prediction from
+the true price. The mean house price in this dataset is $178,186;
+so, although our error is significant, the predictions are within
+the ballpark of the true values.&lt;/p&gt;
+&lt;p&gt;There are many avenues to explore which could improve the
+model's performance. Here are some things to try in the future:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Engineer some custom features, especially ones that capture
+interactions between variables. These might be something like the
+ratio of bathrooms to bedrooms, or ratio of plot area to house
+floor area.&lt;/li&gt;
+&lt;li&gt;Make use of the ordinal variables: there are some variables that
+are actually ordinal, not categorical. An example of this is X.
+Instead of ignoring the ordering of the levels of the variable,
+they could be taken advantage of.&lt;/li&gt;
+&lt;li&gt;Try some alternate models, especially those that can fit
+non-linear functions. There may be some non-linear interactions
+between the house price and the independent variables, such as
+the price not being monotonically increasing with the value of an
+independence variable. One plausible explanation of this might be
+something along the lines of: a larger yard may correlate with a
+more valuable property, but it may correlate with a more rural
+location; the negative effect of the rural location on the house
+price might outweigh the increase from the larger yard.&lt;/li&gt;
+&lt;li&gt;Supplement external data: we are given the names of
+neighborhoods of the houses. There is publicly available data on
+houses and their prices from these locations. This data could be
+collected and used to supplement the data provided by Kaggle. Or,
+a secondary model could be built from the external data and then
+combined with the model trained on the Kaggle data in an ensemble.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="docutils footnote" frame="void" id="id6" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id5"&gt;[3]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;The RMSE is in fact the standard deviation of the
+residuals, which are the differences between each prediction and
+true value. The standard deviation is the square root of the
+expected squared deviation, rather than the expected deviation.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Analyzing Subreddit Networks</title><link href="http://marshallmallicoat.com/subreddit-networks.html" rel="alternate"></link><published>2018-11-02T00:00:00-05:00</published><updated>2018-11-12T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-11-02:/subreddit-networks.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The popular website reddit.com contains numerous messageboards
 (called &amp;quot;subreddits&amp;quot;), each dedicated to a particular subject,
@@ -17,7 +247,7 @@ lists of links are human-curated, they give high-quality
 indicators of related topics and communities. By following these
 links programmatically, we can collect the data needed to to
 visualize and analyze these networks.&lt;/p&gt;
-&lt;p&gt;All of the code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/subreddit-graphs"&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/subreddit-graphs"&gt;Github&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="scrape-the-data"&gt;
 &lt;h2&gt;Scrape the Data&lt;/h2&gt;
@@ -91,7 +321,7 @@ hierarchy.&lt;/td&gt;&lt;/tr&gt;
 &lt;tt class="docutils literal"&gt;networkx&lt;/tt&gt; to visualize and analyze the networks. I quickly
 made a couple plots using &lt;tt class="docutils literal"&gt;matplotlib&lt;/tt&gt; to visualize the graphs.&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;img alt="network centered as /r/programming" src="./media/prog-graph.png" /&gt;
+&lt;img alt="network centered as /r/programming" src="./figures/prog-graph.png" /&gt;
 &lt;/div&gt;
 &lt;p&gt;Unfortunately, these were difficult to read and not very useful
 for exploring the networks. To remedy this, I decided to use the
@@ -101,11 +331,11 @@ interactive plots. After we convert the network data into the
 HTML file containing JavaScript visualizations.&lt;/p&gt;
 &lt;p&gt;Click on the images below to view the interactive plots.&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
-&lt;a class="reference external image-reference" href="html/fin-force.html"&gt;&lt;img alt="network centered as /r/financialindependence" src="./media/fin-force-label.jpg" /&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="html/fin-force.html"&gt;&lt;img alt="network centered as /r/financialindependence" src="./figures/fin-force-label.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Plot of the network centered at the subreddit /r/financialindependence&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="figure align-center"&gt;
-&lt;a class="reference external image-reference" href="html/prog-force.html"&gt;&lt;img alt="network centered as /r/programming" src="./media/prog-force-label.jpg" /&gt;&lt;/a&gt;
+&lt;a class="reference external image-reference" href="html/prog-force.html"&gt;&lt;img alt="network centered as /r/programming" src="./figures/prog-force-label.jpg" /&gt;&lt;/a&gt;
 &lt;p class="caption"&gt;Plot of the network centered at the subreddit /r/programming&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;In these charts, the relative number of subscribers to each
