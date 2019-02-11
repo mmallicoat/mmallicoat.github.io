@@ -1,5 +1,287 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP - Projects</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/projects.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2018-11-18T00:00:00-06:00</updated><entry><title>Does the Computer Cheat in Mario Party?</title><link href="http://marshallmallicoat.com/mario-party.html" rel="alternate"></link><published>2018-11-17T00:00:00-06:00</published><updated>2018-11-18T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-11-17:/mario-party.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP - Projects</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/projects.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2019-02-11T00:00:00-06:00</updated><entry><title>Dental Demographics</title><link href="http://marshallmallicoat.com/dental-demographics.html" rel="alternate"></link><published>2018-12-31T00:00:00-06:00</published><updated>2019-02-11T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-12-31:/dental-demographics.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The profitability of a dental practice depends greatly on its
+geographic location. The demographics of the patient population
+in the area surrounding the practice affects the demand for
+dental care (that is, the need and the means to pay). Key
+characteristics are the age and income levels of the …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The profitability of a dental practice depends greatly on its
+geographic location. The demographics of the patient population
+in the area surrounding the practice affects the demand for
+dental care (that is, the need and the means to pay). Key
+characteristics are the age and income levels of the population.
+Another location-dependent factor is the amount of competition
+from other dental practices. An underserved area could be a good
+place to start a new practice.&lt;/p&gt;
+&lt;p&gt;Most dental practices in the United States are privately owned.
+A sole dentist or partnership will finance the opening of a new
+dental practice themselves. Placing the practice in a location
+that will be profitable is an important part of their business
+strategy.&lt;/p&gt;
+&lt;p&gt;This is a concern even for dentists who do not own their own
+practice. Dentists in the US are usually paid as a percent of the
+amount of dental care they provide, which in turn is dependent of
+the amount of business the practice can bring in.&lt;/p&gt;
+&lt;p&gt;In order to find suitable locations for a new dental practice, I
+compiled demographic data from the US Census Bureau and records of
+existing practices from online business directories. I confined
+my search in the states of Kansas and Missouri, with a particular
+focus on the metropolitan area of Kansas City, Missouri.&lt;/p&gt;
+&lt;p&gt;All of the code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/dental-demographics"&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="american-community-survey"&gt;
+&lt;h2&gt;American Community Survey&lt;/h2&gt;
+&lt;p&gt;I used demographic data from the &lt;a class="reference external" href="https://www.census.gov/programs-surveys/acs.html"&gt;American Community Survey&lt;/a&gt; (ACS)
+published by the US Census Bureau. This survey contains data from
+a five-year period, 2012–2016. The attributes collected include
+age, sex, race, occupation, veteran status, insurance benefits,
+and many others.&lt;/p&gt;
+&lt;p&gt;The ACS has some advantages over the &lt;a class="reference external" href="https://www.census.gov/programs-surveys/decennial-census.html"&gt;Decennial Census&lt;/a&gt;. It contains
+many more attributes than the Census. The data is also aggregated
+and published annually rather than every ten years, providing a
+more up-to-date snapshot. One drawback is that the ACS only covers
+a sample of the population rather than the population entire.&lt;/p&gt;
+&lt;p&gt;In the ACS, the finest granularity of the geographic component
+is the Public Use Microdata Area (PUMA). These are generally
+small geographic regions, containing no fewer than 100,000 people
+(in order to ensure anonymity and statistical credibility). The
+boundaries of the PUMAs do not cross state or county lines, so the
+data can be aggregated at that level. The boundaries also do not
+cross the Census Blocks and Census Tracts used in the Decennial
+Census. &lt;a class="footnote-reference" href="#id2" id="id1"&gt;[1]&lt;/a&gt;&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="geographic hierarchy in data" src="./figures/data-geo-hierarchy.jpg" /&gt;
+&lt;p class="caption"&gt;The PUMA falls between the County and Census Tract granularities.&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class="docutils footnote" frame="void" id="id2" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;They do, however, cross the boundaries of ZIP codes.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="age-and-income"&gt;
+&lt;h2&gt;Age and Income&lt;/h2&gt;
+&lt;p&gt;Areas with higher incomes will spend more on dental care than
+those with lower incomes. This is not surprising, especially in
+the US where almost all dental care is paid for out-of-pocket or
+by private insurance. &lt;a class="footnote-reference" href="#id6" id="id4"&gt;[2]&lt;/a&gt; Areas with older populations will spend
+more on dental care, because older people tend to have more dental
+problems and also because of the positive correlation between age
+and income/wealth. So, we will focus on these two demographic
+attributes in considering a location.&lt;/p&gt;
+&lt;p&gt;Below is snippet of the statistics for each PUMA in Kansas (state
+code 20 &lt;a class="footnote-reference" href="#id7" id="id5"&gt;[3]&lt;/a&gt;) and Missouri (state code 29).&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="7%" /&gt;
+&lt;col width="6%" /&gt;
+&lt;col width="13%" /&gt;
+&lt;col width="29%" /&gt;
+&lt;col width="13%" /&gt;
+&lt;col width="30%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;State&lt;/th&gt;
+&lt;th class="head"&gt;PUMA&lt;/th&gt;
+&lt;th class="head"&gt;Population&lt;/th&gt;
+&lt;th class="head"&gt;Median Household Income
+(2016 Dollars)&lt;/th&gt;
+&lt;th class="head"&gt;Median Age&lt;/th&gt;
+&lt;th class="head"&gt;Percent Aged 60 or Older&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;100&lt;/td&gt;
+&lt;td&gt;109,867&lt;/td&gt;
+&lt;td&gt;$41,200&lt;/td&gt;
+&lt;td&gt;41&lt;/td&gt;
+&lt;td&gt;26.7%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;200&lt;/td&gt;
+&lt;td&gt;147,564&lt;/td&gt;
+&lt;td&gt;$42,318&lt;/td&gt;
+&lt;td&gt;41&lt;/td&gt;
+&lt;td&gt;25.7%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;300&lt;/td&gt;
+&lt;td&gt;134,983&lt;/td&gt;
+&lt;td&gt;$32,714&lt;/td&gt;
+&lt;td&gt;26&lt;/td&gt;
+&lt;td&gt;12.2%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;400&lt;/td&gt;
+&lt;td&gt;122,120&lt;/td&gt;
+&lt;td&gt;$42,564&lt;/td&gt;
+&lt;td&gt;37&lt;/td&gt;
+&lt;td&gt;20.5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;500&lt;/td&gt;
+&lt;td&gt;161,762&lt;/td&gt;
+&lt;td&gt;$40,129&lt;/td&gt;
+&lt;td&gt;33&lt;/td&gt;
+&lt;td&gt;16.5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;601&lt;/td&gt;
+&lt;td&gt;116,104&lt;/td&gt;
+&lt;td&gt;$81,513&lt;/td&gt;
+&lt;td&gt;38&lt;/td&gt;
+&lt;td&gt;18.3%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;602&lt;/td&gt;
+&lt;td&gt;153,179&lt;/td&gt;
+&lt;td&gt;$65,904&lt;/td&gt;
+&lt;td&gt;37&lt;/td&gt;
+&lt;td&gt;22.5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;603&lt;/td&gt;
+&lt;td&gt;158,524&lt;/td&gt;
+&lt;td&gt;$69,349&lt;/td&gt;
+&lt;td&gt;34&lt;/td&gt;
+&lt;td&gt;13.6%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;604&lt;/td&gt;
+&lt;td&gt;144,839&lt;/td&gt;
+&lt;td&gt;$106,734&lt;/td&gt;
+&lt;td&gt;39&lt;/td&gt;
+&lt;td&gt;18.9%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;700&lt;/td&gt;
+&lt;td&gt;116,206&lt;/td&gt;
+&lt;td&gt;$26,172&lt;/td&gt;
+&lt;td&gt;29&lt;/td&gt;
+&lt;td&gt;15.3%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;I also visualized these results using &lt;a class="reference external" href="https://en.wikipedia.org/wiki/QGIS"&gt;QGIS&lt;/a&gt;.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Median Household Income" src="./figures/median-household-income.png" /&gt;
+&lt;p class="caption"&gt;Higher median household incomes are shown in darker shades.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;We see that the highest income areas in these two states are
+in the suburbs of Kansas City and Saint Louis, on the western
+and eastern borders of Missouri. There are also slightly higher
+incomes in the suburbs of Topeka (in north–central Kansas) and
+Wichita (in south–central Kansas).&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Median Age" src="./figures/median-age.png" /&gt;
+&lt;p class="caption"&gt;Higher median ages are shown in darker shades.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;The median age is generally higher in more rural regions. In the
+areas where large universities are located, we see a much lower
+median age than elsewhere. The youthful patches on the map can be
+explained by Kansas State University in Manhattan, the University
+of Kansas in Lawrence, the University of Missouri in Columbia, and
+Missouri State University in Springfield.&lt;/p&gt;
+&lt;p&gt;An outlier in income and age is southwest Kansas: it has unusually
+high incomes and unusually young population for a rural area.
+My guess is that this is due to oil and gas exploitation in the
+region, attracting young workers and paying relatively high wages.
+See the chart from geological survey below.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="KS Geological Survey" src="./figures/ks_geological_survey_fig3.jpg" /&gt;
+&lt;p class="caption"&gt;&lt;a class="reference external" href="http://www.kgs.ku.edu/Publications/PIC/pic32.html"&gt;Kansas Geological Survey, Public Information Circular (PIC) 32, December 2011&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;table class="docutils footnote" frame="void" id="id6" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id4"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;The existing socialized medical programs in the US (e.g.,
+Medicaid and Medicare) generally do not provide dental coverage.
+One exception is Tricare, which does.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="id7" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id5"&gt;[3]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;The codes used in the ACS data accord with the
+&lt;a class="reference external" href="https://en.wikipedia.org/wiki/Federal_Information_Processing_Standard_state_code"&gt;Federal Information Processing Standard&lt;/a&gt;
+(FIPS) state codes.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="competition"&gt;
+&lt;h2&gt;Competition&lt;/h2&gt;
+&lt;p&gt;A third consideration is the number of dental practices already
+operating the region. The more dental practices there are, the
+more competition. This leads to lower utilization of the capacity
+of each dental practice and lower profitability.&lt;/p&gt;
+&lt;p&gt;To assess this, I scraped the listings of dentists and dental
+practices from an online business directory. Since I wanted to
+focus on the metropolitan area of Kansas City, I collected listing
+from the region around Lenexa, Kansas, an inner-ring suburb. &lt;a class="footnote-reference" href="#id9" id="id8"&gt;[4]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Given the address of each dental practice, I used the &lt;a class="reference external" href="https://www.openstreetmap.org"&gt;Open Street
+Map&lt;/a&gt; &lt;a class="reference external" href="https://wiki.openstreetmap.org/wiki/Nominatim"&gt;Nominatim&lt;/a&gt; API to geocode each location, looking up the
+latitude and longitude coordinates for each street address.&lt;/p&gt;
+&lt;p&gt;The &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Shapefile"&gt;shapefiles&lt;/a&gt; provided by the Census Bureau for the PUMAs
+contain the boundaries of these geographic regions. Using the
+&lt;tt class="docutils literal"&gt;fiona&lt;/tt&gt; Python library, we can easily open and manipulate
+shapefiles. In conjunction with the &lt;tt class="docutils literal"&gt;shapely&lt;/tt&gt; library, we can
+find which PUMA each of the dental practices is located in, by way
+of its coordinates.&lt;/p&gt;
+&lt;p&gt;After removing duplicate locations from our list of dental
+practices, we can then tabulate the number in practices in each
+PUMA. One rule of thumb is that an ideal practice has 2000 active
+patients. So, we would be looking for areas with around 2000 or
+more people per practice.&lt;/p&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Population per Dental Practice" src="./figures/practice-count.png" /&gt;
+&lt;p class="caption"&gt;Population per dental practice in the Kansas City area&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;According to our chart, southwest Johnson County (bottom left
+PUMA) and western Kansas City (two PUMAs on right) have a suitable
+ratio. Wyandotte County (top center PUMA) is somewhat underserved,
+so it could be a profitable location for a practice. Southeast
+Johnson County (bottom center PUMA) has the lowest ratio; however,
+it is also the area with the highest median household income
+Kansas or Missouri, so it may nevertheless be a good location.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="id9" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id8"&gt;[4]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Since I did not scrape the entire business directory, only the
+data for the areas close to the origin of Lenexa, KS, can be
+expected to be reasonably complete.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;div class="section" id="future-directions"&gt;
+&lt;h2&gt;Future Directions&lt;/h2&gt;
+&lt;p&gt;The attributes considered here may be a good start, but there are
+other factors worth looking at. Future analysis could investigate
+the dental insurance providers in the area and how much they will
+pay for various dental procedures. The same procedure in one area
+may be better compensated than in another due to the typical
+insurance coverage of the patients.&lt;/p&gt;
+&lt;p&gt;The data quality of the existing dental practices could be
+improved. The addresses scraped from the business directory were
+quite dirty, having problems like:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;Some dentists are listed multiple times at different practices&lt;/li&gt;
+&lt;li&gt;Some dental practices listed are no longer operating&lt;/li&gt;
+&lt;li&gt;Errors in addresses for practices, such as the wrong city or ZIP code given&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is also little trust in the listings being complete. In the
+future, there may be better sources for this information, such as
+lists of in-network dental practitioners published by insurance
+companies.&lt;/p&gt;
+&lt;p&gt;Open Street Map's Nominatim geocoding API seems to be less
+tolerant to malformed addresses than Google Maps'. For a
+commercial application, it would probably be worth paying for
+Google's service.&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Does the Computer Cheat in Mario Party?</title><link href="http://marshallmallicoat.com/mario-party.html" rel="alternate"></link><published>2018-11-17T00:00:00-06:00</published><updated>2018-11-18T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-11-17:/mario-party.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;I happened to play the video game &lt;em&gt;Mario Party 5&lt;/em&gt; with my brother
 over a holiday. The game involves rolling dice to move your
@@ -473,7 +755,7 @@ expected squared deviation, rather than the expected deviation.&lt;/td&gt;&lt;/t
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Analyzing Subreddit Networks</title><link href="http://marshallmallicoat.com/subreddit-networks.html" rel="alternate"></link><published>2018-11-02T00:00:00-05:00</published><updated>2018-11-12T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-11-02:/subreddit-networks.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+</content></entry><entry><title>Analyzing Subreddit Networks</title><link href="http://marshallmallicoat.com/subreddit-networks.html" rel="alternate"></link><published>2018-11-02T00:00:00-05:00</published><updated>2019-02-07T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-11-02:/subreddit-networks.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The popular website reddit.com contains numerous messageboards
 (called &amp;quot;subreddits&amp;quot;), each dedicated to a particular subject,
@@ -799,7 +1081,6 @@ than many of nodes with a clustering coefficient of 1.&lt;/p&gt;
 &lt;h2&gt;Next Steps&lt;/h2&gt;
 &lt;p&gt;There is much room for expansion on this sort of analysis. Some
 further avenues to explore are:&lt;/p&gt;
-&lt;blockquote&gt;
 &lt;p&gt;1. A more extensive network could be constructed by crawling the
 actual posts on each messageboard and collecting hyperlinks given
 there. Links to webpages outside of reddit.com could also be
@@ -808,6 +1089,5 @@ crawled.&lt;/p&gt;
 order to measure the &lt;em&gt;strength&lt;/em&gt; of each link in the network.&lt;/p&gt;
 &lt;p&gt;3. Instead of an undirected graph, the direction of the links
 could be incorporated into the model.&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;/div&gt;
 </content></entry></feed>
