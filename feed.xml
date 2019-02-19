@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>▲HEAP</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feed.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2019-02-11T00:00:00-06:00</updated><entry><title>Dental Demographics</title><link href="http://marshallmallicoat.com/dental-demographics.html" rel="alternate"></link><published>2018-12-31T00:00:00-06:00</published><updated>2019-02-11T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-12-31:/dental-demographics.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feed.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2019-02-19T00:00:00-06:00</updated><entry><title>Dental Demographics</title><link href="http://marshallmallicoat.com/dental-demographics.html" rel="alternate"></link><published>2018-12-31T00:00:00-06:00</published><updated>2019-02-11T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-12-31:/dental-demographics.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The profitability of a dental practice depends greatly on its
 geographic location. The demographics of the patient population
@@ -29,7 +29,7 @@ compiled demographic data from the US Census Bureau and records of
 existing practices from online business directories. I confined
 my search in the states of Kansas and Missouri, with a particular
 focus on the metropolitan area of Kansas City, Missouri.&lt;/p&gt;
-&lt;p&gt;All of the code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/dental-demographics"&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;All of the code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/dental-demographics"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="american-community-survey"&gt;
 &lt;h2&gt;American Community Survey&lt;/h2&gt;
@@ -296,7 +296,7 @@ lower rolls on average than the computer players, we wondered if
 perhaps they were given an advantage somehow. I manually recorded
 a sample of the dice rolls from the game in order to test this
 possibility.&lt;/p&gt;
-&lt;p&gt;The data and code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/mario-party"&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The data and code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/mario-party"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- Style: Student's *t*-test; Mann–Whitney *U* test; Wilcoxon rank-sum test; (Pearson's) chi-squared test; Smirnov–Kolmogorov test; *p*-value --&gt;
 &lt;/div&gt;
 &lt;div class="section" id="distribution-of-dice-rolls"&gt;
@@ -548,7 +548,7 @@ the house's particular features. The function takes the form of a
 &lt;em&gt;hyperplane&lt;/em&gt; (a generalization of the plane to higher dimensional
 space). Usually the response variable, in our case the house
 price, is transformed before the fitting takes place.&lt;/p&gt;
-&lt;p&gt;The code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/kaggle-house-prices"&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/kaggle-house-prices"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="data-prep"&gt;
 &lt;h2&gt;Data Prep&lt;/h2&gt;
@@ -755,7 +755,7 @@ expected squared deviation, rather than the expected deviation.&lt;/td&gt;&lt;/t
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;/div&gt;
-</content></entry><entry><title>Analyzing Subreddit Networks</title><link href="http://marshallmallicoat.com/subreddit-networks.html" rel="alternate"></link><published>2018-11-02T00:00:00-05:00</published><updated>2019-02-07T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-11-02:/subreddit-networks.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+</content></entry><entry><title>Exploring Subreddit Networks</title><link href="http://marshallmallicoat.com/subreddit-networks.html" rel="alternate"></link><published>2018-11-02T00:00:00-05:00</published><updated>2019-02-19T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-11-02:/subreddit-networks.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The popular website reddit.com contains numerous messageboards
 (called &amp;quot;subreddits&amp;quot;), each dedicated to a particular subject,
@@ -773,7 +773,7 @@ lists of links are human-curated, they give high-quality
 indicators of related topics and communities. By following these
 links programmatically, we can collect the data needed to to
 visualize and analyze these networks.&lt;/p&gt;
-&lt;p&gt;The code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/subreddit-graphs"&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The code for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/subreddit-graphs"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="scrape-the-data"&gt;
 &lt;h2&gt;Scrape the Data&lt;/h2&gt;
