@@ -1,5 +1,524 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feed.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2019-02-19T00:00:00-06:00</updated><entry><title>Dental Demographics</title><link href="http://marshallmallicoat.com/dental-demographics.html" rel="alternate"></link><published>2018-12-31T00:00:00-06:00</published><updated>2019-02-11T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-12-31:/dental-demographics.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feed.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2019-02-28T00:00:00-06:00</updated><entry><title>Student Satisfaction Regression</title><link href="http://marshallmallicoat.com/student-satisfaction.html" rel="alternate"></link><published>2019-02-25T00:00:00-06:00</published><updated>2019-02-28T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2019-02-25:/student-satisfaction.html</id><summary type="html">&lt;!-- Style: Student's *t*-test; Mann–Whitney *U* test; Wilcoxon rank-sum test;
+(Pearson's) chi-squared test; Smirnov–Kolmogorov test; *p*-value;
+*F*-test; en-dash in "Q–Q plot" not hyphen --&gt;
+&lt;p&gt;Sears et al. &lt;a class="footnote-reference" href="#sears" id="id1"&gt;[1]&lt;/a&gt; performed a survey of psychology students at the
+University of Calgary in order to better understand which factors lead to
+students' satisfaction with their degree program. In this project, I perform a
+regression analysis on the variables selected for this survey. &lt;a class="footnote-reference" href="#data" id="id2"&gt;[2]&lt;/a&gt; The
+code and data …&lt;/p&gt;</summary><content type="html">&lt;!-- Style: Student's *t*-test; Mann–Whitney *U* test; Wilcoxon rank-sum test;
+(Pearson's) chi-squared test; Smirnov–Kolmogorov test; *p*-value;
+*F*-test; en-dash in "Q–Q plot" not hyphen --&gt;
+&lt;p&gt;Sears et al. &lt;a class="footnote-reference" href="#sears" id="id1"&gt;[1]&lt;/a&gt; performed a survey of psychology students at the
+University of Calgary in order to better understand which factors lead to
+students' satisfaction with their degree program. In this project, I perform a
+regression analysis on the variables selected for this survey. &lt;a class="footnote-reference" href="#data" id="id2"&gt;[2]&lt;/a&gt; The
+code and data for this project can be found on &lt;a class="reference external" href="https://github.com/mmallicoat/student-satisfaction"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;table class="docutils footnote" frame="void" id="sears" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Sears, Christopher R., et al. (2017). Predictors of Student
+Satisfaction in a Large Psychology Undergraduate Program.  &lt;em&gt;Canadian
+Psychology, 58&lt;/em&gt;(2), 148–160. &lt;a class="reference external" href="http://dx.doi.org/10.1037/cap0000082"&gt;http://dx.doi.org/10.1037/cap0000082&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="data" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;This analysis uses &lt;em&gt;synthetic&lt;/em&gt; data that was produced to
+imitate the data collected in the study itself.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="section" id="exploration"&gt;
+&lt;h2&gt;Exploration&lt;/h2&gt;
+&lt;p&gt;In the data, we have one response variable (&lt;span class="formula"&gt;&lt;i&gt;y&lt;/i&gt;&lt;/span&gt;) and ten explanatory
+variables (&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;1&lt;/sub&gt;, &lt;i&gt;X&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt;, …, &lt;i&gt;X&lt;/i&gt;&lt;sub&gt;10&lt;/sub&gt;&lt;/span&gt;). They represent the following
+quantities, as assessed by each student in the survey:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;y&lt;/i&gt;&lt;/span&gt;: overall satisfaction with the psychology program&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/span&gt;: quality of teaching in lectures&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;2&lt;/sub&gt;&lt;/span&gt;: quality of teaching in labs&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;3&lt;/sub&gt;&lt;/span&gt;: student-faculty interaction&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;4&lt;/sub&gt;&lt;/span&gt;: level of academic challenge&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;5&lt;/sub&gt;&lt;/span&gt;: opportunities for research experience&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;6&lt;/sub&gt;&lt;/span&gt;: variety of courses available&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;7&lt;/sub&gt;&lt;/span&gt;: opportunities for class discussions&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;8&lt;/sub&gt;&lt;/span&gt;: opportunities to write about views and ideas&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;9&lt;/sub&gt;&lt;/span&gt;: program advising&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;10&lt;/sub&gt;&lt;/span&gt;: career information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;First, we read the data into our R program and calculate some descriptive
+statistics.&lt;/p&gt;
+&lt;pre class="code R literal-block"&gt;
+&lt;span class="c1"&gt;# Read in data&lt;/span&gt;
+df &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; read.csv&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'data/survey.csv'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;# Descriptive statistics&lt;/span&gt;
+df_mean &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;sapply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;df&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kp"&gt;mean&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+df_sd &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="kp"&gt;sapply&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;df&lt;span class="p"&gt;,&lt;/span&gt; sd&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;This gives us the mean and standard deviation of each variable:&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="6%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;&lt;/th&gt;
+&lt;th class="head"&gt;Y1&lt;/th&gt;
+&lt;th class="head"&gt;X1&lt;/th&gt;
+&lt;th class="head"&gt;X2&lt;/th&gt;
+&lt;th class="head"&gt;X3&lt;/th&gt;
+&lt;th class="head"&gt;X4&lt;/th&gt;
+&lt;th class="head"&gt;X5&lt;/th&gt;
+&lt;th class="head"&gt;X6&lt;/th&gt;
+&lt;th class="head"&gt;X7&lt;/th&gt;
+&lt;th class="head"&gt;X8&lt;/th&gt;
+&lt;th class="head"&gt;X9&lt;/th&gt;
+&lt;th class="head"&gt;X10&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;Mean&lt;/td&gt;
+&lt;td&gt;0.076&lt;/td&gt;
+&lt;td&gt;0.127&lt;/td&gt;
+&lt;td&gt;-0.046&lt;/td&gt;
+&lt;td&gt;0.118&lt;/td&gt;
+&lt;td&gt;0.055&lt;/td&gt;
+&lt;td&gt;0.148&lt;/td&gt;
+&lt;td&gt;-0.051&lt;/td&gt;
+&lt;td&gt;-0.097&lt;/td&gt;
+&lt;td&gt;0.038&lt;/td&gt;
+&lt;td&gt;0.051&lt;/td&gt;
+&lt;td&gt;-0.097&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SD&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;1.7&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The answers given to the survey questions were coded as integers from −3 (&lt;em&gt;very
+unsatisfied&lt;/em&gt;) to +3 (&lt;em&gt;very satisfied&lt;/em&gt;), with 0 for &lt;em&gt;neutral&lt;/em&gt;. The means of the
+variables are all small and near 0, so the students' responses are likely
+well-balanced in terms of satisfaction versus dissatisfaction.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="validating-assumptions"&gt;
+&lt;h2&gt;Validating Assumptions&lt;/h2&gt;
+&lt;p&gt;The linear regression model makes a number of assumptions about the properties
+of the data. These include the assumption that the explanatory variables are
+linearly independent, or that they lack &lt;strong&gt;perfect&lt;/strong&gt; multicollinearity. To
+ensure the soundness of our model, we will check if any of our explanatory are
+collinear.&lt;/p&gt;
+&lt;p&gt;Besides the theoretical assumption, there are practical reasons to avoid
+even &amp;quot;imperfect&amp;quot; collinearity between explanatory variables:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;In a multiple linear regression, we estimate the coefficients with
+the formula &lt;span class="formula"&gt;&lt;i&gt;β̂&lt;/i&gt; = (&lt;i&gt;X&lt;/i&gt;&lt;sup&gt;&lt;i&gt;T&lt;/i&gt;&lt;/sup&gt;&lt;i&gt;X&lt;/i&gt;)&lt;sup&gt; − 1&lt;/sup&gt;&lt;i&gt;X&lt;/i&gt;&lt;sup&gt;&lt;i&gt;T&lt;/i&gt;&lt;/sup&gt;&lt;i&gt;y&lt;/i&gt;&lt;/span&gt;. If two
+explanatory variables are collinear, the matrix &lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sup&gt;&lt;i&gt;T&lt;/i&gt;&lt;/sup&gt;&lt;i&gt;X&lt;/i&gt;&lt;/span&gt; will
+be near singular. This makes it computationally difficult to invert.&lt;/li&gt;
+&lt;li&gt;If two explanatory variables are collinear, the variance of
+their coefficients in the linear model will be very high.
+This reduces the power of the &lt;em&gt;t&lt;/em&gt;-test used to determine
+if the coefficient is statistically significant.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A crude way to detect collinearity between variables is the look at their
+correlation coefficient matrix. Large values (say, greater than 0.70) might
+indicate collinearity.&lt;/p&gt;
+&lt;pre class="code R literal-block"&gt;
+df_correl &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; cor&lt;span class="p"&gt;(&lt;/span&gt;df&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;The correlation coefficient matrix for our variables is:&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="6%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;&lt;/th&gt;
+&lt;th class="head"&gt;Y1&lt;/th&gt;
+&lt;th class="head"&gt;X1&lt;/th&gt;
+&lt;th class="head"&gt;X2&lt;/th&gt;
+&lt;th class="head"&gt;X3&lt;/th&gt;
+&lt;th class="head"&gt;X4&lt;/th&gt;
+&lt;th class="head"&gt;X5&lt;/th&gt;
+&lt;th class="head"&gt;X6&lt;/th&gt;
+&lt;th class="head"&gt;X7&lt;/th&gt;
+&lt;th class="head"&gt;X8&lt;/th&gt;
+&lt;th class="head"&gt;X9&lt;/th&gt;
+&lt;th class="head"&gt;X10&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;Y1&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;0.63&lt;/td&gt;
+&lt;td&gt;0.40&lt;/td&gt;
+&lt;td&gt;0.51&lt;/td&gt;
+&lt;td&gt;0.56&lt;/td&gt;
+&lt;td&gt;0.44&lt;/td&gt;
+&lt;td&gt;0.30&lt;/td&gt;
+&lt;td&gt;0.36&lt;/td&gt;
+&lt;td&gt;0.54&lt;/td&gt;
+&lt;td&gt;0.30&lt;/td&gt;
+&lt;td&gt;0.45&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X1&lt;/td&gt;
+&lt;td&gt;0.63&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;0.50&lt;/td&gt;
+&lt;td&gt;0.60&lt;/td&gt;
+&lt;td&gt;0.42&lt;/td&gt;
+&lt;td&gt;0.36&lt;/td&gt;
+&lt;td&gt;0.42&lt;/td&gt;
+&lt;td&gt;0.39&lt;/td&gt;
+&lt;td&gt;0.55&lt;/td&gt;
+&lt;td&gt;0.39&lt;/td&gt;
+&lt;td&gt;0.41&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X2&lt;/td&gt;
+&lt;td&gt;0.40&lt;/td&gt;
+&lt;td&gt;0.50&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;0.34&lt;/td&gt;
+&lt;td&gt;0.39&lt;/td&gt;
+&lt;td&gt;0.22&lt;/td&gt;
+&lt;td&gt;0.31&lt;/td&gt;
+&lt;td&gt;0.33&lt;/td&gt;
+&lt;td&gt;0.27&lt;/td&gt;
+&lt;td&gt;0.18&lt;/td&gt;
+&lt;td&gt;0.27&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X3&lt;/td&gt;
+&lt;td&gt;0.51&lt;/td&gt;
+&lt;td&gt;0.60&lt;/td&gt;
+&lt;td&gt;0.34&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;0.34&lt;/td&gt;
+&lt;td&gt;0.61&lt;/td&gt;
+&lt;td&gt;0.36&lt;/td&gt;
+&lt;td&gt;0.47&lt;/td&gt;
+&lt;td&gt;0.60&lt;/td&gt;
+&lt;td&gt;0.54&lt;/td&gt;
+&lt;td&gt;0.52&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X4&lt;/td&gt;
+&lt;td&gt;0.56&lt;/td&gt;
+&lt;td&gt;0.42&lt;/td&gt;
+&lt;td&gt;0.39&lt;/td&gt;
+&lt;td&gt;0.34&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;0.39&lt;/td&gt;
+&lt;td&gt;0.29&lt;/td&gt;
+&lt;td&gt;0.34&lt;/td&gt;
+&lt;td&gt;0.29&lt;/td&gt;
+&lt;td&gt;0.32&lt;/td&gt;
+&lt;td&gt;0.35&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X5&lt;/td&gt;
+&lt;td&gt;0.44&lt;/td&gt;
+&lt;td&gt;0.36&lt;/td&gt;
+&lt;td&gt;0.22&lt;/td&gt;
+&lt;td&gt;0.61&lt;/td&gt;
+&lt;td&gt;0.39&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;0.28&lt;/td&gt;
+&lt;td&gt;0.38&lt;/td&gt;
+&lt;td&gt;0.56&lt;/td&gt;
+&lt;td&gt;0.37&lt;/td&gt;
+&lt;td&gt;0.50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X6&lt;/td&gt;
+&lt;td&gt;0.30&lt;/td&gt;
+&lt;td&gt;0.42&lt;/td&gt;
+&lt;td&gt;0.31&lt;/td&gt;
+&lt;td&gt;0.36&lt;/td&gt;
+&lt;td&gt;0.29&lt;/td&gt;
+&lt;td&gt;0.28&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;0.32&lt;/td&gt;
+&lt;td&gt;0.34&lt;/td&gt;
+&lt;td&gt;0.30&lt;/td&gt;
+&lt;td&gt;0.33&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X7&lt;/td&gt;
+&lt;td&gt;0.36&lt;/td&gt;
+&lt;td&gt;0.39&lt;/td&gt;
+&lt;td&gt;0.33&lt;/td&gt;
+&lt;td&gt;0.47&lt;/td&gt;
+&lt;td&gt;0.34&lt;/td&gt;
+&lt;td&gt;0.38&lt;/td&gt;
+&lt;td&gt;0.32&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;0.54&lt;/td&gt;
+&lt;td&gt;0.31&lt;/td&gt;
+&lt;td&gt;0.25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X8&lt;/td&gt;
+&lt;td&gt;0.54&lt;/td&gt;
+&lt;td&gt;0.55&lt;/td&gt;
+&lt;td&gt;0.27&lt;/td&gt;
+&lt;td&gt;0.60&lt;/td&gt;
+&lt;td&gt;0.29&lt;/td&gt;
+&lt;td&gt;0.56&lt;/td&gt;
+&lt;td&gt;0.34&lt;/td&gt;
+&lt;td&gt;0.54&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;0.46&lt;/td&gt;
+&lt;td&gt;0.48&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X9&lt;/td&gt;
+&lt;td&gt;0.30&lt;/td&gt;
+&lt;td&gt;0.39&lt;/td&gt;
+&lt;td&gt;0.18&lt;/td&gt;
+&lt;td&gt;0.54&lt;/td&gt;
+&lt;td&gt;0.32&lt;/td&gt;
+&lt;td&gt;0.37&lt;/td&gt;
+&lt;td&gt;0.30&lt;/td&gt;
+&lt;td&gt;0.31&lt;/td&gt;
+&lt;td&gt;0.46&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;td&gt;0.56&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;X10&lt;/td&gt;
+&lt;td&gt;0.45&lt;/td&gt;
+&lt;td&gt;0.41&lt;/td&gt;
+&lt;td&gt;0.27&lt;/td&gt;
+&lt;td&gt;0.52&lt;/td&gt;
+&lt;td&gt;0.35&lt;/td&gt;
+&lt;td&gt;0.50&lt;/td&gt;
+&lt;td&gt;0.33&lt;/td&gt;
+&lt;td&gt;0.25&lt;/td&gt;
+&lt;td&gt;0.48&lt;/td&gt;
+&lt;td&gt;0.56&lt;/td&gt;
+&lt;td&gt;1.00&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;None of the correlation coefficients between the explanatory variables are
+larger than 0.70, so there is no obvious sign of collinearity.&lt;/p&gt;
+&lt;p&gt;A more thorough way to detect multicollinearity is to compute the Variance Inflation
+Factor (VIF) for each variable in the linear model. But to do this, we must first
+fit the coefficients of our linear model. This is a one-liner in R:&lt;/p&gt;
+&lt;pre class="code R literal-block"&gt;
+md &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; lm&lt;span class="p"&gt;(&lt;/span&gt;df&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;&lt;span class="formula"&gt;&lt;i&gt;VIF&lt;/i&gt;&lt;sub&gt;&lt;i&gt;j&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt; is defined as &lt;span class="formula"&gt;1 ⁄ (1 − &lt;i&gt;R&lt;/i&gt;&lt;span class="scripts"&gt;&lt;sup class="script"&gt;2&lt;/sup&gt;&lt;sub class="script"&gt;&lt;i&gt;j&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt;)&lt;/span&gt; where &lt;span class="formula"&gt;&lt;i&gt;R&lt;/i&gt;&lt;span class="scripts"&gt;&lt;sup class="script"&gt;2&lt;/sup&gt;&lt;sub class="script"&gt;&lt;i&gt;j&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt;&lt;/span&gt;
+is the coefficient of determination for explanatory variable &lt;span class="formula"&gt;&lt;i&gt;j&lt;/i&gt;&lt;/span&gt; when
+&lt;em&gt;regressed on the other explanatory variables&lt;/em&gt;. We are checking to see
+&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;&lt;i&gt;j&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt; can be predicted to a high degree of accuracy by a linear
+combination of the other variables. If &lt;span class="formula"&gt;&lt;i&gt;R&lt;/i&gt;&lt;span class="scripts"&gt;&lt;sup class="script"&gt;2&lt;/sup&gt;&lt;sub class="script"&gt;&lt;i&gt;j&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt;&lt;/span&gt; is large (that is,
+that a large proportion of the variance of &lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;&lt;i&gt;j&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt; can be explained by the
+other variables), then &lt;span class="formula"&gt;&lt;i&gt;VIF&lt;/i&gt;&lt;sub&gt;&lt;i&gt;j&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt; will be large. If the VIF for an
+explanatory variable is larger than some threshold (say, 5), then we can
+conclude that it is collinear and exclude it from our model.&lt;/p&gt;
+&lt;p&gt;Another view of the same quantity is &lt;em&gt;tolerance&lt;/em&gt;, which is defined as the
+reciprocal of the VIF.  Using the &lt;tt class="docutils literal"&gt;car&lt;/tt&gt; library, we can calculate both of
+these for our linear model:&lt;/p&gt;
+&lt;pre class="code R literal-block"&gt;
+vif_md &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; vif&lt;span class="p"&gt;(&lt;/span&gt;md&lt;span class="p"&gt;)&lt;/span&gt;
+tol_md &lt;span class="o"&gt;&amp;lt;-&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt; vif&lt;span class="p"&gt;(&lt;/span&gt;md&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;The VIFs and tolerances for our variables are:&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="14%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;col width="9%" /&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;&lt;/th&gt;
+&lt;th class="head"&gt;X1&lt;/th&gt;
+&lt;th class="head"&gt;X2&lt;/th&gt;
+&lt;th class="head"&gt;X3&lt;/th&gt;
+&lt;th class="head"&gt;X4&lt;/th&gt;
+&lt;th class="head"&gt;X5&lt;/th&gt;
+&lt;th class="head"&gt;X6&lt;/th&gt;
+&lt;th class="head"&gt;X7&lt;/th&gt;
+&lt;th class="head"&gt;X8&lt;/th&gt;
+&lt;th class="head"&gt;X9&lt;/th&gt;
+&lt;th class="head"&gt;X10&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;VIF&lt;/td&gt;
+&lt;td&gt;2.2&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;1.7&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Tolerance&lt;/td&gt;
+&lt;td&gt;0.45&lt;/td&gt;
+&lt;td&gt;0.68&lt;/td&gt;
+&lt;td&gt;0.39&lt;/td&gt;
+&lt;td&gt;0.68&lt;/td&gt;
+&lt;td&gt;0.50&lt;/td&gt;
+&lt;td&gt;0.76&lt;/td&gt;
+&lt;td&gt;0.62&lt;/td&gt;
+&lt;td&gt;0.44&lt;/td&gt;
+&lt;td&gt;0.58&lt;/td&gt;
+&lt;td&gt;0.55&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;None of the VIFs are greater than 5 (or tolerances less than 0.2), so again it
+seems that our variables are not collinear.&lt;/p&gt;
+&lt;p&gt;Another assumption of the linear regression that we should check is the
+normality of the residuals. This can be done using a quantile–quantile (Q–Q)
+plot of the empirical distribution of the residuals against a normal
+distribution.&lt;/p&gt;
+&lt;pre class="code R literal-block"&gt;
+plot&lt;span class="p"&gt;(&lt;/span&gt;md&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="Q–Q plot of residuals against standard normal distribution" src="./figures/residual-normality.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;Our observations fall close to the 45° line, so the residuals
+are approximately normal.&lt;/p&gt;
+&lt;p&gt;Another assumption to check is the &lt;em&gt;homoscedasticity&lt;/em&gt; of residuals, that is,
+that they have the equal variance. We can check this by plotting the each
+residual against the value that our model predicts for that observation. If
+there is a linear relationship (for example, if the residuals tend to be larger
+when the predicted value is larger), then homoscedasticity is violated.&lt;/p&gt;
+&lt;pre class="code R literal-block"&gt;
+plot&lt;span class="p"&gt;(&lt;/span&gt;md&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div class="figure align-center"&gt;
+&lt;img alt="plot of residuals against fitted values" src="./figures/residual-homoscedasticity.png" /&gt;
+&lt;/div&gt;
+&lt;p&gt;The red fitted line has close to 0 slope, so the residuals
+are largely homoscedastic.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="selecting-variables-in-model"&gt;
+&lt;h2&gt;Selecting Variables in Model&lt;/h2&gt;
+&lt;p&gt;Now that we have testing our assumptions, we can assess how well the model fits
+the data. To start, we can look at the &lt;em&gt;t&lt;/em&gt;-tests of the coefficients and the
+&lt;em&gt;F&lt;/em&gt;-test of the overall model.&lt;/p&gt;
+&lt;pre class="code R literal-block"&gt;
+&lt;span class="kp"&gt;summary&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;md&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;pre class="code literal-block"&gt;
+Coefficients:
+            Estimate Std. Error t value Pr(&amp;gt;|t|)
+(Intercept)  0.01406    0.06867   0.205 0.837930
+X1           0.32463    0.06375   5.092 7.45e-07 ***
+X2           0.02385    0.04661   0.512 0.609407
+X3           0.06550    0.05630   1.164 0.245846
+X4           0.30920    0.05058   6.113 4.25e-09 ***
+X5           0.02068    0.04950   0.418 0.676464
+X6          -0.03563    0.03907  -0.912 0.362744
+X7          -0.02678    0.05111  -0.524 0.600856
+X8           0.17878    0.05331   3.354 0.000935 ***
+X9          -0.12363    0.04787  -2.583 0.010434 *
+X10          0.11114    0.04760   2.335 0.020424 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.033 on 226 degrees of freedom
+Multiple R-squared:  0.568,    Adjusted R-squared:  0.5488
+F-statistic: 29.71 on 10 and 226 DF,  p-value: &amp;lt; 2.2e-16
+&lt;/pre&gt;
+&lt;p&gt;We see that some of our explanatory variables have statistically significant
+relationship with the response. The ones that do not we would like to remove,
+as long as the fit of our model is not unduly reduced. If the true values for
+the coefficients of these variables have small magnitude, then we should be
+able to remove them without much harming the fit of our model.&lt;/p&gt;
+&lt;p&gt;To accomplish this, we can perform &lt;em&gt;backwards elimination&lt;/em&gt;: one by one, we
+remove insignificant variables from our model, testing if it leads to a
+statistically significant decrease in the fit of the model. We can test the
+significance of the change in &lt;span class="formula"&gt;&lt;i&gt;R&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt; between the two models using the
+&lt;em&gt;F&lt;/em&gt;-test. We repeat this procedure until all of the variables are significant
+(using a significance level of 0.05).&lt;/p&gt;
+&lt;p&gt;Applying backwards elimination, we end up with a model that includes the
+following variables:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;1&lt;/sub&gt;&lt;/span&gt;: quality of teaching in lectures&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;4&lt;/sub&gt;&lt;/span&gt;: level of academic challenge&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;8&lt;/sub&gt;&lt;/span&gt;: opportunities to write about views and ideas&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;9&lt;/sub&gt;&lt;/span&gt;: program advising&lt;/li&gt;
+&lt;li&gt;&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;10&lt;/sub&gt;&lt;/span&gt;: career information&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Below is the summary of the &lt;em&gt;t&lt;/em&gt;-tests and &lt;em&gt;F&lt;/em&gt;-tests for this final model.&lt;/p&gt;
+&lt;pre class="code literal-block"&gt;
+Coefficients:
+            Estimate Std. Error t value Pr(&amp;gt;|t|)
+(Intercept)  0.02603    0.06745   0.386   0.6999
+X1           0.34397    0.05484   6.272 1.73e-09 ***
+X4           0.31227    0.04710   6.630 2.34e-10 ***
+X8           0.19050    0.04560   4.177 4.19e-05 ***
+X9          -0.11514    0.04577  -2.516   0.0126 *
+X10          0.12527    0.04516   2.774   0.0060 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.029 on 231 degrees of freedom
+Multiple R-squared:  0.5617,    Adjusted R-squared:  0.5523
+F-statistic: 59.22 on 5 and 231 DF,  p-value: &amp;lt; 2.2e-16
+&lt;/pre&gt;
+&lt;p&gt;The &lt;span class="formula"&gt;&lt;i&gt;R&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt; for the final model is only 0.0063 less than the original. The
+adjusted &lt;span class="formula"&gt;&lt;i&gt;R&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;, which removes the spurious increase in &lt;span class="formula"&gt;&lt;i&gt;R&lt;/i&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt; that
+is caused by adding unpredictive variables, is slightly &lt;em&gt;higher&lt;/em&gt; in the final
+model. Backwards elimination gives us a smaller model which explains nearly as
+much of the variance in our response variable as the one using all of the
+variables.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="next-steps"&gt;
+&lt;h2&gt;Next Steps&lt;/h2&gt;
+&lt;p&gt;There are some aspects of this regression that have not been addressed:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Statistical_data_type"&gt;statistical data type&lt;/a&gt; of our response variable is &lt;em&gt;ordinal&lt;/em&gt;, not
+real-valued. The standard linear regression assumes that the response
+variable is normally distributed, which is clearly not the case here.
+I think, ideally, we would use an &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Ordinal_regression"&gt;ordinal regression&lt;/a&gt; instead.&lt;/li&gt;
+&lt;li&gt;At the risk of overfitting, we might try capturing interaction between the
+explanatory variables by adding cross-product terms to the model like
+&lt;span class="formula"&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;&lt;i&gt;i&lt;/i&gt;&lt;/sub&gt;&lt;i&gt;X&lt;/i&gt;&lt;sub&gt;&lt;i&gt;j&lt;/i&gt;&lt;/sub&gt;&lt;/span&gt; where &lt;span class="formula"&gt;&lt;i&gt;i&lt;/i&gt; ≠ &lt;i&gt;j&lt;/i&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Dental Demographics</title><link href="http://marshallmallicoat.com/dental-demographics.html" rel="alternate"></link><published>2018-12-31T00:00:00-06:00</published><updated>2019-02-11T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-12-31:/dental-demographics.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The profitability of a dental practice depends greatly on its
 geographic location. The demographics of the patient population
