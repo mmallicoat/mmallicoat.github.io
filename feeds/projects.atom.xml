@@ -1370,7 +1370,7 @@ made a couple plots using &lt;tt class="docutils literal"&gt;matplotlib&lt;/tt&g
 &lt;/div&gt;
 &lt;p&gt;Unfortunately, these were difficult to read and not very useful
 for exploring the networks. To remedy this, I decided to use the
-visualization library &lt;tt class="docutils literal"&gt;d3&lt;/tt&gt; (written in JavaScript) to make some
+D3 visualization library (written in JavaScript) to make some
 interactive plots. After we convert the network data into the
 &amp;quot;node-link&amp;quot; JSON format using &lt;tt class="docutils literal"&gt;networkx&lt;/tt&gt;, we can read it into a
 HTML file containing JavaScript visualizations.&lt;/p&gt;
