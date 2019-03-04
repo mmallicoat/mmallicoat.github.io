@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0"><channel><title>Marshall Mallicoat - Marshall Mallicoat</title><link>http://marshallmallicoat.com/</link><description></description><lastBuildDate>Thu, 28 Feb 2019 00:00:00 -0600</lastBuildDate><item><title>Student Satisfaction Regression</title><link>http://marshallmallicoat.com/student-satisfaction.html</link><description>&lt;!-- Style: Student's *t*-test; Mann–Whitney *U* test; Wilcoxon rank-sum test;
-(Pearson's) chi-squared test; Smirnov–Kolmogorov test; *p*-value;
-*F*-test; en-dash in "Q–Q plot" not hyphen --&gt;
-&lt;p&gt;Sears et al. &lt;a class="footnote-reference" href="#sears" id="id1"&gt;[1]&lt;/a&gt; performed a survey of psychology students at the
-University of Calgary in order to better understand which factors lead to
-students' satisfaction with their degree program. In this project, I perform a
-regression analysis on the variables selected for this survey. &lt;a class="footnote-reference" href="#data" id="id2"&gt;[2]&lt;/a&gt; The
-code and data …&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Marshall Mallicoat</dc:creator><pubDate>Mon, 25 Feb 2019 00:00:00 -0600</pubDate><guid isPermaLink="false">tag:marshallmallicoat.com,2019-02-25:/student-satisfaction.html</guid></item><item><title>Dental Demographics</title><link>http://marshallmallicoat.com/dental-demographics.html</link><description>&lt;div class="section" id="introduction"&gt;
+<rss version="2.0"><channel><title>Marshall Mallicoat - Marshall Mallicoat</title><link>http://marshallmallicoat.com/</link><description></description><lastBuildDate>Tue, 19 Feb 2019 00:00:00 -0600</lastBuildDate><item><title>Dental Demographics</title><link>http://marshallmallicoat.com/dental-demographics.html</link><description>&lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The profitability of a dental practice depends greatly on its
 geographic location. The demographics of the patient population
