@@ -154,11 +154,12 @@ metric, the <em>graph density</em>.</p>
 <p>Graph density is defined as the ratio of the number of edges to
 the total possible number of edges between the nodes. The total
 possible would be achieved if every node was connected to every
-other node. For a graph with <em>n</em> nodes, this would result in <em>n
-choose 2</em> or <em>n * (n - 1) / 2</em> edges. The density thus varies from
-0 (in a graph with no edges) to 1 (in a graph with every possible
-edge). The densities of the financial and programming graphs are
-0.01 and 0.04, respectively, so they have low density.</p>
+other node. For a graph with <span class="formula"><i>n</i></span> nodes, this would result
+in <span class="formula"><span class="bigsymbol">(</span><span class="binom"><span class="binomstack"><i>n</i></span><span class="binomstack">2</span></span><span class="bigsymbol">)</span></span> or <span class="formula"><i>n</i>(<i>n</i> − 1) ⁄ 2</span> edges.
+The density thus varies from 0 (in a graph with no edges) to 1
+(in a graph with every possible edge). The densities of the
+financial and programming graphs are 0.01 and 0.04, respectively,
+so they have low density.</p>
 </div>
 <div class="section" id="centrality">
 <h3>Centrality</h3>
@@ -246,10 +247,9 @@ contributing to its high centrality.</p>
 <p>Another metric for describing a network is the <em>clustering
 coefficient.</em> Before we define this, first define a <em>triangle</em> as
 a sub-graph of three nodes that are all connected to each other.
-Suppose we have a node <em>u</em> with degree <em>n</em>. The maximum possible
-of triangles including <em>u</em> is <em>n choose 2</em>, or <em>n * (n - 1) / 2</em>.
+Suppose we have a node <span class="formula"><i>u</i></span> with degree <span class="formula"><i>n</i></span>. The maximum possible of triangles including <span class="formula"><i>u</i></span> is <span class="formula"><span class="bigsymbol">(</span><span class="binom"><span class="binomstack"><i>n</i></span><span class="binomstack">2</span></span><span class="bigsymbol">)</span></span>.
 The clustering coefficient is the number of existing triangles
-including node <em>u</em> divided by this maximum possible number.
+including node <span class="formula"><i>u</i></span> divided by this maximum possible number.
 So, this coefficient will always be between 0 and 1. It can be
 interpreted as the tendency of a node to cluster with other nodes.
 Any node that is only connected to a single other node will always have
