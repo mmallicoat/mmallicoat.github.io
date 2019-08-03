@@ -1,5 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feed.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2019-06-20T00:00:00-05:00</updated><entry><title>Dental Demographics</title><link href="http://marshallmallicoat.com/dental-demographics.html" rel="alternate"></link><published>2018-12-31T00:00:00-06:00</published><updated>2019-02-11T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-12-31:/dental-demographics.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feed.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2019-08-02T00:00:00-05:00</updated><entry><title>Carriages</title><link href="http://marshallmallicoat.com/carriages.html" rel="alternate"></link><published>2019-08-02T00:00:00-05:00</published><updated>2019-08-02T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2019-08-02:/carriages.html</id><summary type="html">&lt;p&gt;Webster's Dictionary &lt;a class="footnote-reference" href="#websters" id="id1"&gt;[1]&lt;/a&gt; lists many different types of
+carriages among its entries. Strangely, it seems to me, most of these
+are accompanied with illustrations. These always catch my eye as I
+look up words, so I've gradually become aware of the great diversity
+in the construction of these vehicles. For …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Webster's Dictionary &lt;a class="footnote-reference" href="#websters" id="id1"&gt;[1]&lt;/a&gt; lists many different types of
+carriages among its entries. Strangely, it seems to me, most of these
+are accompanied with illustrations. These always catch my eye as I
+look up words, so I've gradually become aware of the great diversity
+in the construction of these vehicles. For no reason other than to
+scratch an itch, I've collected a list of different types of carriages
+and wagons here. Unless otherwise noted, I believe I found them in
+Webster's.&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;berlin&lt;/li&gt;
+&lt;li&gt;brougham&lt;/li&gt;
+&lt;li&gt;buckboard&lt;/li&gt;
+&lt;li&gt;cabriolet&lt;/li&gt;
+&lt;li&gt;chaise&lt;/li&gt;
+&lt;li&gt;coach-and-four &lt;a class="footnote-reference" href="#stephenson" id="id2"&gt;[2]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;droshkey&lt;/li&gt;
+&lt;li&gt;four-in-hand&lt;/li&gt;
+&lt;li&gt;gig&lt;/li&gt;
+&lt;li&gt;hackney&lt;/li&gt;
+&lt;li&gt;hansom&lt;/li&gt;
+&lt;li&gt;jaunting car&lt;/li&gt;
+&lt;li&gt;phaeton&lt;/li&gt;
+&lt;li&gt;post chaise &lt;a class="footnote-reference" href="#gibbon" id="id3"&gt;[3]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;prairie schooner&lt;/li&gt;
+&lt;li&gt;rickshaw&lt;/li&gt;
+&lt;li&gt;sleigh&lt;/li&gt;
+&lt;li&gt;stagecoach (or simply coach)&lt;/li&gt;
+&lt;li&gt;surrey&lt;/li&gt;
+&lt;li&gt;telega&lt;/li&gt;
+&lt;li&gt;tuk-tuk&lt;/li&gt;
+&lt;li&gt;van&lt;/li&gt;
+&lt;li&gt;victoria&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table class="docutils footnote" frame="void" id="websters" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;&lt;em&gt;Webster's New Collegiate Dictionary&lt;/em&gt; (G. &amp;amp; C. Merriam Company, 1979)
+and &lt;em&gt;Webster's New International Dictionary&lt;/em&gt; (2nd ed., G. &amp;amp; C. Merriam Company, 1941)&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="stephenson" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id2"&gt;[2]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Neil Stephenson's &lt;em&gt;Quicksilver&lt;/em&gt; (William Morrow and Company, 2003)&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;table class="docutils footnote" frame="void" id="gibbon" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id3"&gt;[3]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Edward Gibbon's &lt;em&gt;The Autobiography of Edward Gibbon&lt;/em&gt; (Ed. by Dero A. Saunders, Meridian Books, 1961)&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</content></entry><entry><title>Minimalist Websites</title><link href="http://marshallmallicoat.com/minimalist-sites.html" rel="alternate"></link><published>2019-08-02T00:00:00-05:00</published><updated>2019-08-02T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2019-08-02:/minimalist-sites.html</id><summary type="html">&lt;p&gt;I like hand-made personal websites, especially those with a minimalist
+bent, so I've collected some here. This list has some overlap with my
+&lt;a class="reference external" href="./links.html"&gt;Links to People&lt;/a&gt;, since when I've found someone with
+a cool minimalist website, I've often kept a link to it.&lt;/p&gt;
+&lt;div class="section" id="show-me-the-sites"&gt;
+&lt;h2&gt;Show Me the Sites&lt;/h2&gt;
+&lt;p&gt;Shared hosting sites …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I like hand-made personal websites, especially those with a minimalist
+bent, so I've collected some here. This list has some overlap with my
+&lt;a class="reference external" href="./links.html"&gt;Links to People&lt;/a&gt;, since when I've found someone with
+a cool minimalist website, I've often kept a link to it.&lt;/p&gt;
+&lt;div class="section" id="show-me-the-sites"&gt;
+&lt;h2&gt;Show Me the Sites&lt;/h2&gt;
+&lt;p&gt;Shared hosting sites like &lt;a class="reference external" href="https://crime.team/"&gt;crime.team&lt;/a&gt; and
+&lt;a class="reference external" href="http://tilde.club/"&gt;tilde.club&lt;/a&gt; are styled like a terminal window.
+(Here's a &lt;a class="reference external" href="http://tilde.club/%7Epfhawkins/othertildes.html"&gt;list&lt;/a&gt; of
+some more.)&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://legiblenews.com/"&gt;Legible News&lt;/a&gt; is a news site populated
+from Wikipedia's Current Events portal. (It is built by &lt;a class="reference external" href="https://www.coltonhurst.com/index.html"&gt;Colton Hurst&lt;/a&gt;, who has a fairly
+minimalist site, too.)&lt;/p&gt;
+&lt;p&gt;The &lt;a class="reference external" href="https://text.npr.org/"&gt;text-only version of NPR&lt;/a&gt; is pretty
+neat.&lt;/p&gt;
+&lt;p&gt;The personal website of &lt;a class="reference external" href="http://domhofmann.com/"&gt;Dom Hofmann&lt;/a&gt;, a
+co-founder of Vine, &lt;em&gt;has no CSS.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;There is a certain style of blog where the page is dominated by a
+simple list of articles, which seems to have been informed by the
+general style of &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators"&gt;static site generators&lt;/a&gt;.
+Here are some: &lt;a class="reference external" href="https://trevore.com/"&gt;Trever Elkins&lt;/a&gt;, &lt;a class="reference external" href="https://www.devever.net/~hl/"&gt;Hugo Landau&lt;/a&gt;, &lt;a class="reference external" href="https://danluu.com/"&gt;Dan Luu&lt;/a&gt;,
+&lt;a class="reference external" href="http://blog.zorinaq.com/"&gt;Marc Bevand&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Idiosyncratic and minimal: &lt;a class="reference external" href="http://gaxun.net/"&gt;Gaxun.net&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;More full-featured, but hand-made feel: US branch of the &lt;a class="reference external" href="http://transfiguration.chartreux.org/index.htm"&gt;Carthusian
+Order&lt;/a&gt;, poet &lt;a class="reference external" href="http://erikkennedy.com/"&gt;Erik
+Kennedy&lt;/a&gt;, poet &lt;a class="reference external" href="https://www.stephaniekwak.com/"&gt;Stephanie Kwak&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Low Tech Magazine&lt;/em&gt; has a &lt;a class="reference external" href="https://solar.lowtechmagazine.com/"&gt;solar-powered site&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Portfolios: &lt;a class="reference external" href="http://www.audunmortensen.com/"&gt;Audun Mortensen&lt;/a&gt;, &lt;a class="reference external" href="http://www.davidfishkind.com/"&gt;David Fishkind&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Dental Demographics</title><link href="http://marshallmallicoat.com/dental-demographics.html" rel="alternate"></link><published>2018-12-31T00:00:00-06:00</published><updated>2019-02-11T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-12-31:/dental-demographics.html</id><summary type="html">&lt;div class="section" id="introduction"&gt;
 &lt;h2&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;The profitability of a dental practice depends greatly on its
 geographic location. The demographics of the patient population
@@ -1106,7 +1197,7 @@ could be incorporated into the model.&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="../thoughts-on-sports.html"&gt;Thoughts on sports&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="../vanitas.html"&gt;Vanitas&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Links to People</title><link href="http://marshallmallicoat.com/links.html" rel="alternate"></link><published>2018-09-12T00:00:00-05:00</published><updated>2018-09-12T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-12:/links.html</id><summary type="html">&lt;p&gt;Here is a collection of links to personal websites, either those
+</content></entry><entry><title>Links to People</title><link href="http://marshallmallicoat.com/links.html" rel="alternate"></link><published>2018-09-12T00:00:00-05:00</published><updated>2019-08-02T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-12:/links.html</id><summary type="html">&lt;p&gt;Here is a collection of links to personal websites, either those
 I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;div class="section" id="arts-and-letters"&gt;
 &lt;h2&gt;Arts and Letters&lt;/h2&gt;
@@ -1114,11 +1205,11 @@ I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://berliac.com"&gt;Berliac&lt;/a&gt;: comic book artist&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://gabbybess.com/"&gt;Bess, Gabby&lt;/a&gt;: writer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.crispinbest.com/"&gt;Best, Crispin&lt;/a&gt;: writer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.gwern.net/"&gt;Branwen, Gwern&lt;/a&gt;: writer on many topics&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.gwern.net/"&gt;Branwen, Gwern&lt;/a&gt;: commentator on many topics&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.davidfishkind.com/"&gt;Fishkind, David&lt;/a&gt;: writer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://poemshape.wordpress.com/"&gt;Gillespie, Patrick&lt;/a&gt;: poet&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://erikkennedy.com/"&gt;Kennedy, Erik&lt;/a&gt;: poet&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.audunmortensen.com/"&gt;Mortensen …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Here is a collection of links to personal websites, either those
+&lt;li&gt;&lt;a class="reference external" href="https://cassandragillig.com/"&gt;Gillig, Cassandra&lt;/a&gt;: poet&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://erikkennedy.com/"&gt;Kennedy …&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Here is a collection of links to personal websites, either those
 I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;div class="section" id="arts-and-letters"&gt;
 &lt;h2&gt;Arts and Letters&lt;/h2&gt;
@@ -1126,10 +1217,13 @@ I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://berliac.com"&gt;Berliac&lt;/a&gt;: comic book artist&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://gabbybess.com/"&gt;Bess, Gabby&lt;/a&gt;: writer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.crispinbest.com/"&gt;Best, Crispin&lt;/a&gt;: writer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.gwern.net/"&gt;Branwen, Gwern&lt;/a&gt;: writer on many topics&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.gwern.net/"&gt;Branwen, Gwern&lt;/a&gt;: commentator on many topics&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.davidfishkind.com/"&gt;Fishkind, David&lt;/a&gt;: writer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://poemshape.wordpress.com/"&gt;Gillespie, Patrick&lt;/a&gt;: poet&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://cassandragillig.com/"&gt;Gillig, Cassandra&lt;/a&gt;: poet&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://erikkennedy.com/"&gt;Kennedy, Erik&lt;/a&gt;: poet&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.stephaniekwak.com/"&gt;Kwak, Stephanie&lt;/a&gt;: computery poet&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.taolin.info/"&gt;Tao Lin&lt;/a&gt;: novelist and poet&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.audunmortensen.com/"&gt;Mortensen, Audun&lt;/a&gt;: artist and poet&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.pageantboys.com/"&gt;Pageant Boys&lt;/a&gt;: my friend Alexander Sheppard's band&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://hillarypredko.com/"&gt;Predko, Hillary&lt;/a&gt;: writer and designer&lt;/li&gt;
@@ -1146,11 +1240,8 @@ I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://trevore.com/"&gt;Elkins, Trevor&lt;/a&gt;: programmer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://blog.alexellis.io/"&gt;Ellis, Alex&lt;/a&gt;: programmer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://gaxun.net/"&gt;Gaxun&lt;/a&gt;: a raft drifting on the open sea&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://hamberg.no/erlend/"&gt;Hamburg, Erlend&lt;/a&gt;: programmer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://joeyh.name/"&gt;Hess, Joey&lt;/a&gt;: off-the-grid programmer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.sacrideo.us/"&gt;Hsu, Aaron&lt;/a&gt;: programmer and
-handwriting enthusiast&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://crime.team/~jkap/"&gt;Kaplan, Jae&lt;/a&gt;: founder of shared hosting site &lt;a class="reference external" href="https://crime.team/"&gt;crime.team&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://hamberg.no/erlend/"&gt;Hamburg, Erlend&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="http://www.sacrideo.us/"&gt;Hsu, Aaron&lt;/a&gt;: programmer and handwriting enthusiast&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://www.devever.net/~hl/"&gt;Landau, Hugo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://danluu.com/"&gt;Luu, Dan&lt;/a&gt;: programmer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://coolguy.website/"&gt;Mandeville, Zach&lt;/a&gt;: solarpunk&lt;/li&gt;
