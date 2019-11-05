@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat - Marshall Mallicoat</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/marshall-mallicoat.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2019-10-12T00:00:00-05:00</updated><entry><title>Dream on March 6th, 2014</title><link href="http://marshallmallicoat.com/dream.html" rel="alternate"></link><published>2019-10-12T00:00:00-05:00</published><updated>2019-10-12T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2019-10-12:/dream.html</id><content type="html">&lt;audio controls&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat - Marshall Mallicoat</title><link href="http://marshallmallicoat.com/" rel="alternate"></link><link href="http://marshallmallicoat.com/feeds/marshall-mallicoat.atom.xml" rel="self"></link><id>http://marshallmallicoat.com/</id><updated>2019-11-04T00:00:00-06:00</updated><entry><title>Dream on March 6th, 2014</title><link href="http://marshallmallicoat.com/dream.html" rel="alternate"></link><published>2019-10-12T00:00:00-05:00</published><updated>2019-10-12T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2019-10-12:/dream.html</id><content type="html">&lt;audio controls&gt;
   &lt;source src="media/Dream 128kbps.mp3" type="audio/mp3"&gt;
     A HTML5 audio player should appear here.
 &lt;/audio&gt;</content></entry><entry><title>My Surname</title><link href="http://marshallmallicoat.com/surname.html" rel="alternate"></link><published>2019-10-12T00:00:00-05:00</published><updated>2019-10-12T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2019-10-12:/surname.html</id><summary type="html">&lt;p&gt;My surname is &lt;em&gt;Mallicoat&lt;/em&gt;, pronounced like the first two syllables of
@@ -105,16 +105,17 @@ and &lt;em&gt;Webster's New International Dictionary&lt;/em&gt; (2nd ed., G. &am
 &lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id3"&gt;[3]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Edward Gibbon's &lt;em&gt;The Autobiography of Edward Gibbon&lt;/em&gt; (ed. by Dero A. Saunders, Meridian Books, 1961)&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-</content></entry><entry><title>Minimalist Websites</title><link href="http://marshallmallicoat.com/minimalist-sites.html" rel="alternate"></link><published>2019-08-02T00:00:00-05:00</published><updated>2019-08-02T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2019-08-02:/minimalist-sites.html</id><summary type="html">&lt;p&gt;I like hand-made personal websites, especially those with a minimalist
-bent, so I've collected some here. This list has some overlap with my
-&lt;a class="reference external" href="./links.html"&gt;Links to People&lt;/a&gt;, since when I've found someone with
-a cool minimalist website, I've often kept a link to it.&lt;/p&gt;
+</content></entry><entry><title>Minimalist Websites</title><link href="http://marshallmallicoat.com/minimalist-sites.html" rel="alternate"></link><published>2019-08-02T00:00:00-05:00</published><updated>2019-11-04T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2019-08-02:/minimalist-sites.html</id><summary type="html">&lt;p&gt;I like hand-made personal websites, especially those with a minimalist
+bent, so I've collected some here.&lt;/p&gt;
 &lt;div class="section" id="show-me-the-sites"&gt;
 &lt;h2&gt;Show Me the Sites&lt;/h2&gt;
-&lt;p&gt;Shared hosting sites …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I like hand-made personal websites, especially those with a minimalist
-bent, so I've collected some here. This list has some overlap with my
-&lt;a class="reference external" href="./links.html"&gt;Links to People&lt;/a&gt;, since when I've found someone with
-a cool minimalist website, I've often kept a link to it.&lt;/p&gt;
+&lt;p&gt;Shared hosting sites &lt;a class="reference external" href="https://crime.team/"&gt;crime.team&lt;/a&gt; and
+&lt;a class="reference external" href="http://tilde.club/"&gt;tilde.club&lt;/a&gt; are styled like a terminal window.
+(Here's a &lt;a class="reference external" href="http://tilde.club/%7Epfhawkins/othertildes.html"&gt;list&lt;/a&gt; of
+some more.)&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://legiblenews.com/"&gt;Legible News&lt;/a&gt; is a news site populated
+from Wikipedia's Current …&lt;/p&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;I like hand-made personal websites, especially those with a minimalist
+bent, so I've collected some here.&lt;/p&gt;
 &lt;div class="section" id="show-me-the-sites"&gt;
 &lt;h2&gt;Show Me the Sites&lt;/h2&gt;
 &lt;p&gt;Shared hosting sites &lt;a class="reference external" href="https://crime.team/"&gt;crime.team&lt;/a&gt; and
@@ -148,7 +149,24 @@ Kennedy&lt;/a&gt;, poet &lt;a class="reference external" href="https://www.steph
 &lt;li&gt;&lt;a class="reference external" href="../thoughts-on-sports.html"&gt;Thoughts on sports&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="../vanitas.html"&gt;Vanitas&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content></entry><entry><title>Links to People</title><link href="http://marshallmallicoat.com/links.html" rel="alternate"></link><published>2018-09-12T00:00:00-05:00</published><updated>2019-08-02T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-12:/links.html</id><summary type="html">&lt;p&gt;Here is a collection of links to personal websites, either those
+</content></entry><entry><title>Press and Appearances</title><link href="http://marshallmallicoat.com/press.html" rel="alternate"></link><published>2018-09-05T00:00:00-05:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-05:/press.html</id><summary type="html">&lt;div class="section" id="press-and-appearances"&gt;
+&lt;h2&gt;Press and Appearances&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;A reading I gave was covered in Susan Dunne's &lt;a class="reference external" href="http://www.courant.com/entertainment/arts-theater/hc-syllable-poetry-series-little-river-restorative-20171119-story.html"&gt;&amp;quot;Syllable: A Monthly Night Of Words And
+Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;em&gt;Hartford Courant&lt;/em&gt;, 28 Nov. 2017).&lt;/li&gt;
+&lt;li&gt;I appeared briefly in Adam Humphrey's documentary &lt;a class="reference external" href="https://www.youtube.com/watch?v=Ppm8__FxZ4o"&gt;Shitty Youth&lt;/a&gt; [at the 18:46
+minute mark] (Nov. 2012).&lt;/li&gt;
+&lt;li&gt;I was profiled in …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="press-and-appearances"&gt;
+&lt;h2&gt;Press and Appearances&lt;/h2&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;A reading I gave was covered in Susan Dunne's &lt;a class="reference external" href="http://www.courant.com/entertainment/arts-theater/hc-syllable-poetry-series-little-river-restorative-20171119-story.html"&gt;&amp;quot;Syllable: A Monthly Night Of Words And
+Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;em&gt;Hartford Courant&lt;/em&gt;, 28 Nov. 2017).&lt;/li&gt;
+&lt;li&gt;I appeared briefly in Adam Humphrey's documentary &lt;a class="reference external" href="https://www.youtube.com/watch?v=Ppm8__FxZ4o"&gt;Shitty Youth&lt;/a&gt; [at the 18:46
+minute mark] (Nov. 2012).&lt;/li&gt;
+&lt;li&gt;I was profiled in Beach Sloth's &lt;a class="reference external" href="http://www.beachsloth.com/marshall-mallicoat-man-myth-legend.html"&gt;&amp;quot;Marshall Mallicoat: Man, Myth, Legend&amp;quot;&lt;/a&gt; (23 Mar. 2012).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</content></entry><entry><title>Links to People</title><link href="http://marshallmallicoat.com/links.html" rel="alternate"></link><published>2018-08-02T00:00:00-05:00</published><updated>2019-11-04T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-08-02:/links.html</id><summary type="html">&lt;p&gt;Here is a collection of links to personal websites, either those
 I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;div class="section" id="arts-and-letters"&gt;
 &lt;h2&gt;Arts and Letters&lt;/h2&gt;
@@ -175,7 +193,6 @@ I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://erikkennedy.com/"&gt;Kennedy, Erik&lt;/a&gt;: poet&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://mapsformaking.com/"&gt;Kraker, Mauriah&lt;/a&gt;: dancer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://www.stephaniekwak.com/"&gt;Kwak, Stephanie&lt;/a&gt;: computery poet&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://www.taolin.info/"&gt;Tao Lin&lt;/a&gt;: novelist and poet&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.audunmortensen.com/"&gt;Mortensen, Audun&lt;/a&gt;: artist and poet&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.jacksonnieuwland.com"&gt;Nieuwland, Jackson&lt;/a&gt;: poet&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.pageantboys.com/"&gt;Pageant Boys&lt;/a&gt;: my friend Alexander Sheppard's band&lt;/li&gt;
@@ -184,39 +201,30 @@ I've stumbled upon or those run by people I know.&lt;/p&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://erikstinson.com/"&gt;Stinson, Erik&lt;/a&gt;: &amp;quot;writer and commercial creative&amp;quot;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.looknohands.me/"&gt;Vandy, Michelle&lt;/a&gt;: designer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.placesiveneverbeen.com/"&gt;Wagenknecht, Addie&lt;/a&gt;: artist and designer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://jtwelsch.com/"&gt;Welsch, J.T.&lt;/a&gt;: &amp;quot;writer and academic&amp;quot;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://www.leahwilks.com/"&gt;Wilks, Leah&lt;/a&gt;: dancer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="computing"&gt;
 &lt;h2&gt;Computing&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="http://zorinaq.com/"&gt;Bevand, Marc&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://trevore.com/"&gt;Elkins, Trevor&lt;/a&gt;: programmer&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://blog.alexellis.io/"&gt;Ellis, Alex&lt;/a&gt;: programmer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://gaxun.net/"&gt;Gaxun&lt;/a&gt;: a raft drifting on the open sea&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://hamberg.no/erlend/"&gt;Hamburg, Erlend&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://www.sacrideo.us/"&gt;Hsu, Aaron&lt;/a&gt;: programmer and handwriting enthusiast&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://www.devever.net/~hl/"&gt;Landau, Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://danluu.com/"&gt;Luu, Dan&lt;/a&gt;: programmer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://coolguy.website/"&gt;Mandeville, Zach&lt;/a&gt;: solarpunk&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://begriffs.com/"&gt;Nelson, Joe&lt;/a&gt;: programmer&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="https://www.alicemaz.com/"&gt;Maz, Alice&lt;/a&gt;: programmer and writer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://blog.invisiblethings.org/about/"&gt;Rutkowska, Joanna&lt;/a&gt;: computer engineer&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://tilde.town/~vilmibm/"&gt;Smith, Nathaniel&lt;/a&gt;: founder of shared hosting site &lt;a class="reference external" href="https://tilde.town"&gt;tilde.town&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="https://sheep.horse/"&gt;Stephens, Andrew&lt;/a&gt;: programmer&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
 &lt;div class="section" id="gopher-sites"&gt;
 &lt;h2&gt;Gopher Sites &lt;a class="footnote-reference" href="#gopher" id="id1"&gt;[1]&lt;/a&gt;&lt;/h2&gt;
 &lt;ul class="simple"&gt;
-&lt;li&gt;&lt;a class="reference external" href="gopher://sdf.org:70/1/users/dbucklin/"&gt;Bucklin, Dave&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="gopher://vernunftzentrum.de/1/index.gph"&gt;C-Keen&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="gopher://baud.baby"&gt;Cat&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://vernunftzentrum.de/1/ckeen/index.gph"&gt;C-Keen&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://baud.baby"&gt;Cat&lt;/a&gt;: cool cat&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="gopher://sdf.org/1/users/celadevra"&gt;celadevra&lt;/a&gt;: editor&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="gopher://grex.org/1/%7ejandal"&gt;jandal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="gopher://sdf.org/1/users/jynx/"&gt;jynx&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="gopher://circumlunar.space/1/%7esolderpunk/"&gt;solderpunk&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a class="reference external" href="gopher://gopher.black"&gt;Tomasino, James&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://grex.org/1/~jandal"&gt;jandal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://sdf.org/1/users/jynx"&gt;jynx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://circumlunar.space/1/~solderpunk"&gt;solderpunk&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class="reference external" href="gopher://republic.circumlunar.space/1/~spring"&gt;spring&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table class="docutils footnote" frame="void" id="gopher" rules="none"&gt;
 &lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
@@ -229,23 +237,6 @@ To start reading right away, use the &lt;a class="reference external" href="http
 For a more immersive experience, try the &lt;a class="reference external" href="http://lynx.invisible-island.net/"&gt;Lynx&lt;/a&gt; browser.&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;/div&gt;
-</content></entry><entry><title>Press and Appearances</title><link href="http://marshallmallicoat.com/press.html" rel="alternate"></link><published>2018-09-05T00:00:00-05:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-05:/press.html</id><summary type="html">&lt;div class="section" id="press-and-appearances"&gt;
-&lt;h2&gt;Press and Appearances&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;A reading I gave was covered in Susan Dunne's &lt;a class="reference external" href="http://www.courant.com/entertainment/arts-theater/hc-syllable-poetry-series-little-river-restorative-20171119-story.html"&gt;&amp;quot;Syllable: A Monthly Night Of Words And
-Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;em&gt;Hartford Courant&lt;/em&gt;, 28 Nov. 2017).&lt;/li&gt;
-&lt;li&gt;I appeared briefly in Adam Humphrey's documentary &lt;a class="reference external" href="https://www.youtube.com/watch?v=Ppm8__FxZ4o"&gt;Shitty Youth&lt;/a&gt; [at the 18:46
-minute mark] (Nov. 2012).&lt;/li&gt;
-&lt;li&gt;I was profiled in …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="press-and-appearances"&gt;
-&lt;h2&gt;Press and Appearances&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;A reading I gave was covered in Susan Dunne's &lt;a class="reference external" href="http://www.courant.com/entertainment/arts-theater/hc-syllable-poetry-series-little-river-restorative-20171119-story.html"&gt;&amp;quot;Syllable: A Monthly Night Of Words And
-Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;em&gt;Hartford Courant&lt;/em&gt;, 28 Nov. 2017).&lt;/li&gt;
-&lt;li&gt;I appeared briefly in Adam Humphrey's documentary &lt;a class="reference external" href="https://www.youtube.com/watch?v=Ppm8__FxZ4o"&gt;Shitty Youth&lt;/a&gt; [at the 18:46
-minute mark] (Nov. 2012).&lt;/li&gt;
-&lt;li&gt;I was profiled in Beach Sloth's &lt;a class="reference external" href="http://www.beachsloth.com/marshall-mallicoat-man-myth-legend.html"&gt;&amp;quot;Marshall Mallicoat: Man, Myth, Legend&amp;quot;&lt;/a&gt; (23 Mar. 2012).&lt;/li&gt;
-&lt;/ul&gt;
 &lt;/div&gt;
 </content></entry><entry><title>Writing Published Elsewhere</title><link href="http://marshallmallicoat.com/writing-published.html" rel="alternate"></link><published>2018-01-31T00:00:00-06:00</published><updated>2019-06-20T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-01-31:/writing-published.html</id><summary type="html">&lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://magazine.nytyrant.com/poems-marshall-mallicoat/"&gt;Poems&lt;/a&gt;
