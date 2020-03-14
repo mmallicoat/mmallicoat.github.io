@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>Marshall Mallicoat</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="https://marshallmallicoat.com/theme/css/style.css" />
+ <!-- adds article description to head, if available -->
+</head>
+
+<body>
+  <header>
+      <h1><a href="https://marshallmallicoat.com/" title="Home">Marshall Mallicoat</a></h1>
+  </header>
+
+  <main>
+<article>
+  <header><h1>Found Poetry</h1></header>
+  <footer>
+        Published
+        <time class="published" datetime="2020-03-13T00:00:00-05:00">
+        13 Mar 2020</time>
+  </footer>
+
+  <div class="section" id="a-stylized-bird-with-an-open-mouth-tweeting">
+<h2>A stylized bird with an open mouth, tweeting.</h2>
+<p>While reading a news article <a class="footnote-reference" href="#article" id="id1">[1]</a> with the <a class="reference external" href="https://en.wikipedia.org/wiki/W3m">w3m</a> text-based Web browser,
+I noticed some strange sentences interspersed in the markup gore you typically
+see when reading the Web without JavaScript.</p>
+<pre class="literal-block">
+The UK government warns Trump that war with Iran 'is in none of our interests'
+
+Adam Bienkov
+2020-01-03T10:33:25Z
+ The letter F.  An envelope. It indicates the ability to send an email.  An
+image of a chain link. It symobilizes a website link url.  A stylized bird
+with an open mouth, tweeting.  The word &quot;in&quot;.  A stylized letter F.
+ Three evenly spaced dots forming an ellipsis: &quot;...&quot;. Two crossed lines that
+form an 'X'. It indicates a way to close an interaction, or dismiss a
+notification.
+Donald Trump Boris Johnson Donald Trump Boris Johnson [5e0f163885]
+Donald Trump and Boris Johnson. Getty
+</pre>
+<p>The parts that stuck out to me were:</p>
+<ul class="simple">
+<li>The letter F.</li>
+<li>An envelope. It indicates the ability to send an email.</li>
+<li>An image of a chain link. It symobilizes a website link url.</li>
+</ul>
+<p>And so on. What are these things anyway? Looking at the source of the page,
+I saw it has a bunch of icons which are also hyperlinks. The icon class
+contains a non-standard HTML tag <tt class="docutils literal">&lt;desc&gt;</tt> which contains a description
+of the icon (perhaps in a gesture of accessibility toward people with vision
+impairment). The icon block looks something like this:</p>
+<pre class="code html literal-block">
+<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://www.facebook.com&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;svg-icon facebook-icon&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>Facebook Icon<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">desc</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;desc&quot;</span><span class="p">&gt;</span>The letter F.<span class="p">&lt;/</span><span class="nt">desc</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre>
+<p>The body of the <tt class="docutils literal">&lt;desc&gt;</tt> elements get dumped into the visible text in the w3m
+browser. I wrote a little Python script to extract these descriptions.</p>
+<pre class="code python literal-block">
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'news_article.html'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">article</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">snippets</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;desc id=&quot;desc&quot;&gt;(.*)&lt;\/desc&gt;'</span><span class="p">,</span> <span class="n">article</span><span class="p">)</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'snippets.txt'</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">snippets</span><span class="p">))</span>
+</pre>
+<p>Finally, here are all these little snippets standing alone, with the article
+and other junk stripped out. Read together, they have some majesty.</p>
+<div class="line-block">
+<div class="line">A vertical stack of three evenly spaced horizontal lines.</div>
+<div class="line">A magnifying glass. It indicates, &quot;Click to perform a search&quot;.</div>
+<div class="line">The words &quot;Business Insider&quot;.</div>
+<div class="line">An icon in the shape of a person's head and shoulders. It often indicates a user profile.</div>
+<div class="line">An icon in the shape of a person's head and shoulders. It often indicates a user profile.</div>
+<div class="line">The word Business</div>
+<div class="line">The word Life</div>
+<div class="line">The word News</div>
+<div class="line">A magnifying glass. It indicates, &quot;Click to perform a search&quot;.</div>
+<div class="line">The word &quot;Insider&quot;.</div>
+<div class="line">Two crossed lines that form an 'X'. It indicates a way to close an interaction, or dismiss a notification.</div>
+<div class="line">The word Business</div>
+<div class="line">The word Life</div>
+<div class="line">The word News</div>
+<div class="line">The word All</div>
+<div class="line">An icon in the shape of a person's head and shoulders. It often indicates a user profile.</div>
+<div class="line">An icon in the shape of a person's head and shoulders. It often indicates a user profile.</div>
+<div class="line">An icon of the world globe, indicating different international options.&quot;</div>
+<div class="line">The letter F.</div>
+<div class="line">A stylized bird with an open mouth, tweeting.</div>
+<div class="line">The word &quot;in&quot;.</div>
+<div class="line">A play button in the shape of a television screen.</div>
+<div class="line">A stylized camera.</div>
+<div class="line">The letter F.</div>
+<div class="line">An envelope. It indicates the ability to send an email.</div>
+<div class="line">An image of a chain link. It symobilizes a website link url.</div>
+<div class="line">A stylized bird with an open mouth, tweeting.</div>
+<div class="line">The word &quot;in&quot;.</div>
+<div class="line">A stylized letter F.</div>
+<div class="line">Three evenly spaced dots forming an ellipsis: &quot;...&quot;.</div>
+<div class="line">Two crossed lines that form an 'X'. It indicates a way to close an interaction, or dismiss a notification.</div>
+<div class="line">A check mark. It indicates a confirmation of your intended interaction.</div>
+</div>
+<hr class="docutils" />
+<table class="docutils footnote" frame="void" id="article" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Bienkov, Adam. &quot;The UK government warns Trump that war with Iran 'is in none of our interests'.&quot;
+<em>Business Insider</em>, 3 Jan. 2020,
+<a class="reference external" href="https://www.businessinsider.com/uk-warns-donald-trump-against-launching-war-iran-qassem-soleimani-2020-1">https://www.businessinsider.com/uk-warns-donald-trump-against-launching-war-iran-qassem-soleimani-2020-1</a>.
+Accessed 13 March 2020.</td></tr>
+</tbody>
+</table>
+</div>
+
+
+</article>
+  </main>
+
+  <hr>
+  <footer>
+  <nav>
+    <h3>Navigation</h3>
+    <ul>
+      <li><a href="https://marshallmallicoat.com/">Home</a></li>
+      <li><a href="https://marshallmallicoat.com/about.html">About</a></li>
+      <li><a href="https://marshallmallicoat.com/feed.xml">Feed</a></li>
+    </ul>
+  </nav>
+  </footer>
+</body>
+</html>

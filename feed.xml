@@ -1,5 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat</title><link href="https://marshallmallicoat.com/" rel="alternate"></link><link href="https://marshallmallicoat.com/feed.xml" rel="self"></link><id>https://marshallmallicoat.com/</id><updated>2020-03-07T00:00:00-06:00</updated><entry><title>Der Baader Meinhof Komplex</title><link href="https://marshallmallicoat.com/baader-meinhof.html" rel="alternate"></link><published>2020-02-24T00:00:00-06:00</published><updated>2020-02-24T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2020-02-24:/baader-meinhof.html</id><summary type="html">&lt;p&gt;Here are some stills from the 2008 film &lt;em&gt;Der Baader Meinhof Komplex&lt;/em&gt;,
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat</title><link href="https://marshallmallicoat.com/" rel="alternate"></link><link href="https://marshallmallicoat.com/feed.xml" rel="self"></link><id>https://marshallmallicoat.com/</id><updated>2020-03-13T00:00:00-05:00</updated><entry><title>Found Poetry</title><link href="https://marshallmallicoat.com/found-poetry.html" rel="alternate"></link><published>2020-03-13T00:00:00-05:00</published><updated>2020-03-13T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2020-03-13:/found-poetry.html</id><summary type="html">&lt;div class="section" id="a-stylized-bird-with-an-open-mouth-tweeting"&gt;
+&lt;h2&gt;A stylized bird with an open mouth, tweeting.&lt;/h2&gt;
+&lt;p&gt;While reading a news article &lt;a class="footnote-reference" href="#article" id="id1"&gt;[1]&lt;/a&gt; with the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/W3m"&gt;w3m&lt;/a&gt; text-based Web browser,
+I noticed some strange sentences interspersed in the markup gore you typically
+see when reading the Web without JavaScript.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+The UK government warns Trump that war with Iran 'is in …&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="a-stylized-bird-with-an-open-mouth-tweeting"&gt;
+&lt;h2&gt;A stylized bird with an open mouth, tweeting.&lt;/h2&gt;
+&lt;p&gt;While reading a news article &lt;a class="footnote-reference" href="#article" id="id1"&gt;[1]&lt;/a&gt; with the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/W3m"&gt;w3m&lt;/a&gt; text-based Web browser,
+I noticed some strange sentences interspersed in the markup gore you typically
+see when reading the Web without JavaScript.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+The UK government warns Trump that war with Iran 'is in none of our interests'
+
+Adam Bienkov
+2020-01-03T10:33:25Z
+ The letter F.  An envelope. It indicates the ability to send an email.  An
+image of a chain link. It symobilizes a website link url.  A stylized bird
+with an open mouth, tweeting.  The word &amp;quot;in&amp;quot;.  A stylized letter F.
+ Three evenly spaced dots forming an ellipsis: &amp;quot;...&amp;quot;. Two crossed lines that
+form an 'X'. It indicates a way to close an interaction, or dismiss a
+notification.
+Donald Trump Boris Johnson Donald Trump Boris Johnson [5e0f163885]
+Donald Trump and Boris Johnson. Getty
+&lt;/pre&gt;
+&lt;p&gt;The parts that stuck out to me were:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;The letter F.&lt;/li&gt;
+&lt;li&gt;An envelope. It indicates the ability to send an email.&lt;/li&gt;
+&lt;li&gt;An image of a chain link. It symobilizes a website link url.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And so on. What are these things anyway? Looking at the source of the page,
+I saw it has a bunch of icons which are also hyperlinks. The icon class
+contains a non-standard HTML tag &lt;tt class="docutils literal"&gt;&amp;lt;desc&amp;gt;&lt;/tt&gt; which contains a description
+of the icon (perhaps in a gesture of accessibility toward people with vision
+impairment). The icon block looks something like this:&lt;/p&gt;
+&lt;pre class="code html literal-block"&gt;
+&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt; &lt;span class="na"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;https://www.facebook.com&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;svg&lt;/span&gt; &lt;span class="na"&gt;class&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;svg-icon facebook-icon&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;title&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;Facebook Icon&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;title&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;desc&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;desc&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;The letter F.&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;desc&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;svg&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;The body of the &lt;tt class="docutils literal"&gt;&amp;lt;desc&amp;gt;&lt;/tt&gt; elements get dumped into the visible text in the w3m
+browser. I wrote a little Python script to extract these descriptions.&lt;/p&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
+
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'news_article.html'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'r'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;article&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;snippets&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;re&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findall&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s1"&gt;'&amp;lt;desc id=&amp;quot;desc&amp;quot;&amp;gt;(.*)&amp;lt;\/desc&amp;gt;'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'snippets.txt'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'w'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;'&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;join&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;snippets&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Finally, here are all these little snippets standing alone, with the article
+and other junk stripped out. Read together, they have some majesty.&lt;/p&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;A vertical stack of three evenly spaced horizontal lines.&lt;/div&gt;
+&lt;div class="line"&gt;A magnifying glass. It indicates, &amp;quot;Click to perform a search&amp;quot;.&lt;/div&gt;
+&lt;div class="line"&gt;The words &amp;quot;Business Insider&amp;quot;.&lt;/div&gt;
+&lt;div class="line"&gt;An icon in the shape of a person's head and shoulders. It often indicates a user profile.&lt;/div&gt;
+&lt;div class="line"&gt;An icon in the shape of a person's head and shoulders. It often indicates a user profile.&lt;/div&gt;
+&lt;div class="line"&gt;The word Business&lt;/div&gt;
+&lt;div class="line"&gt;The word Life&lt;/div&gt;
+&lt;div class="line"&gt;The word News&lt;/div&gt;
+&lt;div class="line"&gt;A magnifying glass. It indicates, &amp;quot;Click to perform a search&amp;quot;.&lt;/div&gt;
+&lt;div class="line"&gt;The word &amp;quot;Insider&amp;quot;.&lt;/div&gt;
+&lt;div class="line"&gt;Two crossed lines that form an 'X'. It indicates a way to close an interaction, or dismiss a notification.&lt;/div&gt;
+&lt;div class="line"&gt;The word Business&lt;/div&gt;
+&lt;div class="line"&gt;The word Life&lt;/div&gt;
+&lt;div class="line"&gt;The word News&lt;/div&gt;
+&lt;div class="line"&gt;The word All&lt;/div&gt;
+&lt;div class="line"&gt;An icon in the shape of a person's head and shoulders. It often indicates a user profile.&lt;/div&gt;
+&lt;div class="line"&gt;An icon in the shape of a person's head and shoulders. It often indicates a user profile.&lt;/div&gt;
+&lt;div class="line"&gt;An icon of the world globe, indicating different international options.&amp;quot;&lt;/div&gt;
+&lt;div class="line"&gt;The letter F.&lt;/div&gt;
+&lt;div class="line"&gt;A stylized bird with an open mouth, tweeting.&lt;/div&gt;
+&lt;div class="line"&gt;The word &amp;quot;in&amp;quot;.&lt;/div&gt;
+&lt;div class="line"&gt;A play button in the shape of a television screen.&lt;/div&gt;
+&lt;div class="line"&gt;A stylized camera.&lt;/div&gt;
+&lt;div class="line"&gt;The letter F.&lt;/div&gt;
+&lt;div class="line"&gt;An envelope. It indicates the ability to send an email.&lt;/div&gt;
+&lt;div class="line"&gt;An image of a chain link. It symobilizes a website link url.&lt;/div&gt;
+&lt;div class="line"&gt;A stylized bird with an open mouth, tweeting.&lt;/div&gt;
+&lt;div class="line"&gt;The word &amp;quot;in&amp;quot;.&lt;/div&gt;
+&lt;div class="line"&gt;A stylized letter F.&lt;/div&gt;
+&lt;div class="line"&gt;Three evenly spaced dots forming an ellipsis: &amp;quot;...&amp;quot;.&lt;/div&gt;
+&lt;div class="line"&gt;Two crossed lines that form an 'X'. It indicates a way to close an interaction, or dismiss a notification.&lt;/div&gt;
+&lt;div class="line"&gt;A check mark. It indicates a confirmation of your intended interaction.&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr class="docutils" /&gt;
+&lt;table class="docutils footnote" frame="void" id="article" rules="none"&gt;
+&lt;colgroup&gt;&lt;col class="label" /&gt;&lt;col /&gt;&lt;/colgroup&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id1"&gt;[1]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Bienkov, Adam. &amp;quot;The UK government warns Trump that war with Iran 'is in none of our interests'.&amp;quot;
+&lt;em&gt;Business Insider&lt;/em&gt;, 3 Jan. 2020,
+&lt;a class="reference external" href="https://www.businessinsider.com/uk-warns-donald-trump-against-launching-war-iran-qassem-soleimani-2020-1"&gt;https://www.businessinsider.com/uk-warns-donald-trump-against-launching-war-iran-qassem-soleimani-2020-1&lt;/a&gt;.
+Accessed 13 March 2020.&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+</content><category term="Notes"></category></entry><entry><title>Der Baader Meinhof Komplex</title><link href="https://marshallmallicoat.com/baader-meinhof.html" rel="alternate"></link><published>2020-02-24T00:00:00-06:00</published><updated>2020-02-24T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2020-02-24:/baader-meinhof.html</id><summary type="html">&lt;p&gt;Here are some stills from the 2008 film &lt;em&gt;Der Baader Meinhof Komplex&lt;/em&gt;,
 directed by Uli Edel.
 It is a historical drama about the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Red_Army_Faction"&gt;Red Army Faction&lt;/a&gt; (RAF).&lt;/p&gt;
 &lt;div class="figure align-center"&gt;
