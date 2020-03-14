@@ -43,7 +43,7 @@ impairment). The icon block looks something like this:&lt;/p&gt;
     &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;svg&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;a&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;
-&lt;p&gt;The body of the &lt;tt class="docutils literal"&gt;&amp;lt;desc&amp;gt;&lt;/tt&gt; elements get dumped into the visible text in the w3m
+&lt;p&gt;The body of the &lt;tt class="docutils literal"&gt;&amp;lt;desc&amp;gt;&lt;/tt&gt; element get dumped into the visible text in the w3m
 browser. I wrote a little Python script to extract these descriptions.&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;re&lt;/span&gt;
