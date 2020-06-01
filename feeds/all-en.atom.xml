@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat</title><link href="https://marshallmallicoat.com/" rel="alternate"></link><link href="https://marshallmallicoat.com/feeds/all-en.atom.xml" rel="self"></link><id>https://marshallmallicoat.com/</id><updated>2020-04-05T00:00:00-05:00</updated><entry><title>Found Poetry</title><link href="https://marshallmallicoat.com/found-poetry.html" rel="alternate"></link><published>2020-03-13T00:00:00-05:00</published><updated>2020-03-13T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2020-03-13:/found-poetry.html</id><summary type="html">&lt;div class="section" id="a-stylized-bird-with-an-open-mouth-tweeting"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat</title><link href="https://marshallmallicoat.com/" rel="alternate"></link><link href="https://marshallmallicoat.com/feeds/all-en.atom.xml" rel="self"></link><id>https://marshallmallicoat.com/</id><updated>2020-06-01T00:00:00-05:00</updated><entry><title>Found Poetry</title><link href="https://marshallmallicoat.com/found-poetry.html" rel="alternate"></link><published>2020-03-13T00:00:00-05:00</published><updated>2020-03-13T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2020-03-13:/found-poetry.html</id><summary type="html">&lt;div class="section" id="a-stylized-bird-with-an-open-mouth-tweeting"&gt;
 &lt;h2&gt;A stylized bird with an open mouth, tweeting.&lt;/h2&gt;
 &lt;p&gt;While reading a news article &lt;a class="footnote-reference" href="#article" id="id1"&gt;[1]&lt;/a&gt; with the &lt;a class="reference external" href="https://en.wikipedia.org/wiki/W3m"&gt;w3m&lt;/a&gt; text-based Web browser,
 I noticed some strange sentences interspersed in the markup gore you typically
@@ -745,20 +745,11 @@ Kennedy&lt;/a&gt;, poet &lt;a class="reference external" href="https://www.steph
 &lt;li&gt;&lt;a class="reference external" href="../thoughts-on-sports.html"&gt;Thoughts on sports&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="../vanitas.html"&gt;Vanitas&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content><category term="Writing"></category></entry><entry><title>Press and Appearances</title><link href="https://marshallmallicoat.com/press.html" rel="alternate"></link><published>2018-09-05T00:00:00-05:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-05:/press.html</id><summary type="html">&lt;div class="section" id="press-and-appearances"&gt;
+</content><category term="Writing"></category></entry><entry><title>Press and Appearances</title><link href="https://marshallmallicoat.com/press.html" rel="alternate"></link><published>2018-09-05T00:00:00-05:00</published><updated>2020-06-01T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-05:/press.html</id><content type="html">&lt;div class="section" id="press-and-appearances"&gt;
 &lt;h2&gt;Press and Appearances&lt;/h2&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;A reading I gave was covered in Susan Dunne's &lt;a class="reference external" href="http://www.courant.com/entertainment/arts-theater/hc-syllable-poetry-series-little-river-restorative-20171119-story.html"&gt;&amp;quot;Syllable: A Monthly Night Of Words And
 Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;em&gt;Hartford Courant&lt;/em&gt;, 28 Nov. 2017).&lt;/li&gt;
-&lt;li&gt;I appeared briefly in Adam Humphrey's documentary &lt;a class="reference external" href="https://www.youtube.com/watch?v=Ppm8__FxZ4o"&gt;Shitty Youth&lt;/a&gt; [at the 18:46
-minute mark] (Nov. 2012).&lt;/li&gt;
-&lt;li&gt;I was profiled in …&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</summary><content type="html">&lt;div class="section" id="press-and-appearances"&gt;
-&lt;h2&gt;Press and Appearances&lt;/h2&gt;
-&lt;ul class="simple"&gt;
-&lt;li&gt;A reading I gave was covered in Susan Dunne's &lt;a class="reference external" href="http://www.courant.com/entertainment/arts-theater/hc-syllable-poetry-series-little-river-restorative-20171119-story.html"&gt;&amp;quot;Syllable: A Monthly Night Of Words And
-Music At Little River Restoratives&amp;quot;&lt;/a&gt; (&lt;em&gt;Hartford Courant&lt;/em&gt;, 28 Nov. 2017).&lt;/li&gt;
-&lt;li&gt;I appeared briefly in Adam Humphrey's documentary &lt;a class="reference external" href="https://www.youtube.com/watch?v=Ppm8__FxZ4o"&gt;Shitty Youth&lt;/a&gt; [at the 18:46
-minute mark] (Nov. 2012).&lt;/li&gt;
 &lt;li&gt;I was profiled in Beach Sloth's &lt;a class="reference external" href="http://www.beachsloth.com/marshall-mallicoat-man-myth-legend.html"&gt;&amp;quot;Marshall Mallicoat: Man, Myth, Legend&amp;quot;&lt;/a&gt; (23 Mar. 2012).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/div&gt;
