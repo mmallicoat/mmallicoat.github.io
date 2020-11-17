@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat - Writing</title><link href="/" rel="alternate"></link><link href="/feeds/writing.atom.xml" rel="self"></link><id>/</id><updated>2020-06-17T00:00:00-05:00</updated><entry><title>Lyric Essays</title><link href="/lyric-essays.html" rel="alternate"></link><published>2018-09-22T00:00:00-05:00</published><updated>2018-09-22T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:None,2018-09-22:/lyric-essays.html</id><content type="html">&lt;p&gt;Here are a few lyric essays written in 2015:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat - Writing</title><link href="https://marshallmallicoat.com/" rel="alternate"></link><link href="https://marshallmallicoat.com/feeds/writing.atom.xml" rel="self"></link><id>https://marshallmallicoat.com/</id><updated>2020-06-17T00:00:00-05:00</updated><entry><title>Lyric Essays</title><link href="https://marshallmallicoat.com/lyric-essays.html" rel="alternate"></link><published>2018-09-22T00:00:00-05:00</published><updated>2018-09-22T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-09-22:/lyric-essays.html</id><content type="html">&lt;p&gt;Here are a few lyric essays written in 2015:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="../in-the-twilight.html"&gt;In the twilight of GMT+1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="../john-henry.html"&gt;John Henry&lt;/a&gt;&lt;/li&gt;
@@ -7,7 +7,7 @@
 &lt;li&gt;&lt;a class="reference external" href="../thoughts-on-sports.html"&gt;Thoughts on sports&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="../vanitas.html"&gt;Vanitas&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content><category term="Writing"></category></entry><entry><title>Writing Published Elsewhere</title><link href="/writing-published.html" rel="alternate"></link><published>2018-01-31T00:00:00-06:00</published><updated>2020-06-17T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:None,2018-01-31:/writing-published.html</id><summary type="html">&lt;!-- Note: newhive.com page with 3 Pop Serial poems is broken --&gt;
+</content><category term="Writing"></category></entry><entry><title>Writing Published Elsewhere</title><link href="https://marshallmallicoat.com/writing-published.html" rel="alternate"></link><published>2018-01-31T00:00:00-06:00</published><updated>2020-06-17T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2018-01-31:/writing-published.html</id><summary type="html">&lt;!-- Note: newhive.com page with 3 Pop Serial poems is broken --&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference external" href="https://kgbbarlit.com/content/two-poems-0"&gt;2 poems&lt;/a&gt;
 in &lt;cite&gt;KGB Bar Lit&lt;/cite&gt;, issue 10 (16 May 2020)&lt;/li&gt;
@@ -53,7 +53,7 @@ in &lt;cite&gt;horse ghost&lt;/cite&gt;, volume one (early 2012)&lt;/li&gt;
 &lt;li&gt;&lt;a class="reference external" href="http://cooprenner.com/2012/02/Red.html"&gt;4 poems&lt;/a&gt;, co-written with Alexander Sheppard,
 in &lt;cite&gt;elimae&lt;/cite&gt; (Feb. 2012)&lt;/li&gt;
 &lt;/ul&gt;
-</content><category term="Writing"></category></entry><entry><title>All Along the Livery Line</title><link href="/all-along-the-livery-line.html" rel="alternate"></link><published>2016-11-25T00:00:00-06:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:None,2016-11-25:/all-along-the-livery-line.html</id><content type="html">&lt;p&gt;&lt;cite&gt;All Along the Livery Line&lt;/cite&gt; is a collection of poems published from
+</content><category term="Writing"></category></entry><entry><title>All Along the Livery Line</title><link href="https://marshallmallicoat.com/all-along-the-livery-line.html" rel="alternate"></link><published>2016-11-25T00:00:00-06:00</published><updated>2018-09-07T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2016-11-25:/all-along-the-livery-line.html</id><content type="html">&lt;p&gt;&lt;cite&gt;All Along the Livery Line&lt;/cite&gt; is a collection of poems published from
 2012 to 2014. It is available in PDF &lt;a class="reference external" href="../media/All Along the Livery Line.pdf"&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- .. _here: {filename}/media/All\ Along\ the\ Livery\ Line.pdf --&gt;
 </content><category term="Writing"></category></entry></feed>
