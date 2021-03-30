@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat - Marshall Mallicoat</title><link href="https://marshallmallicoat.com/" rel="alternate"></link><link href="https://marshallmallicoat.com/feeds/marshall-mallicoat.atom.xml" rel="self"></link><id>https://marshallmallicoat.com/</id><updated>2021-03-06T00:00:00-06:00</updated><entry><title>Found Poetry</title><link href="https://marshallmallicoat.com/found-poetry.html" rel="alternate"></link><published>2020-03-13T00:00:00-05:00</published><updated>2020-06-17T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2020-03-13:/found-poetry.html</id><summary type="html">&lt;div class="contents topic" id="contents"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Marshall Mallicoat - Marshall Mallicoat</title><link href="https://marshallmallicoat.com/" rel="alternate"></link><link href="https://marshallmallicoat.com/feeds/marshall-mallicoat.atom.xml" rel="self"></link><id>https://marshallmallicoat.com/</id><updated>2021-03-11T00:00:00-06:00</updated><entry><title>Found Poetry</title><link href="https://marshallmallicoat.com/found-poetry.html" rel="alternate"></link><published>2020-03-13T00:00:00-05:00</published><updated>2020-06-17T00:00:00-05:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2020-03-13:/found-poetry.html</id><summary type="html">&lt;div class="contents topic" id="contents"&gt;
 &lt;p class="topic-title"&gt;&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;a class="reference internal" href="#fiberoptic-haiku" id="id2"&gt;Fiberoptic Haiku&lt;/a&gt;&lt;/li&gt;
@@ -738,7 +738,7 @@ and &lt;em&gt;Webster's New International Dictionary&lt;/em&gt; (2nd ed., G. &am
 &lt;tr&gt;&lt;td class="label"&gt;&lt;a class="fn-backref" href="#id3"&gt;[3]&lt;/a&gt;&lt;/td&gt;&lt;td&gt;Edward Gibbon's &lt;em&gt;The Autobiography of Edward Gibbon&lt;/em&gt; (ed. by Dero A. Saunders, Meridian Books, 1961)&lt;/td&gt;&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-</content><category term="Notes"></category></entry><entry><title>Minimalist Websites</title><link href="https://marshallmallicoat.com/minimalist-sites.html" rel="alternate"></link><published>2019-08-02T00:00:00-05:00</published><updated>2019-11-04T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2019-08-02:/minimalist-sites.html</id><summary type="html">&lt;p&gt;I like hand-made personal websites, especially those with a minimalist
+</content><category term="Notes"></category></entry><entry><title>Minimalist Websites</title><link href="https://marshallmallicoat.com/minimalist-sites.html" rel="alternate"></link><published>2019-08-02T00:00:00-05:00</published><updated>2021-03-11T00:00:00-06:00</updated><author><name>Marshall Mallicoat</name></author><id>tag:marshallmallicoat.com,2019-08-02:/minimalist-sites.html</id><summary type="html">&lt;p&gt;I like hand-made personal websites, especially those with a minimalist
 bent, so I've collected some here.&lt;/p&gt;
 &lt;div class="section" id="show-me-the-sites"&gt;
 &lt;h2&gt;Show Me the Sites&lt;/h2&gt;
@@ -762,6 +762,7 @@ minimalist site, too.)&lt;/p&gt;
 neat.&lt;/p&gt;
 &lt;p&gt;The personal website of &lt;a class="reference external" href="http://domhofmann.com/"&gt;Dom Hofmann&lt;/a&gt;, a
 co-founder of Vine, &lt;em&gt;has no CSS.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://tillery.fyi/blog/"&gt;Raw file directory exposed by web server?!&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;There is a certain style of blog where the page is dominated by a
 simple list of articles, which seems to have been informed by the
 general style of &lt;a class="reference external" href="https://en.wikipedia.org/wiki/Web_template_system#Static_site_generators"&gt;static site generators&lt;/a&gt;.
